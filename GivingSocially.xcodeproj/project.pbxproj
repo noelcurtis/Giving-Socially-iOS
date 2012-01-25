@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
+		C7424CB914D09703003EA7C2 /* GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB814D09703003EA7C2 /* GSUser.m */; };
+		C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */; };
 		D226206914CFCC1B009AB9BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206814CFCC1B009AB9BE /* UIKit.framework */; };
 		D226206B14CFCC1B009AB9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206A14CFCC1B009AB9BE /* Foundation.framework */; };
 		D226206D14CFCC1B009AB9BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206C14CFCC1B009AB9BE /* CoreGraphics.framework */; };
@@ -74,6 +77,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C7424CB414D096CC003EA7C2 /* GSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSMappingProvider.h; path = "Mapping Provider/GSMappingProvider.h"; sourceTree = "<group>"; };
+		C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSMappingProvider.m; path = "Mapping Provider/GSMappingProvider.m"; sourceTree = "<group>"; };
+		C7424CB714D09703003EA7C2 /* GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSUser.h; path = User/GSUser.h; sourceTree = "<group>"; };
+		C7424CB814D09703003EA7C2 /* GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSUser.m; path = User/GSUser.m; sourceTree = "<group>"; };
+		C7424CBB14D09CAD003EA7C2 /* ApiUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiUserTests.h; path = ApiTests/ApiUserTests.h; sourceTree = "<group>"; };
+		C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiUserTests.m; path = ApiTests/ApiUserTests.m; sourceTree = "<group>"; };
 		D226206414CFCC1B009AB9BE /* GivingSocially.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivingSocially.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D226206814CFCC1B009AB9BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D226206A14CFCC1B009AB9BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +142,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7424CB314D09659003EA7C2 /* Mapping Provider */ = {
+			isa = PBXGroup;
+			children = (
+				C7424CB414D096CC003EA7C2 /* GSMappingProvider.h */,
+				C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */,
+			);
+			name = "Mapping Provider";
+			sourceTree = "<group>";
+		};
+		C7424CBA14D09708003EA7C2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C7424CB714D09703003EA7C2 /* GSUser.h */,
+				C7424CB814D09703003EA7C2 /* GSUser.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		C7424CBF14D09CC4003EA7C2 /* ApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				C7424CBB14D09CAD003EA7C2 /* ApiUserTests.h */,
+				C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */,
+			);
+			name = ApiTests;
+			sourceTree = "<group>";
+		};
 		D226205914CFCC1B009AB9BE = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +236,8 @@
 		D2FDBF9514CFD04C00BC6524 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C7424CBA14D09708003EA7C2 /* User */,
+				C7424CB314D09659003EA7C2 /* Mapping Provider */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +297,7 @@
 		D2FDBFA514CFD05B00BC6524 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				C7424CBF14D09CC4003EA7C2 /* ApiTests */,
 				D2FDBFA614CFD05B00BC6524 /* Support */,
 				D2FDBFAA14CFD05B00BC6524 /* Unit */,
 			);
@@ -457,6 +496,8 @@
 			files = (
 				D2FDBF9C14CFD04C00BC6524 /* GSAppDelegate.m in Sources */,
 				D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */,
+				C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */,
+				C7424CB914D09703003EA7C2 /* GSUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FDBFB214CFD0DA00BC6524 /* GivingSociallyTests.m in Sources */,
+				C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
