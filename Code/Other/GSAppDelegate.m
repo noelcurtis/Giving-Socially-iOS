@@ -7,9 +7,12 @@
 //
 
 #import "GSAppDelegate.h"
-
+#import "GSMappingProvider.h"
 #import <RestKit/RestKit.h>
 #import "TestFlight.h"
+#import "GSGift.h"
+#import "GSGiftList.h"
+#import "GSUser.h"
 
 @interface GSAppDelegate ()
 
@@ -53,7 +56,13 @@
 {
     //    RKLogConfigureByName("RestKit/Network", RKLogLevelDebug);
     //    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-    [RKObjectManager objectManagerWithBaseURL:@"http://scottpenrose.com"];
+    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://stormy-sky-8032.herokuapp.com/api"];
+    RKParserRegistry* parserRegistery = [RKParserRegistry sharedRegistry];
+    [parserRegistery setParserClass:NSClassFromString(@"RKJSONParserJSONKit") forMIMEType:@"application/json"];
+    
+    GSMappingProvider* provider = [[[GSMappingProvider alloc] init] autorelease];
+    objectManager.mappingProvider = provider;
+    [self setupRestKitRoutes];
 //    [[RKParserRegistry sharedRegistry] setParserClass:NSClassFromString(@"RKXMLParserLibXML") forMIMEType:@"application/rss+xml"]; 
 //    [[RKClient sharedClient].requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
 //    [[RKClient sharedClient].requestQueue setRequestTimeout:30.0];
@@ -62,6 +71,13 @@
 //    NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 //    [dateFormatter setDateFormat:@"E, dd MMM yyyy HH:mm:ss Z"];
 //    [RKObjectMapping addDefaultDateFormatter:dateFormatter];
+}
+
+- (void)setupRestKitRoutes{
+    RKObjectRouter *router = [RKObjectManager sharedManager].router;
+    
+    // User Routes
+    [router routeClass:[GSUser class] toResourcePath:@"/users/sign_in" forMethod:RKRequestMethodPOST];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
