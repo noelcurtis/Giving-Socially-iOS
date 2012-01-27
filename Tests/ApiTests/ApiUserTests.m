@@ -8,6 +8,7 @@
 
 #import "ApiUserTests.h"
 #import "GSUser.h"
+#import "GSGiftList.h"
 
 @interface ApiUserTests()
 
@@ -48,7 +49,7 @@
     }
 }
 
-- (void) testshowFriendsOfUser{
+- (void) testShowFriendsOfUser{
     
     @try {
         _authToken = @"GrvbiDuei4N2LVhxXiiG";
@@ -63,6 +64,26 @@
         // assert response
         STAssertNotNil([loadedObjects objectAtIndex:0], @"No users were returned!");
         STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
+    }
+    @catch (NSException *exception) {
+        STFail(exception.reason);
+    }
+}
+
+-(void) testShowGiftListsOfUser{
+    @try {
+        _authToken = @"GrvbiDuei4N2LVhxXiiG";
+        
+        NSString *showUserUri = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
+        // make request
+        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showUserUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
+        [objectLoader send];
+        
+        [_loaderDelegate waitForResponse];
+        NSArray *loadedObjects = _loaderDelegate.objects;
+        // assert response
+        STAssertNotNil([loadedObjects objectAtIndex:0], @"No Gift Lists were returned!");
+        STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSGiftList class]], @"Something other than a GiftList was returned from the API!");
     }
     @catch (NSException *exception) {
         STFail(exception.reason);

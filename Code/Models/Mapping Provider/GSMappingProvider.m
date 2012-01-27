@@ -8,6 +8,7 @@
 
 #import "GSMappingProvider.h"
 #import "GSUser.h"
+#import "GSGiftList.h"
 
 @implementation GSMappingProvider
 
@@ -29,6 +30,26 @@
         [users mapKeyPath:@"email" toAttribute:@"email"];
         [users mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
         [self setMapping:users forKeyPath:@"users.user"];
+        
+        // GiftList Mapping
+        RKObjectMapping* giftlist = [RKObjectMapping mappingForClass:[GSGiftList class]];
+        [giftlist mapKeyPath:@"name" toAttribute:@"name"];
+        [giftlist mapKeyPath:@"id" toAttribute:@"resourceId"];
+        [giftlist mapKeyPath:@"is_editable_by_friends" toAttribute:@"isEditableByFriends"];
+        [giftlist mapKeyPath:@"is_private" toAttribute:@"isPrivate"];
+        [giftlist mapKeyPath:@"purpose" toAttribute:@"purpose"];
+        [giftlist mapKeyPath:@"all_gifts_purchased?" toAttribute:@"allGiftsPurchased"];
+        [self setMapping:giftlist forKeyPath:@"gift_list"];
+        
+        // GiftLists Mapping
+        RKObjectMapping* giftlists = [RKObjectMapping mappingForClass:[GSGiftList class]];
+        [giftlists mapKeyPath:@"name" toAttribute:@"name"];
+        [giftlists mapKeyPath:@"id" toAttribute:@"resourceId"];
+        [giftlists mapKeyPath:@"is_editable_by_friends" toAttribute:@"isEditableByFriends"];
+        [giftlists mapKeyPath:@"is_private" toAttribute:@"isPrivate"];
+        [giftlists mapKeyPath:@"purpose" toAttribute:@"purpose"];
+//        [giftlists mapKeyPath:@"all_gifts_purchased?" toAttribute:@"allGiftsPurchased"];
+        [self setMapping:giftlists forKeyPath:@"gift_lists.gift_list"];
     }
     
     return self;

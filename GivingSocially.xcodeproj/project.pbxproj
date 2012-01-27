@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C721A0CC14D2F29400601BCB /* RKSpecResponseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */; };
+		C721A0D014D3124400601BCB /* GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CF14D3124400601BCB /* GSGiftList.m */; };
 		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
 		C7424CB914D09703003EA7C2 /* GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB814D09703003EA7C2 /* GSUser.m */; };
 		C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */; };
@@ -79,6 +80,8 @@
 /* Begin PBXFileReference section */
 		C721A0C914D2F09800601BCB /* RKSpecResponseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSpecResponseLoader.h; sourceTree = "<group>"; };
 		C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSpecResponseLoader.m; sourceTree = "<group>"; };
+		C721A0CE14D3124400601BCB /* GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSGiftList.h; path = "Gift List/GSGiftList.h"; sourceTree = "<group>"; };
+		C721A0CF14D3124400601BCB /* GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGiftList.m; path = "Gift List/GSGiftList.m"; sourceTree = "<group>"; };
 		C7424CB414D096CC003EA7C2 /* GSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSMappingProvider.h; path = "Mapping Provider/GSMappingProvider.h"; sourceTree = "<group>"; };
 		C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSMappingProvider.m; path = "Mapping Provider/GSMappingProvider.m"; sourceTree = "<group>"; };
 		C7424CB714D09703003EA7C2 /* GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSUser.h; path = User/GSUser.h; sourceTree = "<group>"; };
@@ -142,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C721A0CD14D3121D00601BCB /* Gift List */ = {
+			isa = PBXGroup;
+			children = (
+				C721A0CE14D3124400601BCB /* GSGiftList.h */,
+				C721A0CF14D3124400601BCB /* GSGiftList.m */,
+			);
+			name = "Gift List";
+			sourceTree = "<group>";
+		};
 		C7424CB314D09659003EA7C2 /* Mapping Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,7 @@
 		D2FDBF9514CFD04C00BC6524 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C721A0CD14D3121D00601BCB /* Gift List */,
 				C7424CBA14D09708003EA7C2 /* User */,
 				C7424CB314D09659003EA7C2 /* Mapping Provider */,
 			);
@@ -498,6 +511,7 @@
 				D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */,
 				C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */,
 				C7424CB914D09703003EA7C2 /* GSUser.m in Sources */,
+				C721A0D014D3124400601BCB /* GSGiftList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
