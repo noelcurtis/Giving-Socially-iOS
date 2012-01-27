@@ -22,6 +22,13 @@
         [user mapKeyPath:@"email" toAttribute:@"email"];
         [user mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
         [self setMapping:user forKeyPath:@"user"];
+        
+        // Users mapping        
+        RKObjectMapping* users = [RKObjectMapping mappingForClass:[GSUser class]];
+        [users mapKeyPath:@"username" toAttribute:@"username"];
+        [users mapKeyPath:@"email" toAttribute:@"email"];
+        [users mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
+        [self setMapping:users forKeyPath:@"users.user"];
     }
     
     return self;

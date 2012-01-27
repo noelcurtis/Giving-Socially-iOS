@@ -8,11 +8,11 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "GSMappingProvider.h"
-#import <RestKit/RestKit.h>
+#import "RKSpecResponseLoader.h"
 
-
-@interface ApiUserTests : SenTestCase
-
+@interface ApiUserTests : SenTestCase{
+    RKSpecResponseLoader* _loaderDelegate;
+}
 
 
 @end
