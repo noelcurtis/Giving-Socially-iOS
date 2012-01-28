@@ -53,7 +53,7 @@
 {
     //    RKLogConfigureByName("RestKit/Network", RKLogLevelDebug);
     //    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:3000/api"];
+    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://stormy-sky-8032.herokuapp.com/api"];
     RKParserRegistry* parserRegistery = [RKParserRegistry sharedRegistry];
     [parserRegistery setParserClass:NSClassFromString(@"RKJSONParserJSONKit") forMIMEType:@"application/json"];
     

@@ -12,13 +12,12 @@
 
 @interface ApiUserTests()
 
-@property (nonatomic, retain) NSString *authToken;
+@property (nonatomic, readonly) NSString *authToken;
 @property (nonatomic, readonly) NSString *authTokenParam;
 
 @end
 
 @implementation ApiUserTests
-@synthesize authToken = _authToken;
 
 - (void)setUp
 {
@@ -52,8 +51,6 @@
 - (void) testShowFriendsOfUser{
     
     @try {
-        _authToken = @"GrvbiDuei4N2LVhxXiiG";
-        
         NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
         // make request
         RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showUserUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
@@ -72,8 +69,6 @@
 
 -(void) testShowGiftListsOfUser{
     @try {
-        _authToken = @"GrvbiDuei4N2LVhxXiiG";
-        
         NSString *showUserUri = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
         // make request
         RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showUserUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
@@ -91,11 +86,16 @@
 }
 
 -(NSString*) authTokenParam{
-    if (_authToken) {
-        return [NSString stringWithFormat:@"?auth_token=%@", _authToken];
+    if (self.authToken) {
+        return [NSString stringWithFormat:@"?auth_token=%@", self.authToken];
     }   
     @throw [NSException exceptionWithName:@"AuthTokenNotSet" reason:@"auth_token is not set" userInfo:nil];
 }
+
+-(NSString*) authToken{
+    return @"QmrVpGgHqGSPu3z6tPBR";
+}
+
 
 - (void)tearDown
 {
