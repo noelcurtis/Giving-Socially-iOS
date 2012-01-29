@@ -7,7 +7,7 @@
 //
 
 #import "GSAppDelegate.h"
-
+#import "GSMappingProvider.h"
 #import <RestKit/RestKit.h>
 #import "TestFlight.h"
 
@@ -53,7 +53,12 @@
 {
     //    RKLogConfigureByName("RestKit/Network", RKLogLevelDebug);
     //    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-    [RKObjectManager objectManagerWithBaseURL:@"http://scottpenrose.com"];
+    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://stormy-sky-8032.herokuapp.com/api"];
+    RKParserRegistry* parserRegistery = [RKParserRegistry sharedRegistry];
+    [parserRegistery setParserClass:NSClassFromString(@"RKJSONParserJSONKit") forMIMEType:@"application/json"];
+    
+    GSMappingProvider* provider = [[[GSMappingProvider alloc] init] autorelease];
+    objectManager.mappingProvider = provider;
 //    [[RKParserRegistry sharedRegistry] setParserClass:NSClassFromString(@"RKXMLParserLibXML") forMIMEType:@"application/rss+xml"]; 
 //    [[RKClient sharedClient].requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
 //    [[RKClient sharedClient].requestQueue setRequestTimeout:30.0];
