@@ -35,15 +35,7 @@
     
     @try {
         NSString *showUserUri = @"/users/little_kitten.json";
-        // make request
-        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showUserUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
-        [objectLoader send];
-        
-        [_loaderDelegate waitForResponse];
-        NSArray *loadedObjects = _loaderDelegate.objects;
-        // assert response
-        STAssertNotNil([loadedObjects objectAtIndex:0], @"No users were returned!");
-        STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
+        [self sendApiRequest:showUserUri responseType:[GSUser class]];
     }@catch (NSException *exception){
         STFail(exception.reason);
     }
@@ -53,15 +45,7 @@
     
     @try {
         NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
-        // make request
-        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showUserUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
-        [objectLoader send];
-        
-        [_loaderDelegate waitForResponse];
-        NSArray *loadedObjects = _loaderDelegate.objects;
-        // assert response
-        STAssertNotNil([loadedObjects objectAtIndex:0], @"No users were returned!");
-        STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
+        [self sendApiRequest:showUserUri responseType:[GSUser class]];
     }
     @catch (NSException *exception) {
         STFail(exception.reason);
@@ -71,37 +55,40 @@
 -(void) testShowGiftListsOfUser{
     @try {
         NSString *showGiftLists = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
-        // make request
-        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showGiftLists objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
-        [objectLoader send];
-        
-        [_loaderDelegate waitForResponse];
-        NSArray *loadedObjects = _loaderDelegate.objects;
-        // assert response
-        STAssertNotNil([loadedObjects objectAtIndex:0], @"No Gift Lists were returned!");
-        STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSGiftList class]], @"Something other than a GiftList was returned from the API!");
+        [self sendApiRequest:showGiftLists responseType:[GSGiftList class]];
     }
     @catch (NSException *exception) {
         STFail(exception.reason);
     }
 }
+
 -(void) testShowGiftsForGiftList{
     @try {
         
         NSString *giftListId = @"2";
         NSString *showGifts = [NSString stringWithFormat:@"/gift_lists/%@/gifts%@", giftListId,self.authTokenParam];
+        [self sendApiRequest:showGifts responseType:[GSGift class]];
+    }
+    @catch (NSException *exception) {
+        STFail(exception.reason);
+    }
+}
+
+
+-(void) sendApiRequest:(NSString*) requestUri responseType:(Class) classType{
+    @try {
         // make request
-        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showGifts objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
+        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:requestUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
         [objectLoader send];
         
         [_loaderDelegate waitForResponse];
         NSArray *loadedObjects = _loaderDelegate.objects;
         // assert response
-        STAssertNotNil([loadedObjects objectAtIndex:0], @"No Gifts were returned!");
-        STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSGift class]], @"Something other than Gifts was returned from the API!");
+        STAssertNotNil([loadedObjects objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", [classType description]]);
+        STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:classType], @"Something other than a GiftList was returned from the API!");
     }
     @catch (NSException *exception) {
-        STFail(exception.reason);
+        @throw exception;
     }
 }
 
