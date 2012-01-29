@@ -38,7 +38,7 @@
         [giftlist mapKeyPath:@"is_editable_by_friends" toAttribute:@"isEditableByFriends"];
         [giftlist mapKeyPath:@"is_private" toAttribute:@"isPrivate"];
         [giftlist mapKeyPath:@"purpose" toAttribute:@"purpose"];
-        [giftlist mapKeyPath:@"all_gifts_purchased?" toAttribute:@"allGiftsPurchased"];
+        [giftlist mapKeyPath:@"all_gifts_purchased" toAttribute:@"allGiftsPurchased"];
         [self setMapping:giftlist forKeyPath:@"gift_list"];
         
         // GiftLists Mapping
@@ -48,7 +48,7 @@
         [giftlists mapKeyPath:@"is_editable_by_friends" toAttribute:@"isEditableByFriends"];
         [giftlists mapKeyPath:@"is_private" toAttribute:@"isPrivate"];
         [giftlists mapKeyPath:@"purpose" toAttribute:@"purpose"];
-//        [giftlists mapKeyPath:@"all_gifts_purchased?" toAttribute:@"allGiftsPurchased"];
+        [giftlists mapKeyPath:@"all_gifts_purchased" toAttribute:@"allGiftsPurchased"];
         [self setMapping:giftlists forKeyPath:@"gift_lists.gift_list"];
     }
     

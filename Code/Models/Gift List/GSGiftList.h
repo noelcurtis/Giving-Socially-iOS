@@ -15,6 +15,6 @@
 @property (nonatomic, assign) BOOL isEditableByFriends;
 @property (nonatomic, assign) BOOL isPrivate;
 @property (nonatomic, retain) NSString *purpose;
-@property (nonatomic, assign) BOOL *allGiftsPurchased;
+@property (nonatomic, assign) BOOL allGiftsPurchased;
 
 @end
