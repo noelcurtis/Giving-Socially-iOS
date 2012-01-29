@@ -9,6 +9,7 @@
 #import "ApiUserTests.h"
 #import "GSUser.h"
 #import "GSGiftList.h"
+#import "GSGift.h"
 
 @interface ApiUserTests()
 
@@ -69,9 +70,9 @@
 
 -(void) testShowGiftListsOfUser{
     @try {
-        NSString *showUserUri = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
+        NSString *showGiftLists = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
         // make request
-        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showUserUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
+        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showGiftLists objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
         [objectLoader send];
         
         [_loaderDelegate waitForResponse];
@@ -79,6 +80,25 @@
         // assert response
         STAssertNotNil([loadedObjects objectAtIndex:0], @"No Gift Lists were returned!");
         STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSGiftList class]], @"Something other than a GiftList was returned from the API!");
+    }
+    @catch (NSException *exception) {
+        STFail(exception.reason);
+    }
+}
+-(void) testShowGiftsForGiftList{
+    @try {
+        
+        NSString *giftListId = @"2";
+        NSString *showGifts = [NSString stringWithFormat:@"/gift_lists/%@/gifts%@", giftListId,self.authTokenParam];
+        // make request
+        RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:showGifts objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
+        [objectLoader send];
+        
+        [_loaderDelegate waitForResponse];
+        NSArray *loadedObjects = _loaderDelegate.objects;
+        // assert response
+        STAssertNotNil([loadedObjects objectAtIndex:0], @"No Gifts were returned!");
+        STAssertTrue([[loadedObjects objectAtIndex:0] isKindOfClass:[GSGift class]], @"Something other than Gifts was returned from the API!");
     }
     @catch (NSException *exception) {
         STFail(exception.reason);

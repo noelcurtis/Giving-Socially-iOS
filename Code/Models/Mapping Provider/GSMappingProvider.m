@@ -9,6 +9,7 @@
 #import "GSMappingProvider.h"
 #import "GSUser.h"
 #import "GSGiftList.h"
+#import "GSGift.h"
 
 @implementation GSMappingProvider
 
@@ -50,6 +51,28 @@
         [giftlists mapKeyPath:@"purpose" toAttribute:@"purpose"];
         [giftlists mapKeyPath:@"all_gifts_purchased" toAttribute:@"allGiftsPurchased"];
         [self setMapping:giftlists forKeyPath:@"gift_lists.gift_list"];
+        
+        // Gift Mapping
+        RKObjectMapping* gift = [RKObjectMapping mappingForClass:[GSGift class]];
+        [gift mapKeyPath:@"amazon_affiliate_link" toAttribute:@"amazonAffiliateLink"];
+        [gift mapKeyPath:@"approximate_price" toAttribute:@"approximatePrice"];
+        [gift mapKeyPath:@"id" toAttribute:@"resourceId"];
+        [gift mapKeyPath:@"is_purchased" toAttribute:@"isPurchased"];
+        [gift mapKeyPath:@"link_to_example" toAttribute:@"linkToExample"];
+        [gift mapKeyPath:@"name" toAttribute:@"name"];
+        [self setMapping:gift forKeyPath:@"gift"];
+        
+        //Gifts Mapping
+        RKObjectMapping* gifts = [RKObjectMapping mappingForClass:[GSGift class]];
+        [gifts mapKeyPath:@"amazon_affiliate_link" toAttribute:@"amazonAffiliateLink"];
+        [gifts mapKeyPath:@"approximate_price" toAttribute:@"approximatePrice"];
+        [gifts mapKeyPath:@"id" toAttribute:@"resourceId"];
+        [gifts mapKeyPath:@"is_purchased" toAttribute:@"isPurchased"];
+        [gifts mapKeyPath:@"link_to_example" toAttribute:@"linkToExample"];
+        [gifts mapKeyPath:@"name" toAttribute:@"name"];
+        [self setMapping:gifts forKeyPath:@"gifts.gift"];
+        
+        
     }
     
     return self;
