@@ -97,7 +97,7 @@
 
 -(GSUser *)testUser{
     GSUser *user = [[GSUser alloc] init];
-    user.username = @"little_kitten";
+    user.email = @"kitten@puppy.com";
     user.password = @"kitten_little";
     return user;
 }
