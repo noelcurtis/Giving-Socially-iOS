@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) GSUser *testUser;
 
 - (NSArray*)postApiRequest:(NSObject*)object;
-- (NSArray*)sendApiRequest:(NSString*)requestUri responseType:(Class)classType
+- (NSArray*)sendApiRequest:(NSString*)requestUri responseType:(Class)classType;
 - (void)signInUser;
 
 @end
