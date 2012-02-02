@@ -11,12 +11,16 @@
 #import "GSGiftList.h"
 #import "GSGift.h"
 
-@interface ApiUserTests()
+@interface ApiUserTests ()
 
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic, readonly) NSString *authTokenParam;
 @property (nonatomic, retain) RKSpecResponseLoader *loaderDelegate;
 @property (nonatomic, readonly) GSUser *testUser;
+
+- (NSArray*)postApiRequest:(NSObject*)object;
+- (NSArray*)sendApiRequest:(NSString*)requestUri responseType:(Class)classType
+- (void)signInUser;
 
 @end
 
@@ -28,7 +32,7 @@
 - (void)setUp
 {
     [super setUp];
-    RKLogConfigureByName("RestKit/Network", RKLogLevelDebug);
+    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     _loaderDelegate = [RKSpecResponseLoader responseLoader];
     _loaderDelegate.timeout = (1000 * 20);
@@ -36,7 +40,8 @@
     // Set-up code here.
 }
 
--(void) signInUser{
+-(void) signInUser
+{
     NSArray *users = [self postApiRequest:[self testUser]];
     STAssertNotNil([users objectAtIndex:0], @"No Users were returned, thus you could not have been Authenticated!");
     GSUser *authenticatedUser = [users objectAtIndex:0];
@@ -44,8 +49,8 @@
     STAssertNotNil(authenticatedUser.authToken, @"No Users were returned, thus you could not have been Authenticated!");
 }
 
-- (void) testShowFriendsOfUser{
-
+- (void) testShowFriendsOfUser
+{
     NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
     NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUser class]];
     
@@ -54,15 +59,16 @@
     
 }
 
--(void) testShowGiftListsOfUser{
-
+-(void) testShowGiftListsOfUser
+{
     NSString *showGiftLists = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
     NSArray *giftLists = [self sendApiRequest:showGiftLists responseType:[GSGiftList class]];
     STAssertNotNil([giftLists objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Gift Lists"]);
     STAssertTrue([[giftLists objectAtIndex:0] isKindOfClass:[GSGiftList class]], @"Something other than a GiftList was returned from the API!");
 }
 
--(void) testShowGiftsForGiftList{
+-(void) testShowGiftsForGiftList
+{
     NSString *giftListId = @"2";
     NSString *showGifts = [NSString stringWithFormat:@"/gift_lists/%@/gifts%@", giftListId,self.authTokenParam];
     NSArray *gifts = [self sendApiRequest:showGifts responseType:[GSGift class]];
@@ -71,7 +77,8 @@
 }
 
 
--(NSArray*) sendApiRequest:(NSString*) requestUri responseType:(Class) classType{
+-(NSArray*) sendApiRequest:(NSString*) requestUri responseType:(Class) classType
+{
     // make request
     RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:requestUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
     [objectLoader send];
@@ -81,21 +88,24 @@
     return loadedObjects;
 }
 
--(NSArray*) postApiRequest:(NSObject*)object{
+-(NSArray*) postApiRequest:(NSObject*)object
+{
     [[RKObjectManager sharedManager] postObject:object delegate:_loaderDelegate];
     [_loaderDelegate waitForResponse];
     NSArray *loadedObjects = _loaderDelegate.objects;
     return loadedObjects;
 }
 
--(NSString*) authTokenParam{
+-(NSString*) authTokenParam
+{
     if (self.authToken) {
         return [NSString stringWithFormat:@"?auth_token=%@", _authToken];
     }   
     @throw [NSException exceptionWithName:@"AuthTokenNotSet" reason:@"auth_token is not set" userInfo:nil];
 }
 
--(GSUser *)testUser{
+-(GSUser *)testUser
+{
     GSUser *user = [[GSUser alloc] init];
     user.email = @"kitten@puppy.com";
     user.password = @"kitten_little";

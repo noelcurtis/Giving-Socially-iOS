@@ -25,7 +25,7 @@
         [user mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
         [user mapKeyPath:@"password" toAttribute:@"password"];
         [self setMapping:user forKeyPath:@"user"];
-        [self setSerializationMapping:[user inverseMapping] forClass:[GSUser class]];
+        [self registerMapping:user withRootKeyPath:@"user"];
         
         // Users mapping        
         RKObjectMapping* users = [RKObjectMapping mappingForClass:[GSUser class]];

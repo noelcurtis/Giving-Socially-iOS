@@ -17,6 +17,7 @@
 @interface GSAppDelegate ()
 
 - (void)setupRestKit;
+- (void)setupRestKitRoutes;
 
 @end
 
@@ -73,7 +74,8 @@
 //    [RKObjectMapping addDefaultDateFormatter:dateFormatter];
 }
 
-- (void)setupRestKitRoutes{
+- (void)setupRestKitRoutes
+{
     RKObjectRouter *router = [RKObjectManager sharedManager].router;
     
     // User Routes
