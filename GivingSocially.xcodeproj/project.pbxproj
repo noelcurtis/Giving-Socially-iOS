@@ -19,6 +19,11 @@
 		D226208114CFCC1B009AB9BE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226208014CFCC1B009AB9BE /* SenTestingKit.framework */; };
 		D226208214CFCC1B009AB9BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206814CFCC1B009AB9BE /* UIKit.framework */; };
 		D226208314CFCC1B009AB9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206A14CFCC1B009AB9BE /* Foundation.framework */; };
+		D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */; };
+		D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */; };
+		D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */; };
+		D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */; };
+		D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */; };
 		D2FDBF9C14CFD04C00BC6524 /* GSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FDBF9914CFD04C00BC6524 /* GSAppDelegate.m */; };
 		D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FDBF9A14CFD04C00BC6524 /* main.m */; };
 		D2FDBFAD14CFD05B00BC6524 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2FDBFA114CFD05B00BC6524 /* InfoPlist.strings */; };
@@ -97,6 +102,16 @@
 		D226206C14CFCC1B009AB9BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D226207F14CFCC1B009AB9BE /* GivingSociallyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GivingSociallyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D226208014CFCC1B009AB9BE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D2B61C9614DB9A1900DDA2CF /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
+		D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
+		D2B61C9C14DB9AF800DDA2CF /* GSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFriendsViewController.h; sourceTree = "<group>"; };
+		D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFriendsViewController.m; sourceTree = "<group>"; };
+		D2B61C9F14DB9B6B00DDA2CF /* GSMyListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMyListsViewController.h; sourceTree = "<group>"; };
+		D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMyListsViewController.m; sourceTree = "<group>"; };
+		D2B61CA214DB9B7E00DDA2CF /* GSAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAccountViewController.h; sourceTree = "<group>"; };
+		D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAccountViewController.m; sourceTree = "<group>"; };
+		D2B61CA514DBA12400DDA2CF /* GSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewController.h; sourceTree = "<group>"; };
+		D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewController.m; sourceTree = "<group>"; };
 		D2FDBF9714CFD04C00BC6524 /* GivingSocially-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GivingSocially-Prefix.pch"; sourceTree = "<group>"; };
 		D2FDBF9814CFD04C00BC6524 /* GSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAppDelegate.h; sourceTree = "<group>"; };
 		D2FDBF9914CFD04C00BC6524 /* GSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAppDelegate.m; sourceTree = "<group>"; };
@@ -231,14 +246,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D2B61C9514DB99F800DDA2CF /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				D2B61C9614DB9A1900DDA2CF /* IIViewDeckController.h */,
+				D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */,
+			);
+			name = ViewDeck;
+			sourceTree = "<group>";
+		};
 		D2FDBF9214CFD04C00BC6524 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				D2FDBF9314CFD04C00BC6524 /* Categories */,
-				D2FDBF9414CFD04C00BC6524 /* Controllers */,
 				D2FDBF9514CFD04C00BC6524 /* Models */,
-				D2FDBF9614CFD04C00BC6524 /* Other */,
 				D2FDBF9B14CFD04C00BC6524 /* Views */,
+				D2FDBF9414CFD04C00BC6524 /* Controllers */,
+				D2FDBF9314CFD04C00BC6524 /* Categories */,
+				D2FDBF9614CFD04C00BC6524 /* Other */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -253,6 +277,14 @@
 		D2FDBF9414CFD04C00BC6524 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2B61C9C14DB9AF800DDA2CF /* GSFriendsViewController.h */,
+				D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */,
+				D2B61C9F14DB9B6B00DDA2CF /* GSMyListsViewController.h */,
+				D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */,
+				D2B61CA214DB9B7E00DDA2CF /* GSAccountViewController.h */,
+				D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */,
+				D2B61CA514DBA12400DDA2CF /* GSHomeViewController.h */,
+				D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +321,7 @@
 		D2FDBF9E14CFD05B00BC6524 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D2B61C9514DB99F800DDA2CF /* ViewDeck */,
 				D2FDBFE214CFD2B700BC6524 /* TestFlight */,
 				D2FDBFB414CFD13D00BC6524 /* RestKit */,
 			);
@@ -526,6 +559,11 @@
 				C7424CB914D09703003EA7C2 /* GSUser.m in Sources */,
 				C721A0D014D3124400601BCB /* GSGiftList.m in Sources */,
 				C79AE5E114D5C97A009E58B4 /* GSGift.m in Sources */,
+				D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */,
+				D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */,
+				D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */,
+				D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */,
+				D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

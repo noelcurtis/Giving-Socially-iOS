@@ -7,14 +7,27 @@
 //
 
 #import "GSAppDelegate.h"
-#import "GSMappingProvider.h"
-#import <RestKit/RestKit.h>
+
 #import "TestFlight.h"
+
+#import <RestKit/RestKit.h>
+#import "GSMappingProvider.h"
+
+#import "GSFriendsViewController.h"
+#import "GSAccountViewController.h"
+#import "GSHomeViewController.h"
+
+#import "IIViewDeckController.h"
 #import "GSGift.h"
 #import "GSGiftList.h"
 #import "GSUser.h"
 
 @interface GSAppDelegate ()
+
+@property (nonatomic, retain) GSFriendsViewController* friendsViewController;
+@property (nonatomic, retain) GSAccountViewController* accountViewController;
+@property (nonatomic, retain) GSHomeViewController* homeViewController;
+@property (nonatomic, retain) UINavigationController* navigationController;
 
 - (void)setupRestKit;
 - (void)setupRestKitRoutes;
@@ -24,9 +37,14 @@
 @implementation GSAppDelegate
 
 @synthesize window = _window;
+@synthesize navigationController = _navigationController, friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController;
 
 - (void)dealloc
 {
+    [_friendsViewController release];
+    [_accountViewController release];
+    [_homeViewController release];
+    [_navigationController release];
     [_window release];
     [super dealloc];
 }
@@ -40,6 +58,16 @@
 #endif
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    _friendsViewController = [[GSFriendsViewController alloc] init];
+    _accountViewController = [[GSAccountViewController alloc] init];
+    _homeViewController = [[GSHomeViewController alloc] init];
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
+    
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.navigationController 
+                                                                                    leftViewController:self.accountViewController
+                                                                                   rightViewController:self.friendsViewController];
+    [self.window setRootViewController:deckController];
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self setupRestKit];
