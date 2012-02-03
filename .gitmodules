@@ -1,3 +1,6 @@
 [submodule "Libraries/RestKit"]
 	path = Libraries/RestKit
 	url = https://github.com/RestKit/RestKit.git
+[submodule "Libraries/ViewDeck"]
+	path = Libraries/ViewDeck
+	url = https://github.com/Inferis/ViewDeck.git
