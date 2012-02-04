@@ -49,15 +49,15 @@
     STAssertNotNil(authenticatedUser.authToken, @"No Users were returned, thus you could not have been Authenticated!");
 }
 
-- (void) testShowFriendsOfUser
-{
-    NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
-    NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUser class]];
-    
-    STAssertNotNil([users objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Users"]);
-    STAssertTrue([[users objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
-    
-}
+//- (void) testShowFriendsOfUser
+//{
+//    NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
+//    NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUser class]];
+//    
+//    STAssertNotNil([users objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Users"]);
+//    STAssertTrue([[users objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
+//    
+//}
 
 -(void) testShowGiftListsOfUser
 {
