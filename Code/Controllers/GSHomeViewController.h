@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Scott Penrose. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
-@interface GSHomeViewController : UIViewController
+@interface GSHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
 
 @end

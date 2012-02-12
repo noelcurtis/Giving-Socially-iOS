@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GSGift" representedClassName="GSGift" syncable="YES">
+        <attribute name="amazonAffiliateURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="approximatePrice" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="exampleURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="giftID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchased" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="GSGiftList" representedClassName="GSGiftList" syncable="YES">
+        <attribute name="allGiftsPurchased" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="editableByFriends" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="giftListID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privateList" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="purpose" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starred" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="GSUser" representedClassName="GSUser" syncable="YES">
+        <attribute name="authToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facebookToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GSGiftList" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="GSUser" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="GSGift" positionX="160" positionY="192" width="128" height="135"/>
+    </elements>
+</model>

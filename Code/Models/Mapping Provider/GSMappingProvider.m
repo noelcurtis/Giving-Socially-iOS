@@ -17,65 +17,43 @@
     self = [super init];
     
     if(self){
+        RKManagedObjectStore* objectStore = [RKObjectManager sharedManager].objectStore;
         
         // User mapping        
-        RKObjectMapping* user = [RKObjectMapping mappingForClass:[GSUser class]];
+        RKManagedObjectMapping* user = [RKManagedObjectMapping mappingForClass:[GSUser class] inManagedObjectStore:objectStore];
+        [user setPrimaryKeyAttribute:@"email"];
         [user mapKeyPath:@"username" toAttribute:@"username"];
         [user mapKeyPath:@"email" toAttribute:@"email"];
         [user mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
-        [user mapKeyPath:@"password" toAttribute:@"password"];
         [self setMapping:user forKeyPath:@"user"];
+        [self setMapping:user forKeyPath:@"users.user"];
         [self registerMapping:user withRootKeyPath:@"user"];
         
-        // Users mapping        
-        RKObjectMapping* users = [RKObjectMapping mappingForClass:[GSUser class]];
-        [users mapKeyPath:@"username" toAttribute:@"username"];
-        [users mapKeyPath:@"email" toAttribute:@"email"];
-        [users mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
-        [users mapKeyPath:@"password" toAttribute:@"password"];
-        [self setMapping:users forKeyPath:@"users.user"];
-        
         // GiftList Mapping
-        RKObjectMapping* giftlist = [RKObjectMapping mappingForClass:[GSGiftList class]];
+        RKManagedObjectMapping* giftlist = [RKManagedObjectMapping mappingForClass:[GSGiftList class] inManagedObjectStore:objectStore];
+        [giftlist setPrimaryKeyAttribute:@"giftListID"];
         [giftlist mapKeyPath:@"name" toAttribute:@"name"];
-        [giftlist mapKeyPath:@"id" toAttribute:@"resourceId"];
-        [giftlist mapKeyPath:@"is_editable_by_friends" toAttribute:@"isEditableByFriends"];
-        [giftlist mapKeyPath:@"is_private" toAttribute:@"isPrivate"];
-        [giftlist mapKeyPath:@"purpose" toAttribute:@"purpose"];
+        [giftlist mapKeyPath:@"id" toAttribute:@"giftListID"];
+        [giftlist mapKeyPath:@"is_editable_by_friends" toAttribute:@"editableByFriends"];
+        [giftlist mapKeyPath:@"is_private" toAttribute:@"privateList"];
+        [giftlist mapKeyPath:@"is_starred" toAttribute:@"starred"];
         [giftlist mapKeyPath:@"all_gifts_purchased" toAttribute:@"allGiftsPurchased"];
+        [giftlist mapKeyPath:@"due_date" toAttribute:@"dueDate"];
+        [giftlist mapAttributes:@"purpose", nil];
         [self setMapping:giftlist forKeyPath:@"gift_list"];
-        
-        // GiftLists Mapping
-        RKObjectMapping* giftlists = [RKObjectMapping mappingForClass:[GSGiftList class]];
-        [giftlists mapKeyPath:@"name" toAttribute:@"name"];
-        [giftlists mapKeyPath:@"id" toAttribute:@"resourceId"];
-        [giftlists mapKeyPath:@"is_editable_by_friends" toAttribute:@"isEditableByFriends"];
-        [giftlists mapKeyPath:@"is_private" toAttribute:@"isPrivate"];
-        [giftlists mapKeyPath:@"purpose" toAttribute:@"purpose"];
-        [giftlists mapKeyPath:@"all_gifts_purchased" toAttribute:@"allGiftsPurchased"];
-        [self setMapping:giftlists forKeyPath:@"gift_lists.gift_list"];
+        [self setMapping:giftlist forKeyPath:@"gift_lists.gift_list"];
         
         // Gift Mapping
-        RKObjectMapping* gift = [RKObjectMapping mappingForClass:[GSGift class]];
-        [gift mapKeyPath:@"amazon_affiliate_link" toAttribute:@"amazonAffiliateLink"];
+        RKManagedObjectMapping* gift = [RKManagedObjectMapping mappingForClass:[GSGift class] inManagedObjectStore:objectStore];
+        [gift setPrimaryKeyAttribute:@"giftID"];
+        [gift mapKeyPath:@"amazon_affiliate_link" toAttribute:@"amazonAffiliateURL"];
         [gift mapKeyPath:@"approximate_price" toAttribute:@"approximatePrice"];
-        [gift mapKeyPath:@"id" toAttribute:@"resourceId"];
-        [gift mapKeyPath:@"is_purchased" toAttribute:@"isPurchased"];
-        [gift mapKeyPath:@"link_to_example" toAttribute:@"linkToExample"];
-        [gift mapKeyPath:@"name" toAttribute:@"name"];
+        [gift mapKeyPath:@"id" toAttribute:@"giftID"];
+        [gift mapKeyPath:@"is_purchased" toAttribute:@"purchased"];
+        [gift mapKeyPath:@"link_to_example" toAttribute:@"exampleURL"];
+        [gift mapAttributes:@"name", nil];
         [self setMapping:gift forKeyPath:@"gift"];
-        
-        //Gifts Mapping
-        RKObjectMapping* gifts = [RKObjectMapping mappingForClass:[GSGift class]];
-        [gifts mapKeyPath:@"amazon_affiliate_link" toAttribute:@"amazonAffiliateLink"];
-        [gifts mapKeyPath:@"approximate_price" toAttribute:@"approximatePrice"];
-        [gifts mapKeyPath:@"id" toAttribute:@"resourceId"];
-        [gifts mapKeyPath:@"is_purchased" toAttribute:@"isPurchased"];
-        [gifts mapKeyPath:@"link_to_example" toAttribute:@"linkToExample"];
-        [gifts mapKeyPath:@"name" toAttribute:@"name"];
-        [self setMapping:gifts forKeyPath:@"gifts.gift"];
-        
-        
+        [self setMapping:gift forKeyPath:@"gifts.gift"];
     }
     
     return self;

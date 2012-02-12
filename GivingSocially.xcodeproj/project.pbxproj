@@ -8,22 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		C721A0CC14D2F29400601BCB /* RKSpecResponseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */; };
-		C721A0D014D3124400601BCB /* GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CF14D3124400601BCB /* GSGiftList.m */; };
 		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
-		C7424CB914D09703003EA7C2 /* GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB814D09703003EA7C2 /* GSUser.m */; };
 		C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */; };
-		C79AE5E114D5C97A009E58B4 /* GSGift.m in Sources */ = {isa = PBXBuildFile; fileRef = C79AE5E014D5C97A009E58B4 /* GSGift.m */; };
 		D226206914CFCC1B009AB9BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206814CFCC1B009AB9BE /* UIKit.framework */; };
 		D226206B14CFCC1B009AB9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206A14CFCC1B009AB9BE /* Foundation.framework */; };
 		D226206D14CFCC1B009AB9BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206C14CFCC1B009AB9BE /* CoreGraphics.framework */; };
 		D226208114CFCC1B009AB9BE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226208014CFCC1B009AB9BE /* SenTestingKit.framework */; };
 		D226208214CFCC1B009AB9BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206814CFCC1B009AB9BE /* UIKit.framework */; };
 		D226208314CFCC1B009AB9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206A14CFCC1B009AB9BE /* Foundation.framework */; };
+		D22C307C14E788FC00BAF11B /* GSGift.m in Sources */ = {isa = PBXBuildFile; fileRef = D22C307B14E788FC00BAF11B /* GSGift.m */; };
+		D22C307F14E7893500BAF11B /* GSGiftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22C307E14E7893500BAF11B /* GSGiftListViewController.m */; };
+		D282538114E6478500DB1F82 /* GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = D282538014E6478500DB1F82 /* GSGiftList.m */; };
+		D2B2561114E7971100619FE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B2561014E7971100619FE8 /* QuartzCore.framework */; };
+		D2B2561414E799BC00619FE8 /* GSGiftListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561314E799BC00619FE8 /* GSGiftListView.m */; };
+		D2B2561714E81F3E00619FE8 /* GSAccountHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */; };
 		D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */; };
 		D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */; };
 		D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */; };
 		D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */; };
 		D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */; };
+		D2D0B4F814DCEFBA00BED96C /* GSDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B4F614DCEFBA00BED96C /* GSDataModel.xcdatamodeld */; };
+		D2D0B4FD14DCFE8A00BED96C /* GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B4FC14DCFE8A00BED96C /* GSUser.m */; };
+		D2D0B54814DDA26300BED96C /* GSEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B54714DDA26300BED96C /* GSEnvironment.m */; };
+		D2D0B54B14DDA30100BED96C /* GSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B54A14DDA30100BED96C /* GSLoginViewController.m */; };
 		D2FDBF9C14CFD04C00BC6524 /* GSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FDBF9914CFD04C00BC6524 /* GSAppDelegate.m */; };
 		D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FDBF9A14CFD04C00BC6524 /* main.m */; };
 		D2FDBFAD14CFD05B00BC6524 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2FDBFA114CFD05B00BC6524 /* InfoPlist.strings */; };
@@ -86,22 +93,27 @@
 /* Begin PBXFileReference section */
 		C721A0C914D2F09800601BCB /* RKSpecResponseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSpecResponseLoader.h; sourceTree = "<group>"; };
 		C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSpecResponseLoader.m; sourceTree = "<group>"; };
-		C721A0CE14D3124400601BCB /* GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSGiftList.h; path = "Gift List/GSGiftList.h"; sourceTree = "<group>"; };
-		C721A0CF14D3124400601BCB /* GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGiftList.m; path = "Gift List/GSGiftList.m"; sourceTree = "<group>"; };
 		C7424CB414D096CC003EA7C2 /* GSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSMappingProvider.h; path = "Mapping Provider/GSMappingProvider.h"; sourceTree = "<group>"; };
 		C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSMappingProvider.m; path = "Mapping Provider/GSMappingProvider.m"; sourceTree = "<group>"; };
-		C7424CB714D09703003EA7C2 /* GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSUser.h; path = User/GSUser.h; sourceTree = "<group>"; };
-		C7424CB814D09703003EA7C2 /* GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSUser.m; path = User/GSUser.m; sourceTree = "<group>"; };
 		C7424CBB14D09CAD003EA7C2 /* ApiUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiUserTests.h; path = ApiTests/ApiUserTests.h; sourceTree = "<group>"; };
 		C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiUserTests.m; path = ApiTests/ApiUserTests.m; sourceTree = "<group>"; };
-		C79AE5DF14D5C97A009E58B4 /* GSGift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSGift.h; path = Gift/GSGift.h; sourceTree = "<group>"; };
-		C79AE5E014D5C97A009E58B4 /* GSGift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGift.m; path = Gift/GSGift.m; sourceTree = "<group>"; };
 		D226206414CFCC1B009AB9BE /* GivingSocially.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivingSocially.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D226206814CFCC1B009AB9BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D226206A14CFCC1B009AB9BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D226206C14CFCC1B009AB9BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D226207F14CFCC1B009AB9BE /* GivingSociallyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GivingSociallyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D226208014CFCC1B009AB9BE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D22C307A14E788FC00BAF11B /* GSGift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSGift.h; path = Code/Models/GSGift.h; sourceTree = SOURCE_ROOT; };
+		D22C307B14E788FC00BAF11B /* GSGift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGift.m; path = Code/Models/GSGift.m; sourceTree = SOURCE_ROOT; };
+		D22C307D14E7893500BAF11B /* GSGiftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftListViewController.h; sourceTree = "<group>"; };
+		D22C307E14E7893500BAF11B /* GSGiftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftListViewController.m; sourceTree = "<group>"; };
+		D282537F14E6478500DB1F82 /* GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSGiftList.h; path = Code/Models/Gift/GSGiftList.h; sourceTree = SOURCE_ROOT; };
+		D282538014E6478500DB1F82 /* GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGiftList.m; path = Code/Models/Gift/GSGiftList.m; sourceTree = SOURCE_ROOT; };
+		D2B2561014E7971100619FE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D2B2561214E799BC00619FE8 /* GSGiftListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftListView.h; sourceTree = "<group>"; };
+		D2B2561314E799BC00619FE8 /* GSGiftListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftListView.m; sourceTree = "<group>"; };
+		D2B2561514E81F3E00619FE8 /* GSAccountHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAccountHeaderView.h; sourceTree = "<group>"; };
+		D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAccountHeaderView.m; sourceTree = "<group>"; };
 		D2B61C9614DB9A1900DDA2CF /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
 		D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
 		D2B61C9C14DB9AF800DDA2CF /* GSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFriendsViewController.h; sourceTree = "<group>"; };
@@ -112,6 +124,13 @@
 		D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAccountViewController.m; sourceTree = "<group>"; };
 		D2B61CA514DBA12400DDA2CF /* GSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewController.h; sourceTree = "<group>"; };
 		D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewController.m; sourceTree = "<group>"; };
+		D2D0B4F714DCEFBA00BED96C /* GSDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GSDataModel.xcdatamodel; sourceTree = "<group>"; };
+		D2D0B4FB14DCFE8A00BED96C /* GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSUser.h; path = Code/Models/User/GSUser.h; sourceTree = SOURCE_ROOT; };
+		D2D0B4FC14DCFE8A00BED96C /* GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSUser.m; path = Code/Models/User/GSUser.m; sourceTree = SOURCE_ROOT; };
+		D2D0B54614DDA26300BED96C /* GSEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEnvironment.h; sourceTree = "<group>"; };
+		D2D0B54714DDA26300BED96C /* GSEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSEnvironment.m; sourceTree = "<group>"; };
+		D2D0B54914DDA30100BED96C /* GSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLoginViewController.h; sourceTree = "<group>"; };
+		D2D0B54A14DDA30100BED96C /* GSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSLoginViewController.m; sourceTree = "<group>"; };
 		D2FDBF9714CFD04C00BC6524 /* GivingSocially-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GivingSocially-Prefix.pch"; sourceTree = "<group>"; };
 		D2FDBF9814CFD04C00BC6524 /* GSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAppDelegate.h; sourceTree = "<group>"; };
 		D2FDBF9914CFD04C00BC6524 /* GSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B2561114E7971100619FE8 /* QuartzCore.framework in Frameworks */,
 				D2FDBFD514CFD20E00BC6524 /* SystemConfiguration.framework in Frameworks */,
 				D2FDBFCF14CFD1FE00BC6524 /* CFNetwork.framework in Frameworks */,
 				D2FDBFD014CFD1FE00BC6524 /* CoreData.framework in Frameworks */,
@@ -163,15 +183,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C721A0CD14D3121D00601BCB /* Gift List */ = {
-			isa = PBXGroup;
-			children = (
-				C721A0CE14D3124400601BCB /* GSGiftList.h */,
-				C721A0CF14D3124400601BCB /* GSGiftList.m */,
-			);
-			name = "Gift List";
-			sourceTree = "<group>";
-		};
 		C7424CB314D09659003EA7C2 /* Mapping Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,15 +192,6 @@
 			name = "Mapping Provider";
 			sourceTree = "<group>";
 		};
-		C7424CBA14D09708003EA7C2 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				C7424CB714D09703003EA7C2 /* GSUser.h */,
-				C7424CB814D09703003EA7C2 /* GSUser.m */,
-			);
-			name = User;
-			sourceTree = "<group>";
-		};
 		C7424CBF14D09CC4003EA7C2 /* ApiTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,15 +199,6 @@
 				C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */,
 			);
 			name = ApiTests;
-			sourceTree = "<group>";
-		};
-		C79AE5DE14D5C95C009E58B4 /* Gift */ = {
-			isa = PBXGroup;
-			children = (
-				C79AE5DF14D5C97A009E58B4 /* GSGift.h */,
-				C79AE5E014D5C97A009E58B4 /* GSGift.m */,
-			);
-			name = Gift;
 			sourceTree = "<group>";
 		};
 		D226205914CFCC1B009AB9BE = {
@@ -232,6 +225,7 @@
 		D226206714CFCC1B009AB9BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2B2561014E7971100619FE8 /* QuartzCore.framework */,
 				D2FDBFD414CFD20E00BC6524 /* SystemConfiguration.framework */,
 				D2FDBFCA14CFD1FE00BC6524 /* CFNetwork.framework */,
 				D2FDBFCB14CFD1FE00BC6524 /* CoreData.framework */,
@@ -285,6 +279,10 @@
 				D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */,
 				D2B61CA514DBA12400DDA2CF /* GSHomeViewController.h */,
 				D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */,
+				D2D0B54914DDA30100BED96C /* GSLoginViewController.h */,
+				D2D0B54A14DDA30100BED96C /* GSLoginViewController.m */,
+				D22C307D14E7893500BAF11B /* GSGiftListViewController.h */,
+				D22C307E14E7893500BAF11B /* GSGiftListViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -292,9 +290,12 @@
 		D2FDBF9514CFD04C00BC6524 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C79AE5DE14D5C95C009E58B4 /* Gift */,
-				C721A0CD14D3121D00601BCB /* Gift List */,
-				C7424CBA14D09708003EA7C2 /* User */,
+				D22C307A14E788FC00BAF11B /* GSGift.h */,
+				D22C307B14E788FC00BAF11B /* GSGift.m */,
+				D282537F14E6478500DB1F82 /* GSGiftList.h */,
+				D282538014E6478500DB1F82 /* GSGiftList.m */,
+				D2D0B4FB14DCFE8A00BED96C /* GSUser.h */,
+				D2D0B4FC14DCFE8A00BED96C /* GSUser.m */,
 				C7424CB314D09659003EA7C2 /* Mapping Provider */,
 			);
 			path = Models;
@@ -307,6 +308,8 @@
 				D2FDBF9814CFD04C00BC6524 /* GSAppDelegate.h */,
 				D2FDBF9914CFD04C00BC6524 /* GSAppDelegate.m */,
 				D2FDBF9A14CFD04C00BC6524 /* main.m */,
+				D2D0B54614DDA26300BED96C /* GSEnvironment.h */,
+				D2D0B54714DDA26300BED96C /* GSEnvironment.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -314,6 +317,10 @@
 		D2FDBF9B14CFD04C00BC6524 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2B2561214E799BC00619FE8 /* GSGiftListView.h */,
+				D2B2561314E799BC00619FE8 /* GSGiftListView.m */,
+				D2B2561514E81F3E00619FE8 /* GSAccountHeaderView.h */,
+				D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 			children = (
 				D2FDBFA114CFD05B00BC6524 /* InfoPlist.strings */,
 				D2FDBFA314CFD05B00BC6524 /* GivingSocially-Info.plist */,
+				D2D0B4F614DCEFBA00BED96C /* GSDataModel.xcdatamodeld */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -556,14 +564,20 @@
 				D2FDBF9C14CFD04C00BC6524 /* GSAppDelegate.m in Sources */,
 				D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */,
 				C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */,
-				C7424CB914D09703003EA7C2 /* GSUser.m in Sources */,
-				C721A0D014D3124400601BCB /* GSGiftList.m in Sources */,
-				C79AE5E114D5C97A009E58B4 /* GSGift.m in Sources */,
 				D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */,
 				D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */,
 				D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */,
 				D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */,
 				D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */,
+				D2D0B4F814DCEFBA00BED96C /* GSDataModel.xcdatamodeld in Sources */,
+				D2D0B4FD14DCFE8A00BED96C /* GSUser.m in Sources */,
+				D2D0B54814DDA26300BED96C /* GSEnvironment.m in Sources */,
+				D2D0B54B14DDA30100BED96C /* GSLoginViewController.m in Sources */,
+				D282538114E6478500DB1F82 /* GSGiftList.m in Sources */,
+				D22C307C14E788FC00BAF11B /* GSGift.m in Sources */,
+				D22C307F14E7893500BAF11B /* GSGiftListViewController.m in Sources */,
+				D2B2561414E799BC00619FE8 /* GSGiftListView.m in Sources */,
+				D2B2561714E81F3E00619FE8 /* GSAccountHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +790,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2D0B4F614DCEFBA00BED96C /* GSDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2D0B4F714DCEFBA00BED96C /* GSDataModel.xcdatamodel */,
+			);
+			currentVersion = D2D0B4F714DCEFBA00BED96C /* GSDataModel.xcdatamodel */;
+			path = GSDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D226205B14CFCC1B009AB9BE /* Project object */;
 }

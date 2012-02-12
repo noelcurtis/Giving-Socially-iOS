@@ -7,7 +7,7 @@
 //
 
 #import "ApiUserTests.h"
-#import "GSUser.h"
+#import "GSUserOld.h"
 #import "GSGiftList.h"
 #import "GSGift.h"
 
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic, readonly) NSString *authTokenParam;
 @property (nonatomic, retain) RKSpecResponseLoader *loaderDelegate;
-@property (nonatomic, readonly) GSUser *testUser;
+@property (nonatomic, readonly) GSUserOld *testUser;
 
 - (NSArray*)postApiRequest:(NSObject*)object;
 - (NSArray*)sendApiRequest:(NSString*)requestUri responseType:(Class)classType
@@ -44,7 +44,7 @@
 {
     NSArray *users = [self postApiRequest:[self testUser]];
     STAssertNotNil([users objectAtIndex:0], @"No Users were returned, thus you could not have been Authenticated!");
-    GSUser *authenticatedUser = [users objectAtIndex:0];
+    GSUserOld *authenticatedUser = [users objectAtIndex:0];
     _authToken = authenticatedUser.authToken;
     STAssertNotNil(authenticatedUser.authToken, @"No Users were returned, thus you could not have been Authenticated!");
 }
@@ -52,10 +52,10 @@
 - (void) testShowFriendsOfUser
 {
     NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
-    NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUser class]];
+    NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUserOld class]];
     
     STAssertNotNil([users objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Users"]);
-    STAssertTrue([[users objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
+    STAssertTrue([[users objectAtIndex:0] isKindOfClass:[GSUserOld class]], @"Something other than a User was returned from the API!");
     
 }
 
@@ -104,9 +104,9 @@
     @throw [NSException exceptionWithName:@"AuthTokenNotSet" reason:@"auth_token is not set" userInfo:nil];
 }
 
--(GSUser *)testUser
+-(GSUserOld *)testUser
 {
-    GSUser *user = [[GSUser alloc] init];
+    GSUserOld *user = [[GSUserOld alloc] init];
     user.email = @"kitten@puppy.com";
     user.password = @"kitten_little";
     return user;

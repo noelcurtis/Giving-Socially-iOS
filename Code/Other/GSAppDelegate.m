@@ -16,6 +16,7 @@
 #import "GSFriendsViewController.h"
 #import "GSAccountViewController.h"
 #import "GSHomeViewController.h"
+#import "GSLoginViewController.h"
 
 #import "IIViewDeckController.h"
 #import "GSGift.h"
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) GSAccountViewController* accountViewController;
 @property (nonatomic, retain) GSHomeViewController* homeViewController;
 @property (nonatomic, retain) UINavigationController* navigationController;
+@property (nonatomic, retain) GSLoginViewController* loginViewController;
 
 - (void)setupRestKit;
 - (void)setupRestKitRoutes;
@@ -37,7 +39,7 @@
 @implementation GSAppDelegate
 
 @synthesize window = _window;
-@synthesize navigationController = _navigationController, friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController;
+@synthesize navigationController = _navigationController, friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController;
 
 - (void)dealloc
 {
@@ -45,6 +47,7 @@
     [_accountViewController release];
     [_homeViewController release];
     [_navigationController release];
+    [_loginViewController release];
     [_window release];
     [super dealloc];
 }
@@ -78,20 +81,32 @@
 #endif
     
     [self.window makeKeyAndVisible];
+    
+    // Throw up login if not logged in
+    if (nil == [GSUser currentUser]) {
+        _loginViewController = [[GSLoginViewController alloc] init];
+        [_navigationController presentModalViewController:_loginViewController animated:YES];
+    }
+    
     return YES;
 }
 
 - (void)setupRestKit
 {
-    //    RKLogConfigureByName("RestKit/Network", RKLogLevelDebug);
-    //    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://stormy-sky-8032.herokuapp.com/api"];
+    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+//    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURLString:@"http://stormy-sky-8032.herokuapp.com/api"];
+    [objectManager setObjectStore:[RKManagedObjectStore objectStoreWithStoreFilename:@"GivingSocial.sqlite"]];
+    NSLog(@"Object store located at: %@", [objectManager.objectStore pathToStoreFile]);
+    
+    [objectManager.client.requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
+    
     RKParserRegistry* parserRegistery = [RKParserRegistry sharedRegistry];
     [parserRegistery setParserClass:NSClassFromString(@"RKJSONParserJSONKit") forMIMEType:@"application/json"];
     
-    GSMappingProvider* provider = [[[GSMappingProvider alloc] init] autorelease];
-    objectManager.mappingProvider = provider;
+    objectManager.mappingProvider = [[[GSMappingProvider alloc] init] autorelease];
     [self setupRestKitRoutes];
+    
 //    [[RKParserRegistry sharedRegistry] setParserClass:NSClassFromString(@"RKXMLParserLibXML") forMIMEType:@"application/rss+xml"]; 
 //    [[RKClient sharedClient].requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
 //    [[RKClient sharedClient].requestQueue setRequestTimeout:30.0];

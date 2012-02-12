@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GSAccountViewController : UIViewController
+@interface GSAccountViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
