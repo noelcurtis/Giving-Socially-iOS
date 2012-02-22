@@ -20,7 +20,6 @@
     </entity>
     <entity name="GSUser" representedClassName="GSUser" syncable="YES">
         <attribute name="authToken" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="avatar" optional="YES" transient="YES" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="facebookToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,6 +29,6 @@
     <elements>
         <element name="GSGift" positionX="160" positionY="192" width="128" height="135"/>
         <element name="GSGiftList" positionX="160" positionY="192" width="128" height="165"/>
-        <element name="GSUser" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="GSUser" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>
