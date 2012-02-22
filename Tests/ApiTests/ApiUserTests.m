@@ -37,7 +37,6 @@
     _loaderDelegate = [RKSpecResponseLoader responseLoader];
     _loaderDelegate.timeout = (1000 * 20);
     [self signInUser];
-    // Set-up code here.
 }
 
 -(void) signInUser
@@ -46,10 +45,14 @@
         loader.delegate = _loaderDelegate;
         loader.method = RKRequestMethodPOST;
         
+//        NSDictionary* userParams = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                    @"smittenkitten@gmail.com", @"email",
+//                                    @"kittensmitten", @"password",
+//                                    nil];
         NSDictionary* userParams = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    @"smittenkitten@gmail.com", @"email",
-                                    @"kittensmitten", @"password",
-                                    nil];
+                                   @"kitten@puppy.com", @"email",
+                                   @"kitten_little", @"password",
+                                   nil];
         
         NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:userParams, @"user", nil];
         loader.params = params;
@@ -59,8 +62,8 @@
     GSUser *currentUser = [GSUser currentUser];
     STAssertNotNil(currentUser.authToken, @"No Auth Token set, thus you could not have been Authenticated!");
     _authToken = currentUser.authToken;
-    UIImage *avatar = [UIImage imageWithData:[NSData dataWithBase64EncodedString:currentUser.avatar]];
-    [UIImagePNGRepresentation(avatar) writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/NoelTestImage.png"] atomically:YES];
+//    UIImage *avatar = [UIImage imageWithData:[NSData dataWithBase64EncodedString:currentUser.avatar]];
+//    [UIImagePNGRepresentation(avatar) writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/NoelTestImage.png"] atomically:YES];
 }
 
 - (void) testShowFriendsOfUser
@@ -73,22 +76,22 @@
     
 }
 
-//-(void) testShowGiftListsOfUser
-//{
-//    NSString *showGiftLists = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
-//    NSArray *giftLists = [self sendApiRequest:showGiftLists responseType:[GSGiftList class]];
-//    STAssertNotNil([giftLists objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Gift Lists"]);
-//    STAssertTrue([[giftLists objectAtIndex:0] isKindOfClass:[GSGiftList class]], @"Something other than a GiftList was returned from the API!");
-//}
-//
-//-(void) testShowGiftsForGiftList
-//{
-//    NSString *giftListId = @"2";
-//    NSString *showGifts = [NSString stringWithFormat:@"/gift_lists/%@/gifts%@", giftListId,self.authTokenParam];
-//    NSArray *gifts = [self sendApiRequest:showGifts responseType:[GSGift class]];
-//    STAssertNotNil([gifts objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Gifts"]);
-//    STAssertTrue([[gifts objectAtIndex:0] isKindOfClass:[GSGift class]], @"Something other than a Gift was returned from the API!");
-//}
+-(void) testShowGiftListsOfUser
+{
+    NSString *showGiftLists = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
+    NSArray *giftLists = [self sendApiRequest:showGiftLists responseType:[GSGiftList class]];
+    STAssertNotNil([giftLists objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Gift Lists"]);
+    STAssertTrue([[giftLists objectAtIndex:0] isKindOfClass:[GSGiftList class]], @"Something other than a GiftList was returned from the API!");
+}
+
+-(void) testShowGiftsForGiftList
+{
+    NSString *giftListId = @"2";
+    NSString *showGifts = [NSString stringWithFormat:@"/gift_lists/%@/gifts%@", giftListId,self.authTokenParam];
+    NSArray *gifts = [self sendApiRequest:showGifts responseType:[GSGift class]];
+    STAssertNotNil([gifts objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Gifts"]);
+    STAssertTrue([[gifts objectAtIndex:0] isKindOfClass:[GSGift class]], @"Something other than a Gift was returned from the API!");
+}
 
 
 -(NSArray*) sendApiRequest:(NSString*) requestUri responseType:(Class) classType

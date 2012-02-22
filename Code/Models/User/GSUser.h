@@ -16,7 +16,6 @@
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSString* firstName;
 @property (nonatomic, retain) NSString* lastName;
-@property (nonatomic, retain) NSString* avatar;
 
 // Not in CoreData
 @property (nonatomic, retain) NSString* password;

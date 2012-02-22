@@ -27,7 +27,6 @@
         [user mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
         [user mapKeyPath:@"first_name" toAttribute:@"firstName"];
         [user mapKeyPath:@"last_name" toAttribute:@"lastName"];
-        [user mapKeyPath:@"avatar" toAttribute:@"avatar"];
         [self setMapping:user forKeyPath:@"user"];
         [self setSerializationMapping:[user inverseMapping] forClass:[GSUser class]];
         [self setMapping:user forKeyPath:@"users.user"];

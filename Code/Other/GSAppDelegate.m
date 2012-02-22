@@ -93,7 +93,7 @@
 
 - (void)setupRestKit
 {
-    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+//    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
 //    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
     RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURLString:@"http://stormy-sky-8032.herokuapp.com/api"];
     [objectManager setObjectStore:[RKManagedObjectStore objectStoreWithStoreFilename:@"GivingSocial.sqlite"]];
