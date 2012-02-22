@@ -10,6 +10,7 @@
 		C721A0CC14D2F29400601BCB /* RKSpecResponseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */; };
 		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
 		C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */; };
+		C75E2F0E14F591560031A189 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C75E2F0D14F591560031A189 /* NSData+Base64.m */; };
 		D226206914CFCC1B009AB9BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206814CFCC1B009AB9BE /* UIKit.framework */; };
 		D226206B14CFCC1B009AB9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206A14CFCC1B009AB9BE /* Foundation.framework */; };
 		D226206D14CFCC1B009AB9BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206C14CFCC1B009AB9BE /* CoreGraphics.framework */; };
@@ -97,6 +98,8 @@
 		C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSMappingProvider.m; path = "Mapping Provider/GSMappingProvider.m"; sourceTree = "<group>"; };
 		C7424CBB14D09CAD003EA7C2 /* ApiUserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiUserTests.h; path = ApiTests/ApiUserTests.h; sourceTree = "<group>"; };
 		C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiUserTests.m; path = ApiTests/ApiUserTests.m; sourceTree = "<group>"; };
+		C75E2F0C14F591560031A189 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Base64 Encoding/NSData+Base64.h"; sourceTree = "<group>"; };
+		C75E2F0D14F591560031A189 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Base64 Encoding/NSData+Base64.m"; sourceTree = "<group>"; };
 		D226206414CFCC1B009AB9BE /* GivingSocially.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivingSocially.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D226206814CFCC1B009AB9BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D226206A14CFCC1B009AB9BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,6 +202,15 @@
 				C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */,
 			);
 			name = ApiTests;
+			sourceTree = "<group>";
+		};
+		C75E2F0B14F591350031A189 /* Base64 Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				C75E2F0C14F591560031A189 /* NSData+Base64.h */,
+				C75E2F0D14F591560031A189 /* NSData+Base64.m */,
+			);
+			name = "Base64 Encoding";
 			sourceTree = "<group>";
 		};
 		D226205914CFCC1B009AB9BE = {
@@ -328,6 +340,7 @@
 		D2FDBF9E14CFD05B00BC6524 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				C75E2F0B14F591350031A189 /* Base64 Encoding */,
 				D2B61C9514DB99F800DDA2CF /* ViewDeck */,
 				D2FDBFE214CFD2B700BC6524 /* TestFlight */,
 				D2FDBFB414CFD13D00BC6524 /* RestKit */,
@@ -578,6 +591,7 @@
 				D22C307F14E7893500BAF11B /* GSGiftListViewController.m in Sources */,
 				D2B2561414E799BC00619FE8 /* GSGiftListView.m in Sources */,
 				D2B2561714E81F3E00619FE8 /* GSAccountHeaderView.m in Sources */,
+				C75E2F0E14F591560031A189 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

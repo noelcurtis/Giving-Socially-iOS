@@ -18,6 +18,7 @@ static GSUser* gUser = nil;
 @dynamic username;
 @dynamic firstName;
 @dynamic lastName;
+@synthesize avatar; // avatar is not persisted to the Database.
 
 @synthesize password = _password;
 
