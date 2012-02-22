@@ -7,7 +7,7 @@
 //
 
 #import "ApiUserTests.h"
-#import "GSUserOld.h"
+#import "GSUser.h"
 #import "GSGiftList.h"
 #import "GSGift.h"
 
@@ -16,7 +16,6 @@
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic, readonly) NSString *authTokenParam;
 @property (nonatomic, retain) RKSpecResponseLoader *loaderDelegate;
-@property (nonatomic, readonly) GSUserOld *testUser;
 
 - (NSArray*)postApiRequest:(NSObject*)object;
 - (NSArray*)sendApiRequest:(NSString*)requestUri responseType:(Class)classType;
@@ -42,22 +41,34 @@
 
 -(void) signInUser
 {
-    NSArray *users = [self postApiRequest:[self testUser]];
-    STAssertNotNil([users objectAtIndex:0], @"No Users were returned, thus you could not have been Authenticated!");
-    GSUserOld *authenticatedUser = [users objectAtIndex:0];
-    _authToken = authenticatedUser.authToken;
-    STAssertNotNil(authenticatedUser.authToken, @"No Users were returned, thus you could not have been Authenticated!");
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/users/sign_in" usingBlock:^(RKObjectLoader *loader) {
+        loader.delegate = _loaderDelegate;
+        loader.method = RKRequestMethodPOST;
+        
+        NSDictionary* userParams = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    @"kitten@puppy.com", @"email",
+                                    @"kitten_little", @"password",
+                                    nil];
+        
+        NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:userParams, @"user", nil];
+        loader.params = params;
+    }];
+    
+    [_loaderDelegate waitForResponse];
+    GSUser *currentUser = [GSUser currentUser];
+    STAssertNotNil(currentUser.authToken, @"No Auth Token set, thus you could not have been Authenticated!");
+    _authToken = currentUser.authToken;
 }
 
-//- (void) testShowFriendsOfUser
-//{
-//    NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
-//    NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUser class]];
-//    
-//    STAssertNotNil([users objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Users"]);
-//    STAssertTrue([[users objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
-//    
-//}
+- (void) testShowFriendsOfUser
+{
+    NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
+    NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUser class]];
+    
+    STAssertNotNil([users objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Users"]);
+    STAssertTrue([[users objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
+    
+}
 
 -(void) testShowGiftListsOfUser
 {
@@ -89,7 +100,7 @@
 }
 
 -(NSArray*) postApiRequest:(NSObject*)object
-{
+{    
     [[RKObjectManager sharedManager] postObject:object delegate:_loaderDelegate];
     [_loaderDelegate waitForResponse];
     NSArray *loadedObjects = _loaderDelegate.objects;
@@ -102,14 +113,6 @@
         return [NSString stringWithFormat:@"?auth_token=%@", _authToken];
     }   
     @throw [NSException exceptionWithName:@"AuthTokenNotSet" reason:@"auth_token is not set" userInfo:nil];
-}
-
--(GSUserOld *)testUser
-{
-    GSUserOld *user = [[GSUserOld alloc] init];
-    user.email = @"kitten@puppy.com";
-    user.password = @"kitten_little";
-    return user;
 }
 
 

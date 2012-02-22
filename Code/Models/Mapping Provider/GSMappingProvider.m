@@ -26,8 +26,10 @@
         [user mapKeyPath:@"email" toAttribute:@"email"];
         [user mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
         [self setMapping:user forKeyPath:@"user"];
+        [self setSerializationMapping:[user inverseMapping] forClass:[GSUser class]];
         [self setMapping:user forKeyPath:@"users.user"];
         [self registerMapping:user withRootKeyPath:@"user"];
+        
         
         // GiftList Mapping
         RKManagedObjectMapping* giftlist = [RKManagedObjectMapping mappingForClass:[GSGiftList class] inManagedObjectStore:objectStore];
