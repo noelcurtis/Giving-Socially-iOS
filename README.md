@@ -13,3 +13,19 @@ Here is how you can set some code to only run in Debug mode or release mode.
 	#elif CONFIGURATOIN_RELEASE == 0
 	    NSLog(@"\n***************************\nCONFIGURATION MODE: DEBUG\n***************************");
 	#endif
+	
+## Genereating Models
+
+We use mogenerator to generate the models. The machine files are put into ```Code/Models/Machine``` and human files are put into ```Code/Models```.
+
+#### Install Mogenerator
+
+You can read about mogenerator at http://rentzsch.github.com/mogenerator/
+
+```brew install mogenerator```
+
+#### Generate Models
+
+In the project root run
+
+```mogenerator --model Resources/App/GSDataModel.xcdatamodeld/GSDataModel.xcdatamodel --machine-dir Code/Models/Machine --human-dir Code/Models```

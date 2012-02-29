@@ -44,12 +44,18 @@
     
     [self.view setBackgroundColor:[UIColor purpleColor]];
     
-    _tableView = [[UITableView alloc] initWithFrame:(CGRect){ 0, 0, self.view.frame.size } style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:(CGRect){0, 0, self.view.frame.size.width, self.view.frame.size.height - 44} style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.view addSubview:self.tableView];
     
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/gift_lists" delegate:self];
+}
+
+- (void)setupTable
+{
+    self.giftLists = [GSGiftList findAll];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -90,9 +96,7 @@
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects
 {
-    [_giftLists release];
-    _giftLists = [objects retain];
-    [self.tableView reloadData];
+    [self setupTable];
 }
 
 @end

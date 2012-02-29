@@ -19,7 +19,6 @@
 		D226208314CFCC1B009AB9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206A14CFCC1B009AB9BE /* Foundation.framework */; };
 		D22C307C14E788FC00BAF11B /* GSGift.m in Sources */ = {isa = PBXBuildFile; fileRef = D22C307B14E788FC00BAF11B /* GSGift.m */; };
 		D22C307F14E7893500BAF11B /* GSGiftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22C307E14E7893500BAF11B /* GSGiftListViewController.m */; };
-		D282538114E6478500DB1F82 /* GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = D282538014E6478500DB1F82 /* GSGiftList.m */; };
 		D2B2561114E7971100619FE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B2561014E7971100619FE8 /* QuartzCore.framework */; };
 		D2B2561414E799BC00619FE8 /* GSGiftListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561314E799BC00619FE8 /* GSGiftListView.m */; };
 		D2B2561714E81F3E00619FE8 /* GSAccountHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */; };
@@ -29,9 +28,13 @@
 		D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */; };
 		D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */; };
 		D2D0B4F814DCEFBA00BED96C /* GSDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B4F614DCEFBA00BED96C /* GSDataModel.xcdatamodeld */; };
-		D2D0B4FD14DCFE8A00BED96C /* GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B4FC14DCFE8A00BED96C /* GSUser.m */; };
 		D2D0B54814DDA26300BED96C /* GSEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B54714DDA26300BED96C /* GSEnvironment.m */; };
 		D2D0B54B14DDA30100BED96C /* GSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D0B54A14DDA30100BED96C /* GSLoginViewController.m */; };
+		D2F6452414FC80BE0056D869 /* GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F6452114FC80BE0056D869 /* GSGiftList.m */; };
+		D2F6452514FC80BE0056D869 /* GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F6452314FC80BE0056D869 /* GSUser.m */; };
+		D2F6452D14FC80DF0056D869 /* _GSGift.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F6452814FC80DF0056D869 /* _GSGift.m */; };
+		D2F6452E14FC80DF0056D869 /* _GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F6452A14FC80DF0056D869 /* _GSGiftList.m */; };
+		D2F6452F14FC80DF0056D869 /* _GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F6452C14FC80DF0056D869 /* _GSUser.m */; };
 		D2FDBF9C14CFD04C00BC6524 /* GSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FDBF9914CFD04C00BC6524 /* GSAppDelegate.m */; };
 		D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FDBF9A14CFD04C00BC6524 /* main.m */; };
 		D2FDBFAD14CFD05B00BC6524 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2FDBFA114CFD05B00BC6524 /* InfoPlist.strings */; };
@@ -110,8 +113,6 @@
 		D22C307B14E788FC00BAF11B /* GSGift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGift.m; path = Code/Models/GSGift.m; sourceTree = SOURCE_ROOT; };
 		D22C307D14E7893500BAF11B /* GSGiftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftListViewController.h; sourceTree = "<group>"; };
 		D22C307E14E7893500BAF11B /* GSGiftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftListViewController.m; sourceTree = "<group>"; };
-		D282537F14E6478500DB1F82 /* GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSGiftList.h; path = Code/Models/Gift/GSGiftList.h; sourceTree = SOURCE_ROOT; };
-		D282538014E6478500DB1F82 /* GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSGiftList.m; path = Code/Models/Gift/GSGiftList.m; sourceTree = SOURCE_ROOT; };
 		D2B2561014E7971100619FE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D2B2561214E799BC00619FE8 /* GSGiftListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftListView.h; sourceTree = "<group>"; };
 		D2B2561314E799BC00619FE8 /* GSGiftListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftListView.m; sourceTree = "<group>"; };
@@ -128,12 +129,20 @@
 		D2B61CA514DBA12400DDA2CF /* GSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewController.h; sourceTree = "<group>"; };
 		D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewController.m; sourceTree = "<group>"; };
 		D2D0B4F714DCEFBA00BED96C /* GSDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GSDataModel.xcdatamodel; sourceTree = "<group>"; };
-		D2D0B4FB14DCFE8A00BED96C /* GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSUser.h; path = Code/Models/User/GSUser.h; sourceTree = SOURCE_ROOT; };
-		D2D0B4FC14DCFE8A00BED96C /* GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSUser.m; path = Code/Models/User/GSUser.m; sourceTree = SOURCE_ROOT; };
 		D2D0B54614DDA26300BED96C /* GSEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEnvironment.h; sourceTree = "<group>"; };
 		D2D0B54714DDA26300BED96C /* GSEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSEnvironment.m; sourceTree = "<group>"; };
 		D2D0B54914DDA30100BED96C /* GSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLoginViewController.h; sourceTree = "<group>"; };
 		D2D0B54A14DDA30100BED96C /* GSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSLoginViewController.m; sourceTree = "<group>"; };
+		D2F6452014FC80BE0056D869 /* GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftList.h; sourceTree = "<group>"; };
+		D2F6452114FC80BE0056D869 /* GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftList.m; sourceTree = "<group>"; };
+		D2F6452214FC80BE0056D869 /* GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSUser.h; sourceTree = "<group>"; };
+		D2F6452314FC80BE0056D869 /* GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSUser.m; sourceTree = "<group>"; };
+		D2F6452714FC80DF0056D869 /* _GSGift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _GSGift.h; path = Machine/_GSGift.h; sourceTree = "<group>"; };
+		D2F6452814FC80DF0056D869 /* _GSGift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _GSGift.m; path = Machine/_GSGift.m; sourceTree = "<group>"; };
+		D2F6452914FC80DF0056D869 /* _GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _GSGiftList.h; path = Machine/_GSGiftList.h; sourceTree = "<group>"; };
+		D2F6452A14FC80DF0056D869 /* _GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _GSGiftList.m; path = Machine/_GSGiftList.m; sourceTree = "<group>"; };
+		D2F6452B14FC80DF0056D869 /* _GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _GSUser.h; path = Machine/_GSUser.h; sourceTree = "<group>"; };
+		D2F6452C14FC80DF0056D869 /* _GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _GSUser.m; path = Machine/_GSUser.m; sourceTree = "<group>"; };
 		D2FDBF9714CFD04C00BC6524 /* GivingSocially-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GivingSocially-Prefix.pch"; sourceTree = "<group>"; };
 		D2FDBF9814CFD04C00BC6524 /* GSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAppDelegate.h; sourceTree = "<group>"; };
 		D2FDBF9914CFD04C00BC6524 /* GSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAppDelegate.m; sourceTree = "<group>"; };
@@ -261,6 +270,19 @@
 			name = ViewDeck;
 			sourceTree = "<group>";
 		};
+		D2F6452614FC80D10056D869 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				D2F6452714FC80DF0056D869 /* _GSGift.h */,
+				D2F6452814FC80DF0056D869 /* _GSGift.m */,
+				D2F6452914FC80DF0056D869 /* _GSGiftList.h */,
+				D2F6452A14FC80DF0056D869 /* _GSGiftList.m */,
+				D2F6452B14FC80DF0056D869 /* _GSUser.h */,
+				D2F6452C14FC80DF0056D869 /* _GSUser.m */,
+			);
+			name = Machine;
+			sourceTree = "<group>";
+		};
 		D2FDBF9214CFD04C00BC6524 /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,10 +326,11 @@
 			children = (
 				D22C307A14E788FC00BAF11B /* GSGift.h */,
 				D22C307B14E788FC00BAF11B /* GSGift.m */,
-				D282537F14E6478500DB1F82 /* GSGiftList.h */,
-				D282538014E6478500DB1F82 /* GSGiftList.m */,
-				D2D0B4FB14DCFE8A00BED96C /* GSUser.h */,
-				D2D0B4FC14DCFE8A00BED96C /* GSUser.m */,
+				D2F6452014FC80BE0056D869 /* GSGiftList.h */,
+				D2F6452114FC80BE0056D869 /* GSGiftList.m */,
+				D2F6452214FC80BE0056D869 /* GSUser.h */,
+				D2F6452314FC80BE0056D869 /* GSUser.m */,
+				D2F6452614FC80D10056D869 /* Machine */,
 				C7424CB314D09659003EA7C2 /* Mapping Provider */,
 			);
 			path = Models;
@@ -476,7 +499,7 @@
 		D226205B14CFCC1B009AB9BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Scott Penrose.";
 			};
 			buildConfigurationList = D226205E14CFCC1B009AB9BE /* Build configuration list for PBXProject "GivingSocially" */;
@@ -583,15 +606,18 @@
 				D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */,
 				D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */,
 				D2D0B4F814DCEFBA00BED96C /* GSDataModel.xcdatamodeld in Sources */,
-				D2D0B4FD14DCFE8A00BED96C /* GSUser.m in Sources */,
 				D2D0B54814DDA26300BED96C /* GSEnvironment.m in Sources */,
 				D2D0B54B14DDA30100BED96C /* GSLoginViewController.m in Sources */,
-				D282538114E6478500DB1F82 /* GSGiftList.m in Sources */,
 				D22C307C14E788FC00BAF11B /* GSGift.m in Sources */,
 				D22C307F14E7893500BAF11B /* GSGiftListViewController.m in Sources */,
 				D2B2561414E799BC00619FE8 /* GSGiftListView.m in Sources */,
 				D2B2561714E81F3E00619FE8 /* GSAccountHeaderView.m in Sources */,
 				C75E2F0E14F591560031A189 /* NSData+Base64.m in Sources */,
+				D2F6452414FC80BE0056D869 /* GSGiftList.m in Sources */,
+				D2F6452514FC80BE0056D869 /* GSUser.m in Sources */,
+				D2F6452D14FC80DF0056D869 /* _GSGift.m in Sources */,
+				D2F6452E14FC80DF0056D869 /* _GSGiftList.m in Sources */,
+				D2F6452F14FC80DF0056D869 /* _GSUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +721,7 @@
 					"CONFIGURATION_RELEASE=0",
 					"DEBUG=1",
 				);
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Libraries/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/App/GivingSocially-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -722,6 +749,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Code/Other/GivingSocially-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_RELEASE=0";
+				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Libraries/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/App/GivingSocially-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;

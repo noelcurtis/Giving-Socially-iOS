@@ -6,17 +6,8 @@
 //  Copyright (c) 2012 Scott Penrose. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "_GSGift.h"
 
-
-@interface GSGift : NSManagedObject
-
-@property (nonatomic, retain) NSNumber* giftID;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * amazonAffiliateURL;
-@property (nonatomic, retain, getter = isPurchased) NSNumber * purchased;
-@property (nonatomic, retain) NSNumber * approximatePrice;
-@property (nonatomic, retain) NSString * exampleURL;
+@interface GSGift : _GSGift
 
 @end

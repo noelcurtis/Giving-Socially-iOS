@@ -60,6 +60,8 @@
     NSLog(@"\n***************************\nCONFIGURATION MODE: DEBUG\n***************************");
 #endif
     
+    [self setupRestKit];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     _friendsViewController = [[GSFriendsViewController alloc] init];
@@ -72,8 +74,6 @@
                                                                                    rightViewController:self.friendsViewController];
     [self.window setRootViewController:deckController];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    [self setupRestKit];
     
     // TestFlight
 #if CONFIGURATION_RELEASE == 0
@@ -93,9 +93,9 @@
 
 - (void)setupRestKit
 {
-//    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
 //    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURLString:@"http://stormy-sky-8032.herokuapp.com/api"];
+    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURLString:GSBaseURL];
     [objectManager setObjectStore:[RKManagedObjectStore objectStoreWithStoreFilename:@"GivingSocial.sqlite"]];
     NSLog(@"Object store located at: %@", [objectManager.objectStore pathToStoreFile]);
     

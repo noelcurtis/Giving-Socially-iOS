@@ -12,19 +12,7 @@ static GSUser* gUser = nil;
 
 @implementation GSUser
 
-@dynamic email;
-@dynamic authToken;
-@dynamic facebookToken;
-@dynamic username;
-@dynamic firstName;
-@dynamic lastName;
-
 @synthesize password = _password;
-
-- (void)dealloc {
-    [_password release];
-    [super dealloc];
-}
 
 + (GSUser*)currentUser
 {
@@ -35,7 +23,7 @@ static GSUser* gUser = nil;
             [[RKObjectManager sharedManager].client.HTTPHeaders setValue:gUser.authToken forKey:GSAuthTokenHeaderKey];
         }
     }
-
+    
     return gUser;
 }
 

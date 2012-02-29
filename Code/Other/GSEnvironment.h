@@ -8,4 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString* const GSBaseURL;
 extern NSString* const GSAuthTokenHeaderKey;

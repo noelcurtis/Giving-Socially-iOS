@@ -8,14 +8,6 @@
 
 #import "GSGift.h"
 
-
 @implementation GSGift
-
-@dynamic giftID;
-@dynamic name;
-@dynamic amazonAffiliateURL;
-@dynamic purchased;
-@dynamic approximatePrice;
-@dynamic exampleURL;
 
 @end
