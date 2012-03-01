@@ -17,6 +17,7 @@
 #import "GSAccountViewController.h"
 #import "GSHomeViewController.h"
 #import "GSLoginViewController.h"
+#import "GSActivitesViewController.h"
 
 #import "IIViewDeckController.h"
 #import "GSGift.h"
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) GSHomeViewController* homeViewController;
 @property (nonatomic, retain) UINavigationController* navigationController;
 @property (nonatomic, retain) GSLoginViewController* loginViewController;
+@property (nonatomic, retain) GSActivitesViewController* activitiesViewController;
 
 - (void)setupRestKit;
 - (void)setupRestKitRoutes;
@@ -39,7 +41,7 @@
 @implementation GSAppDelegate
 
 @synthesize window = _window;
-@synthesize navigationController = _navigationController, friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController;
+@synthesize navigationController = _navigationController, friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController, activitiesViewController = _activitiesViewController;
 
 - (void)dealloc
 {
@@ -48,6 +50,7 @@
     [_homeViewController release];
     [_navigationController release];
     [_loginViewController release];
+    [_activitiesViewController release];
     [_window release];
     [super dealloc];
 }
@@ -67,7 +70,8 @@
     _friendsViewController = [[GSFriendsViewController alloc] init];
     _accountViewController = [[GSAccountViewController alloc] init];
     _homeViewController = [[GSHomeViewController alloc] init];
-    _navigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
+    _activitiesViewController = [[GSActivitesViewController alloc] init];
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:self.activitiesViewController];
     
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.navigationController 
                                                                                     leftViewController:self.accountViewController

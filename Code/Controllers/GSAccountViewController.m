@@ -87,6 +87,17 @@
         GSLoginViewController* loginVC = [[[GSLoginViewController alloc] init] autorelease];
         [self presentModalViewController:loginVC animated:YES];
     }
+    else if ([cell.textLabel.text isEqualToString:@"Activity"]) {
+
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Gift Lists"]) {
+        
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Settings"]) {
+        
+    }else {
+        NSLog(@"I dont have a View Controller to that matches this type!");
+    }
 }
 
 @end
