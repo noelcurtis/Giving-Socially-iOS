@@ -9,23 +9,24 @@
 #import "GSHomeViewController.h"
 #import "GSGiftList.h"
 #import "GSGiftListViewController.h"
+#import "GSActivity.h"
 
 @interface GSHomeViewController ()
 
 @property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, retain) NSArray* giftLists;
+@property (nonatomic, retain) NSArray* activities;
 
 @end
 
 @implementation GSHomeViewController
 
 @synthesize tableView = _tableView;
-@synthesize giftLists = _giftLists;
+@synthesize activities = _activities;
 
 - (void)dealloc 
 {
     [_tableView release];
-    [_giftLists release];
+    [_activities release];
     [super dealloc];
 }
 
@@ -33,7 +34,7 @@
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        _giftLists = [[NSArray alloc] init];
+        _activities = [[NSArray alloc] init];
     }
     return self;
 }
@@ -49,12 +50,12 @@
     [self.tableView setDataSource:self];
     [self.view addSubview:self.tableView];
     
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/gift_lists" delegate:self];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/activities" delegate:self];
 }
 
 - (void)setupTable
 {
-    self.giftLists = [GSGiftList findAll];
+    self.activities = [GSActivity findAll];
     [self.tableView reloadData];
 }
 
@@ -62,7 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.giftLists count];
+    return [self.activities count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,20 +73,20 @@
     if (nil == cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
-    GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
-    NSLog(@"Gift list id:%@, name:%@", giftList.giftListID, giftList.name);
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@", giftList.name]];
+    GSActivity* activity  = [self.activities objectAtIndex:indexPath.row];
+    NSLog(@"Activity id:%@, descriptor:%@", activity.activityID, activity.friendlyDescription);
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", activity.friendlyDescription]];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
-    GSGiftListViewController* giftListVC = [[[GSGiftListViewController alloc] initWithGiftList:giftList] autorelease];
-    [self.navigationController pushViewController:giftListVC animated:YES];
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
+//    GSGiftListViewController* giftListVC = [[[GSGiftListViewController alloc] initWithGiftList:giftList] autorelease];
+//    [self.navigationController pushViewController:giftListVC animated:YES];
+//}
 
 #pragma mark - RKObjectLoaderDelegate
 

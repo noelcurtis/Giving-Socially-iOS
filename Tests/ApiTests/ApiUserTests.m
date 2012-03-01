@@ -11,6 +11,7 @@
 #import "GSGiftList.h"
 #import "GSGift.h"
 #import "NSData+Base64.h"
+#import "GSActivity.h"
 
 @interface ApiUserTests ()
 
@@ -87,6 +88,15 @@
     STAssertTrue([[gifts objectAtIndex:0] isKindOfClass:[GSGift class]], @"Something other than a Gift was returned from the API!");
 }
 
+//-(void) testShowActivities
+//{
+//    NSString *showActivities = [NSString stringWithFormat:@"/activities%@", self.authTokenParam];
+//    NSArray *activities = [self sendApiRequest:showActivities];
+//    STAssertNotNil([activities objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Activities"]);
+//    STAssertTrue([[activities objectAtIndex:0] isKindOfClass:[GSActivity class]], @"Something other than a Activity was returned from the API!");
+//
+//}
+ 
 
 -(NSArray*) sendApiRequest:(NSString*) requestUri
 {

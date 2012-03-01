@@ -70,9 +70,9 @@ extern const struct GSGiftFetchedProperties {
 @property (nonatomic, retain) NSNumber *giftID;
 
 
-@property int giftIDValue;
-- (int)giftIDValue;
-- (void)setGiftIDValue:(int)value_;
+@property int32_t giftIDValue;
+- (int32_t)giftIDValue;
+- (void)setGiftIDValue:(int32_t)value_;
 
 //- (BOOL)validateGiftID:(id*)value_ error:(NSError**)error_;
 
@@ -100,6 +100,7 @@ extern const struct GSGiftFetchedProperties {
 
 
 
+
 @end
 
 @interface _GSGift (CoreDataGeneratedAccessors)
@@ -109,14 +110,14 @@ extern const struct GSGiftFetchedProperties {
 @interface _GSGift (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSString*)primitiveAmazonAffiliateURL;
-- (void)setPrimitiveAmazonAffiliateURL:(NSString*)value;
+- (NSString *)primitiveAmazonAffiliateURL;
+- (void)setPrimitiveAmazonAffiliateURL:(NSString *)value;
 
 
 
 
-- (NSNumber*)primitiveApproximatePrice;
-- (void)setPrimitiveApproximatePrice:(NSNumber*)value;
+- (NSNumber *)primitiveApproximatePrice;
+- (void)setPrimitiveApproximatePrice:(NSNumber *)value;
 
 - (float)primitiveApproximatePriceValue;
 - (void)setPrimitiveApproximatePriceValue:(float)value_;
@@ -124,29 +125,29 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-- (NSString*)primitiveExampleURL;
-- (void)setPrimitiveExampleURL:(NSString*)value;
+- (NSString *)primitiveExampleURL;
+- (void)setPrimitiveExampleURL:(NSString *)value;
 
 
 
 
-- (NSNumber*)primitiveGiftID;
-- (void)setPrimitiveGiftID:(NSNumber*)value;
+- (NSNumber *)primitiveGiftID;
+- (void)setPrimitiveGiftID:(NSNumber *)value;
 
-- (int)primitiveGiftIDValue;
-- (void)setPrimitiveGiftIDValue:(int)value_;
-
-
-
-
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (int32_t)primitiveGiftIDValue;
+- (void)setPrimitiveGiftIDValue:(int32_t)value_;
 
 
 
 
-- (NSNumber*)primitivePurchased;
-- (void)setPrimitivePurchased:(NSNumber*)value;
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
+
+
+
+
+- (NSNumber *)primitivePurchased;
+- (void)setPrimitivePurchased:(NSNumber *)value;
 
 - (BOOL)primitivePurchasedValue;
 - (void)setPrimitivePurchasedValue:(BOOL)value_;
