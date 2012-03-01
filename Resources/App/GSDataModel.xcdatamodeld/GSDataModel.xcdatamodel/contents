@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1170" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GSActivity" representedClassName="GSActivity" syncable="YES">
+        <attribute name="activityID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="friendlyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gift" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GSGift" syncable="YES"/>
+        <relationship name="giftList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GSGiftList" syncable="YES"/>
+    </entity>
     <entity name="GSGift" representedClassName="GSGift" syncable="YES">
         <attribute name="amazonAffiliateURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="approximatePrice" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -28,8 +34,9 @@
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GSUser" inverseName="friends" inverseEntity="GSUser" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GSGift" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="GSGiftList" positionX="160" positionY="192" width="128" height="165"/>
-        <element name="GSUser" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="GSActivity" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="GSGift" positionX="-144" positionY="-36" width="128" height="135"/>
+        <element name="GSGiftList" positionX="-137" positionY="195" width="128" height="165"/>
+        <element name="GSUser" positionX="-416" positionY="207" width="128" height="150"/>
     </elements>
 </model>

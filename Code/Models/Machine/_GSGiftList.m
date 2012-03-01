@@ -136,21 +136,21 @@ const struct GSGiftListFetchedProperties GSGiftListFetchedProperties = {
 
 
 
-- (int)giftListIDValue {
+- (int32_t)giftListIDValue {
 	NSNumber *result = [self giftListID];
 	return [result intValue];
 }
 
-- (void)setGiftListIDValue:(int)value_ {
+- (void)setGiftListIDValue:(int32_t)value_ {
 	[self setGiftListID:[NSNumber numberWithInt:value_]];
 }
 
-- (int)primitiveGiftListIDValue {
+- (int32_t)primitiveGiftListIDValue {
 	NSNumber *result = [self primitiveGiftListID];
 	return [result intValue];
 }
 
-- (void)setPrimitiveGiftListIDValue:(int)value_ {
+- (void)setPrimitiveGiftListIDValue:(int32_t)value_ {
 	[self setPrimitiveGiftListID:[NSNumber numberWithInt:value_]];
 }
 
@@ -219,6 +219,7 @@ const struct GSGiftListFetchedProperties GSGiftListFetchedProperties = {
 - (void)setPrimitiveStarredValue:(BOOL)value_ {
 	[self setPrimitiveStarred:[NSNumber numberWithBool:value_]];
 }
+
 
 
 

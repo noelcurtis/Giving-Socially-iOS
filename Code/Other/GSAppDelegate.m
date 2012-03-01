@@ -17,8 +17,8 @@
 #import "GSAccountViewController.h"
 #import "GSHomeViewController.h"
 #import "GSLoginViewController.h"
+#import "GSActivitesViewController.h"
 
-#import "IIViewDeckController.h"
 #import "GSGift.h"
 #import "GSGiftList.h"
 #import "GSUser.h"
@@ -28,8 +28,8 @@
 @property (nonatomic, retain) GSFriendsViewController* friendsViewController;
 @property (nonatomic, retain) GSAccountViewController* accountViewController;
 @property (nonatomic, retain) GSHomeViewController* homeViewController;
-@property (nonatomic, retain) UINavigationController* navigationController;
 @property (nonatomic, retain) GSLoginViewController* loginViewController;
+@property (nonatomic, retain) GSActivitesViewController* activitiesViewController;
 
 - (void)setupRestKit;
 - (void)setupRestKitRoutes;
@@ -39,15 +39,15 @@
 @implementation GSAppDelegate
 
 @synthesize window = _window;
-@synthesize navigationController = _navigationController, friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController;
+@synthesize friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController, activitiesViewController = _activitiesViewController;
 
 - (void)dealloc
 {
     [_friendsViewController release];
     [_accountViewController release];
     [_homeViewController release];
-    [_navigationController release];
     [_loginViewController release];
+    [_activitiesViewController release];
     [_window release];
     [super dealloc];
 }
@@ -67,9 +67,10 @@
     _friendsViewController = [[GSFriendsViewController alloc] init];
     _accountViewController = [[GSAccountViewController alloc] init];
     _homeViewController = [[GSHomeViewController alloc] init];
-    _navigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
+    _activitiesViewController = [[GSActivitesViewController alloc] init];
+    UINavigationController* centerNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.activitiesViewController] autorelease];
     
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.navigationController 
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerNavigationController 
                                                                                     leftViewController:self.accountViewController
                                                                                    rightViewController:self.friendsViewController];
     [self.window setRootViewController:deckController];
@@ -85,10 +86,14 @@
     // Throw up login if not logged in
     if (nil == [GSUser currentUser]) {
         _loginViewController = [[GSLoginViewController alloc] init];
-        [_navigationController presentModalViewController:_loginViewController animated:YES];
+        [centerNavigationController presentModalViewController:_loginViewController animated:YES];
     }
     
     return YES;
+}
+
+-(IIViewDeckController *)deckControllerInstance{
+    return (IIViewDeckController*)self.window.rootViewController;
 }
 
 - (void)setupRestKit
