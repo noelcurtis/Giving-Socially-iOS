@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		C76D12D514FEF3AB00E231CD /* GenerateModels */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C76D12D614FEF3AB00E231CD /* Build configuration list for PBXAggregateTarget "GenerateModels" */;
+			buildPhases = (
+				C76D12D914FEF3B900E231CD /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = GenerateModels;
+			productName = GenerateModels;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		C721A0CC14D2F29400601BCB /* RKSpecResponseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */; };
 		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
@@ -522,6 +536,7 @@
 			targets = (
 				D226206314CFCC1B009AB9BE /* GivingSocially */,
 				D226207E14CFCC1B009AB9BE /* GivingSociallyTests */,
+				C76D12D514FEF3AB00E231CD /* GenerateModels */,
 			);
 		};
 /* End PBXProject section */
@@ -577,6 +592,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C76D12D914FEF3B900E231CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mogenerator -m Resources/App/GSDataModel.xcdatamodeld/GSDataModel.xcdatamodel -H Code/Models/ -M Code/Models/Machine/";
+		};
 		D226207D14CFCC1B009AB9BE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -665,6 +693,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C76D12D714FEF3AB00E231CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C76D12D814FEF3AB00E231CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D226208F14CFCC1B009AB9BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -804,6 +846,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C76D12D614FEF3AB00E231CD /* Build configuration list for PBXAggregateTarget "GenerateModels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76D12D714FEF3AB00E231CD /* Debug */,
+				C76D12D814FEF3AB00E231CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D226205E14CFCC1B009AB9BE /* Build configuration list for PBXProject "GivingSocially" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

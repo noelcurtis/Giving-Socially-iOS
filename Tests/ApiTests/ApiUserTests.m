@@ -19,7 +19,7 @@
 @property (nonatomic, retain) RKSpecResponseLoader *loaderDelegate;
 
 - (NSArray*)postApiRequest:(NSObject*)object;
-- (NSArray*)sendApiRequest:(NSString*)requestUri responseType:(Class)classType;
+- (NSArray*)sendApiRequest:(NSString*)requestUri;
 - (void)signInUser;
 
 @end
@@ -45,10 +45,6 @@
         loader.delegate = _loaderDelegate;
         loader.method = RKRequestMethodPOST;
         
-//        NSDictionary* userParams = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                    @"smittenkitten@gmail.com", @"email",
-//                                    @"kittensmitten", @"password",
-//                                    nil];
         NSDictionary* userParams = [NSDictionary dictionaryWithObjectsAndKeys:
                                    @"kitten@puppy.com", @"email",
                                    @"kitten_little", @"password",
@@ -62,14 +58,12 @@
     GSUser *currentUser = [GSUser currentUser];
     STAssertNotNil(currentUser.authToken, @"No Auth Token set, thus you could not have been Authenticated!");
     _authToken = currentUser.authToken;
-//    UIImage *avatar = [UIImage imageWithData:[NSData dataWithBase64EncodedString:currentUser.avatar]];
-//    [UIImagePNGRepresentation(avatar) writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/NoelTestImage.png"] atomically:YES];
 }
 
 - (void) testShowFriendsOfUser
 {
     NSString *showUserUri = [NSString stringWithFormat:@"/friends%@", self.authTokenParam];
-    NSArray *users = [self sendApiRequest:showUserUri responseType:[GSUser class]];
+    NSArray *users = [self sendApiRequest:showUserUri];
     
     STAssertNotNil([users objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Users"]);
     STAssertTrue([[users objectAtIndex:0] isKindOfClass:[GSUser class]], @"Something other than a User was returned from the API!");
@@ -79,7 +73,7 @@
 -(void) testShowGiftListsOfUser
 {
     NSString *showGiftLists = [NSString stringWithFormat:@"/gift_lists%@", self.authTokenParam];
-    NSArray *giftLists = [self sendApiRequest:showGiftLists responseType:[GSGiftList class]];
+    NSArray *giftLists = [self sendApiRequest:showGiftLists];
     STAssertNotNil([giftLists objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Gift Lists"]);
     STAssertTrue([[giftLists objectAtIndex:0] isKindOfClass:[GSGiftList class]], @"Something other than a GiftList was returned from the API!");
 }
@@ -88,13 +82,13 @@
 {
     NSString *giftListId = @"2";
     NSString *showGifts = [NSString stringWithFormat:@"/gift_lists/%@/gifts%@", giftListId,self.authTokenParam];
-    NSArray *gifts = [self sendApiRequest:showGifts responseType:[GSGift class]];
+    NSArray *gifts = [self sendApiRequest:showGifts];
     STAssertNotNil([gifts objectAtIndex:0], [NSString stringWithFormat:@"No %@ were returned!", "Gifts"]);
     STAssertTrue([[gifts objectAtIndex:0] isKindOfClass:[GSGift class]], @"Something other than a Gift was returned from the API!");
 }
 
 
--(NSArray*) sendApiRequest:(NSString*) requestUri responseType:(Class) classType
+-(NSArray*) sendApiRequest:(NSString*) requestUri
 {
     // make request
     RKObjectLoader* objectLoader = [RKObjectLoader loaderWithResourcePath:requestUri objectManager:[RKObjectManager sharedManager] delegate:_loaderDelegate];
