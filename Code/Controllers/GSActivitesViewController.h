@@ -8,6 +8,6 @@
 
 #import <RestKit/RestKit.h>
 
-@interface GSActivitesViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
+@interface GSActivitesViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
 
 @end
