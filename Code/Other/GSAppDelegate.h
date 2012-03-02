@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IIViewDeckController.h"
 
 @interface GSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, readonly) IIViewDeckController *deckControllerInstance;
 
 @end

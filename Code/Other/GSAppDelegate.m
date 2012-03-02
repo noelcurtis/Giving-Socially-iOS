@@ -19,7 +19,6 @@
 #import "GSLoginViewController.h"
 #import "GSActivitesViewController.h"
 
-#import "IIViewDeckController.h"
 #import "GSGift.h"
 #import "GSGiftList.h"
 #import "GSUser.h"
@@ -91,6 +90,10 @@
     }
     
     return YES;
+}
+
+-(IIViewDeckController *)deckControllerInstance{
+    return (IIViewDeckController*)self.window.rootViewController;
 }
 
 - (void)setupRestKit

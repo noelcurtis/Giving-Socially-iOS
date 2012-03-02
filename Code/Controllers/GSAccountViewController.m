@@ -86,22 +86,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     if ([cell.textLabel.text isEqualToString:@"Sign Out"]) {
         GSLoginViewController* loginVC = [[[GSLoginViewController alloc] init] autorelease];
         [self presentModalViewController:loginVC animated:YES];
     }
     else if ([cell.textLabel.text isEqualToString:@"Activity"]) {
-        GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
-        IIViewDeckController* deckControllerInstance = (IIViewDeckController*)appDelegateInstance.window.rootViewController;
         GSActivitesViewController *activitiesViewController = [[[GSActivitesViewController alloc] init] autorelease];
-        deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:activitiesViewController] autorelease];
+        appDelegateInstance.deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:activitiesViewController] autorelease];
     }
     else if ([cell.textLabel.text isEqualToString:@"Gift Lists"]) {
-        GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
-        IIViewDeckController* deckControllerInstance = (IIViewDeckController*)appDelegateInstance.window.rootViewController;
         GSHomeViewController *giftListController = [[[GSHomeViewController alloc] init] autorelease];
-        deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:giftListController] autorelease];
+        appDelegateInstance.deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:giftListController] autorelease];
     }
     else if ([cell.textLabel.text isEqualToString:@"Settings"]) {
         
