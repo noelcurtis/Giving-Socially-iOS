@@ -9,6 +9,10 @@
 #import "GSAccountViewController.h"
 #import "GSLoginViewController.h"
 #import "GSAccountHeaderView.h"
+#import "IIViewDeckController.h"
+#import "GSActivitesViewController.h"
+#import "GSHomeViewController.h"
+#import "GSAppDelegate.h"
 
 @interface GSAccountViewController ()
 
@@ -88,10 +92,16 @@
         [self presentModalViewController:loginVC animated:YES];
     }
     else if ([cell.textLabel.text isEqualToString:@"Activity"]) {
-
+        GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+        IIViewDeckController* deckControllerInstance = (IIViewDeckController*)appDelegateInstance.window.rootViewController;
+        GSActivitesViewController *activitiesViewController = [[[GSActivitesViewController alloc] init] autorelease];
+        deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:activitiesViewController] autorelease];
     }
     else if ([cell.textLabel.text isEqualToString:@"Gift Lists"]) {
-        
+        GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+        IIViewDeckController* deckControllerInstance = (IIViewDeckController*)appDelegateInstance.window.rootViewController;
+        GSHomeViewController *giftListController = [[[GSHomeViewController alloc] init] autorelease];
+        deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:giftListController] autorelease];
     }
     else if ([cell.textLabel.text isEqualToString:@"Settings"]) {
         
@@ -99,5 +109,6 @@
         NSLog(@"I dont have a View Controller to that matches this type!");
     }
 }
+
 
 @end
