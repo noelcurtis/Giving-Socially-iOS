@@ -97,6 +97,7 @@ extern const struct GSUserFetchedProperties {
 
 
 
+
 @end
 
 @interface _GSUser (CoreDataGeneratedAccessors)
@@ -111,38 +112,38 @@ extern const struct GSUserFetchedProperties {
 @interface _GSUser (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSString*)primitiveAuthToken;
-- (void)setPrimitiveAuthToken:(NSString*)value;
+- (NSString *)primitiveAuthToken;
+- (void)setPrimitiveAuthToken:(NSString *)value;
 
 
 
 
-- (NSString*)primitiveEmail;
-- (void)setPrimitiveEmail:(NSString*)value;
+- (NSString *)primitiveEmail;
+- (void)setPrimitiveEmail:(NSString *)value;
 
 
 
 
-- (NSString*)primitiveFacebookToken;
-- (void)setPrimitiveFacebookToken:(NSString*)value;
+- (NSString *)primitiveFacebookToken;
+- (void)setPrimitiveFacebookToken:(NSString *)value;
 
 
 
 
-- (NSString*)primitiveFirstName;
-- (void)setPrimitiveFirstName:(NSString*)value;
+- (NSString *)primitiveFirstName;
+- (void)setPrimitiveFirstName:(NSString *)value;
 
 
 
 
-- (NSString*)primitiveLastName;
-- (void)setPrimitiveLastName:(NSString*)value;
+- (NSString *)primitiveLastName;
+- (void)setPrimitiveLastName:(NSString *)value;
 
 
 
 
-- (NSString*)primitiveUsername;
-- (void)setPrimitiveUsername:(NSString*)value;
+- (NSString *)primitiveUsername;
+- (void)setPrimitiveUsername:(NSString *)value;
 
 
 

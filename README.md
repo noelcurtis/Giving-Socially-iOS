@@ -26,6 +26,8 @@ You can read about mogenerator at http://rentzsch.github.com/mogenerator/
 
 #### Generate Models
 
-In the project root run
+__Via Target__: Simply __build__ the __*GenerateModels*__ target and new _Machine files will be generated from your model.
 
+__Via CLI__: In the project root run
+	
 ```mogenerator --model Resources/App/GSDataModel.xcdatamodeld/GSDataModel.xcdatamodel --machine-dir Code/Models/Machine --human-dir Code/Models```

@@ -10,6 +10,7 @@
 #import "GSUser.h"
 #import "GSGiftList.h"
 #import "GSGift.h"
+#import "GSActivity.h"
 
 @implementation GSMappingProvider
 
@@ -61,6 +62,19 @@
         
         RKObjectMapping *giftSerialization = [gift inverseMapping];
         [self setSerializationMapping:giftSerialization forClass:[GSGift class]];
+        
+        // Activity Mapping
+        RKManagedObjectMapping* activity = [RKManagedObjectMapping mappingForClass:[GSActivity class] inManagedObjectStore:objectStore];
+        [activity setPrimaryKeyAttribute:@"activityID"];
+        [activity mapKeyPath:@"id" toAttribute:@"activityID"];
+        [activity mapKeyPath:@"friendly_descriptor" toAttribute:@"friendlyDescription"];
+        // Gift Relationship
+        [activity mapKeyPath:@"gift" toRelationship:@"gift" withMapping:gift];
+        // Gift List Relationship
+        [activity mapKeyPath:@"gift_list" toRelationship:@"giftList" withMapping:giftlist];
+
+        [self setMapping:activity forKeyPath:@"activity"];
+        [self setMapping:activity forKeyPath:@"activities.activity"];
     }
     
     return self;

@@ -9,6 +9,10 @@
 #import "GSAccountViewController.h"
 #import "GSLoginViewController.h"
 #import "GSAccountHeaderView.h"
+#import "IIViewDeckController.h"
+#import "GSActivitesViewController.h"
+#import "GSHomeViewController.h"
+#import "GSAppDelegate.h"
 
 @interface GSAccountViewController ()
 
@@ -82,11 +86,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     if ([cell.textLabel.text isEqualToString:@"Sign Out"]) {
         GSLoginViewController* loginVC = [[[GSLoginViewController alloc] init] autorelease];
         [self presentModalViewController:loginVC animated:YES];
     }
+    else if ([cell.textLabel.text isEqualToString:@"Activity"]) {
+        GSActivitesViewController *activitiesViewController = [[[GSActivitesViewController alloc] init] autorelease];
+        appDelegateInstance.deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:activitiesViewController] autorelease];
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Gift Lists"]) {
+        GSHomeViewController *giftListController = [[[GSHomeViewController alloc] init] autorelease];
+        appDelegateInstance.deckControllerInstance.centerController =  [[[UINavigationController alloc] initWithRootViewController:giftListController] autorelease];
+    }
+    else if ([cell.textLabel.text isEqualToString:@"Settings"]) {
+        
+    }else {
+        NSLog(@"I dont have a View Controller to that matches this type!");
+    }
 }
+
 
 @end
