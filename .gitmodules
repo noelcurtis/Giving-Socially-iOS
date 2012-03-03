@@ -4,3 +4,6 @@
 [submodule "Libraries/ViewDeck"]
 	path = Libraries/ViewDeck
 	url = https://github.com/Inferis/ViewDeck.git
+[submodule "Libraries/FacebookSDK"]
+	path = Libraries/FacebookSDK
+	url = https://github.com/facebook/facebook-ios-sdk.git
