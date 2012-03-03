@@ -21,13 +21,35 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		C71F262615064E17004E053D /* GSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71F262515064E17004E053D /* GSFriendsViewController.m */; };
+		C71F262A15064E56004E053D /* GSAddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71F262815064E56004E053D /* GSAddFriendsViewController.m */; };
+		C71F262E150653B3004E053D /* GSAddFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71F262D150653B3004E053D /* GSAddFriendsViewController.xib */; };
 		C721A0CC14D2F29400601BCB /* RKSpecResponseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */; };
 		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
 		C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */; };
 		C75E2F0E14F591560031A189 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C75E2F0D14F591560031A189 /* NSData+Base64.m */; };
+		C77258431506B7C60008E2CB /* GSContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77258411506B7C60008E2CB /* GSContactsViewController.m */; };
+		C77258461506B7E60008E2CB /* GSContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77258451506B7E60008E2CB /* GSContactsViewController.xib */; };
+		C77258481506B7FB0008E2CB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77258471506B7FB0008E2CB /* AddressBook.framework */; };
+		C772584A1506B8020008E2CB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77258491506B8020008E2CB /* AddressBookUI.framework */; };
+		C772584D1506C8C20008E2CB /* GSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = C772584C1506C8C20008E2CB /* GSContact.m */; };
 		C77BA30B15001F2600AF0F6D /* GSActivitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BA30A15001F2600AF0F6D /* GSActivitesViewController.m */; };
 		C79CCDC914FEF75100E83DAF /* GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C79CCDC814FEF75100E83DAF /* GSActivity.m */; };
 		C79CCDCF14FEF99C00E83DAF /* _GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C79CCDCE14FEF99C00E83DAF /* _GSActivity.m */; };
+		C7A504CA15096F0300DD88C9 /* GSEmailInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7A504C915096F0300DD88C9 /* GSEmailInviteViewController.xib */; };
+		C7AB0A421508604700701EAD /* GSEmailInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AB0A401508604700701EAD /* GSEmailInviteViewController.m */; };
+		C7FBE70A1502BFCC009F39E4 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6ED1502BFCC009F39E4 /* Facebook.m */; };
+		C7FBE70B1502BFCC009F39E4 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7FBE6F01502BFCC009F39E4 /* FBDialog.bundle */; };
+		C7FBE70C1502BFCC009F39E4 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6F21502BFCC009F39E4 /* FBDialog.m */; };
+		C7FBE70D1502BFCC009F39E4 /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6F41502BFCC009F39E4 /* FBFrictionlessRequestSettings.m */; };
+		C7FBE70E1502BFCC009F39E4 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6F61502BFCC009F39E4 /* FBLoginDialog.m */; };
+		C7FBE70F1502BFCC009F39E4 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6F81502BFCC009F39E4 /* FBRequest.m */; };
+		C7FBE7101502BFCC009F39E4 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6FC1502BFCC009F39E4 /* NSObject+SBJSON.m */; };
+		C7FBE7111502BFCC009F39E4 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6FE1502BFCC009F39E4 /* NSString+SBJSON.m */; };
+		C7FBE7121502BFCC009F39E4 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE7001502BFCC009F39E4 /* SBJSON.m */; };
+		C7FBE7131502BFCC009F39E4 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE7021502BFCC009F39E4 /* SBJsonBase.m */; };
+		C7FBE7141502BFCC009F39E4 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE7041502BFCC009F39E4 /* SBJsonParser.m */; };
+		C7FBE7151502BFCC009F39E4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE7061502BFCC009F39E4 /* SBJsonWriter.m */; };
 		D226206914CFCC1B009AB9BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206814CFCC1B009AB9BE /* UIKit.framework */; };
 		D226206B14CFCC1B009AB9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206A14CFCC1B009AB9BE /* Foundation.framework */; };
 		D226206D14CFCC1B009AB9BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D226206C14CFCC1B009AB9BE /* CoreGraphics.framework */; };
@@ -41,7 +63,6 @@
 		D2B2561414E799BC00619FE8 /* GSGiftListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561314E799BC00619FE8 /* GSGiftListView.m */; };
 		D2B2561714E81F3E00619FE8 /* GSAccountHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */; };
 		D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */; };
-		D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */; };
 		D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */; };
 		D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */; };
 		D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */; };
@@ -69,6 +90,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C7FBE7171502BFCD009F39E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7FBE6E91502BFCC009F39E4 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "facebook-ios-sdk";
+		};
 		D226208414CFCC1B009AB9BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D226205B14CFCC1B009AB9BE /* Project object */;
@@ -114,6 +142,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C71F262415064E17004E053D /* GSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSFriendsViewController.h; path = "Friends View Controllers/GSFriendsViewController.h"; sourceTree = "<group>"; };
+		C71F262515064E17004E053D /* GSFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSFriendsViewController.m; path = "Friends View Controllers/GSFriendsViewController.m"; sourceTree = "<group>"; };
+		C71F262715064E56004E053D /* GSAddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSAddFriendsViewController.h; path = "Friends View Controllers/GSAddFriendsViewController.h"; sourceTree = "<group>"; };
+		C71F262815064E56004E053D /* GSAddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSAddFriendsViewController.m; path = "Friends View Controllers/GSAddFriendsViewController.m"; sourceTree = "<group>"; };
+		C71F262D150653B3004E053D /* GSAddFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSAddFriendsViewController.xib; sourceTree = "<group>"; };
 		C721A0C914D2F09800601BCB /* RKSpecResponseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSpecResponseLoader.h; sourceTree = "<group>"; };
 		C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSpecResponseLoader.m; sourceTree = "<group>"; };
 		C7424CB414D096CC003EA7C2 /* GSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSMappingProvider.h; path = "Mapping Provider/GSMappingProvider.h"; sourceTree = "<group>"; };
@@ -122,12 +155,49 @@
 		C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiUserTests.m; path = ApiTests/ApiUserTests.m; sourceTree = "<group>"; };
 		C75E2F0C14F591560031A189 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Base64 Encoding/NSData+Base64.h"; sourceTree = "<group>"; };
 		C75E2F0D14F591560031A189 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Base64 Encoding/NSData+Base64.m"; sourceTree = "<group>"; };
+		C77258401506B7C60008E2CB /* GSContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSContactsViewController.h; path = "Friends View Controllers/GSContactsViewController.h"; sourceTree = "<group>"; };
+		C77258411506B7C60008E2CB /* GSContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSContactsViewController.m; path = "Friends View Controllers/GSContactsViewController.m"; sourceTree = "<group>"; };
+		C77258451506B7E60008E2CB /* GSContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSContactsViewController.xib; sourceTree = "<group>"; };
+		C77258471506B7FB0008E2CB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		C77258491506B8020008E2CB /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		C772584B1506C8C20008E2CB /* GSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSContact.h; sourceTree = "<group>"; };
+		C772584C1506C8C20008E2CB /* GSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSContact.m; sourceTree = "<group>"; };
 		C77BA30915001F2600AF0F6D /* GSActivitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSActivitesViewController.h; sourceTree = "<group>"; };
 		C77BA30A15001F2600AF0F6D /* GSActivitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSActivitesViewController.m; sourceTree = "<group>"; };
 		C79CCDC714FEF75100E83DAF /* GSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSActivity.h; sourceTree = "<group>"; };
 		C79CCDC814FEF75100E83DAF /* GSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSActivity.m; sourceTree = "<group>"; };
 		C79CCDCD14FEF99C00E83DAF /* _GSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _GSActivity.h; path = Machine/_GSActivity.h; sourceTree = "<group>"; };
 		C79CCDCE14FEF99C00E83DAF /* _GSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _GSActivity.m; path = Machine/_GSActivity.m; sourceTree = "<group>"; };
+		C7A504C915096F0300DD88C9 /* GSEmailInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSEmailInviteViewController.xib; sourceTree = "<group>"; };
+		C7AB0A3F1508604700701EAD /* GSEmailInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSEmailInviteViewController.h; path = "Friends View Controllers/GSEmailInviteViewController.h"; sourceTree = "<group>"; };
+		C7AB0A401508604700701EAD /* GSEmailInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSEmailInviteViewController.m; path = "Friends View Controllers/GSEmailInviteViewController.m"; sourceTree = "<group>"; };
+		C7FBE6E91502BFCC009F39E4 /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		C7FBE6EC1502BFCC009F39E4 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		C7FBE6ED1502BFCC009F39E4 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
+		C7FBE6EE1502BFCC009F39E4 /* facebook_ios_sdk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = facebook_ios_sdk_Prefix.pch; sourceTree = "<group>"; };
+		C7FBE6EF1502BFCC009F39E4 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		C7FBE6F01502BFCC009F39E4 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		C7FBE6F11502BFCC009F39E4 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		C7FBE6F21502BFCC009F39E4 /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDialog.m; sourceTree = "<group>"; };
+		C7FBE6F31502BFCC009F39E4 /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		C7FBE6F41502BFCC009F39E4 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
+		C7FBE6F51502BFCC009F39E4 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		C7FBE6F61502BFCC009F39E4 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginDialog.m; sourceTree = "<group>"; };
+		C7FBE6F71502BFCC009F39E4 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		C7FBE6F81502BFCC009F39E4 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequest.m; sourceTree = "<group>"; };
+		C7FBE6FA1502BFCC009F39E4 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		C7FBE6FB1502BFCC009F39E4 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		C7FBE6FC1502BFCC009F39E4 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		C7FBE6FD1502BFCC009F39E4 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		C7FBE6FE1502BFCC009F39E4 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		C7FBE6FF1502BFCC009F39E4 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		C7FBE7001502BFCC009F39E4 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		C7FBE7011502BFCC009F39E4 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		C7FBE7021502BFCC009F39E4 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		C7FBE7031502BFCC009F39E4 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		C7FBE7041502BFCC009F39E4 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		C7FBE7051502BFCC009F39E4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		C7FBE7061502BFCC009F39E4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		D226206414CFCC1B009AB9BE /* GivingSocially.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivingSocially.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D226206814CFCC1B009AB9BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D226206A14CFCC1B009AB9BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,8 +217,6 @@
 		D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAccountHeaderView.m; sourceTree = "<group>"; };
 		D2B61C9614DB9A1900DDA2CF /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
 		D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
-		D2B61C9C14DB9AF800DDA2CF /* GSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFriendsViewController.h; sourceTree = "<group>"; };
-		D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFriendsViewController.m; sourceTree = "<group>"; };
 		D2B61C9F14DB9B6B00DDA2CF /* GSMyListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMyListsViewController.h; sourceTree = "<group>"; };
 		D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMyListsViewController.m; sourceTree = "<group>"; };
 		D2B61CA214DB9B7E00DDA2CF /* GSAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAccountViewController.h; sourceTree = "<group>"; };
@@ -196,6 +264,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C772584A1506B8020008E2CB /* AddressBookUI.framework in Frameworks */,
+				C77258481506B7FB0008E2CB /* AddressBook.framework in Frameworks */,
 				D2B2561114E7971100619FE8 /* QuartzCore.framework in Frameworks */,
 				D2FDBFD514CFD20E00BC6524 /* SystemConfiguration.framework in Frameworks */,
 				D2FDBFCF14CFD1FE00BC6524 /* CFNetwork.framework in Frameworks */,
@@ -224,6 +294,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71F26181505B353004E053D /* Friends View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C71F262415064E17004E053D /* GSFriendsViewController.h */,
+				C71F262515064E17004E053D /* GSFriendsViewController.m */,
+				C71F262715064E56004E053D /* GSAddFriendsViewController.h */,
+				C71F262815064E56004E053D /* GSAddFriendsViewController.m */,
+				C77258401506B7C60008E2CB /* GSContactsViewController.h */,
+				C77258411506B7C60008E2CB /* GSContactsViewController.m */,
+				C7AB0A3F1508604700701EAD /* GSEmailInviteViewController.h */,
+				C7AB0A401508604700701EAD /* GSEmailInviteViewController.m */,
+			);
+			name = "Friends View Controllers";
+			sourceTree = "<group>";
+		};
+		C71F262C150653B3004E053D /* Friends View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7A504C915096F0300DD88C9 /* GSEmailInviteViewController.xib */,
+				C77258451506B7E60008E2CB /* GSContactsViewController.xib */,
+				C71F262D150653B3004E053D /* GSAddFriendsViewController.xib */,
+			);
+			path = "Friends View Controllers";
+			sourceTree = "<group>";
+		};
 		C7424CB314D09659003EA7C2 /* Mapping Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +346,65 @@
 			name = "Base64 Encoding";
 			sourceTree = "<group>";
 		};
+		C7FBE6E71502BFC0009F39E4 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				C7FBE6E81502BFCC009F39E4 /* src */,
+			);
+			name = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		C7FBE6E81502BFCC009F39E4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C7FBE6E91502BFCC009F39E4 /* facebook-ios-sdk.xcodeproj */,
+				C7FBE6EC1502BFCC009F39E4 /* Facebook.h */,
+				C7FBE6ED1502BFCC009F39E4 /* Facebook.m */,
+				C7FBE6EE1502BFCC009F39E4 /* facebook_ios_sdk_Prefix.pch */,
+				C7FBE6EF1502BFCC009F39E4 /* FBConnect.h */,
+				C7FBE6F01502BFCC009F39E4 /* FBDialog.bundle */,
+				C7FBE6F11502BFCC009F39E4 /* FBDialog.h */,
+				C7FBE6F21502BFCC009F39E4 /* FBDialog.m */,
+				C7FBE6F31502BFCC009F39E4 /* FBFrictionlessRequestSettings.h */,
+				C7FBE6F41502BFCC009F39E4 /* FBFrictionlessRequestSettings.m */,
+				C7FBE6F51502BFCC009F39E4 /* FBLoginDialog.h */,
+				C7FBE6F61502BFCC009F39E4 /* FBLoginDialog.m */,
+				C7FBE6F71502BFCC009F39E4 /* FBRequest.h */,
+				C7FBE6F81502BFCC009F39E4 /* FBRequest.m */,
+				C7FBE6F91502BFCC009F39E4 /* JSON */,
+			);
+			name = src;
+			path = FacebookSDK/src;
+			sourceTree = "<group>";
+		};
+		C7FBE6EA1502BFCC009F39E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7FBE7181502BFCD009F39E4 /* libfacebook_ios_sdk.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7FBE6F91502BFCC009F39E4 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				C7FBE6FA1502BFCC009F39E4 /* JSON.h */,
+				C7FBE6FB1502BFCC009F39E4 /* NSObject+SBJSON.h */,
+				C7FBE6FC1502BFCC009F39E4 /* NSObject+SBJSON.m */,
+				C7FBE6FD1502BFCC009F39E4 /* NSString+SBJSON.h */,
+				C7FBE6FE1502BFCC009F39E4 /* NSString+SBJSON.m */,
+				C7FBE6FF1502BFCC009F39E4 /* SBJSON.h */,
+				C7FBE7001502BFCC009F39E4 /* SBJSON.m */,
+				C7FBE7011502BFCC009F39E4 /* SBJsonBase.h */,
+				C7FBE7021502BFCC009F39E4 /* SBJsonBase.m */,
+				C7FBE7031502BFCC009F39E4 /* SBJsonParser.h */,
+				C7FBE7041502BFCC009F39E4 /* SBJsonParser.m */,
+				C7FBE7051502BFCC009F39E4 /* SBJsonWriter.h */,
+				C7FBE7061502BFCC009F39E4 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		D226205914CFCC1B009AB9BE = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +429,8 @@
 		D226206714CFCC1B009AB9BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C77258491506B8020008E2CB /* AddressBookUI.framework */,
+				C77258471506B7FB0008E2CB /* AddressBook.framework */,
 				D2B2561014E7971100619FE8 /* QuartzCore.framework */,
 				D2FDBFD414CFD20E00BC6524 /* SystemConfiguration.framework */,
 				D2FDBFCA14CFD1FE00BC6524 /* CFNetwork.framework */,
@@ -336,8 +492,7 @@
 		D2FDBF9414CFD04C00BC6524 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2B61C9C14DB9AF800DDA2CF /* GSFriendsViewController.h */,
-				D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */,
+				C71F26181505B353004E053D /* Friends View Controllers */,
 				D2B61C9F14DB9B6B00DDA2CF /* GSMyListsViewController.h */,
 				D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */,
 				D2B61CA214DB9B7E00DDA2CF /* GSAccountViewController.h */,
@@ -369,6 +524,8 @@
 				D2F6452314FC80BE0056D869 /* GSUser.m */,
 				D2F6452614FC80D10056D869 /* Machine */,
 				C7424CB314D09659003EA7C2 /* Mapping Provider */,
+				C772584B1506C8C20008E2CB /* GSContact.h */,
+				C772584C1506C8C20008E2CB /* GSContact.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +546,7 @@
 		D2FDBF9B14CFD04C00BC6524 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C71F262C150653B3004E053D /* Friends View Controllers */,
 				D2B2561214E799BC00619FE8 /* GSGiftListView.h */,
 				D2B2561314E799BC00619FE8 /* GSGiftListView.m */,
 				D2B2561514E81F3E00619FE8 /* GSAccountHeaderView.h */,
@@ -402,6 +560,7 @@
 		D2FDBF9E14CFD05B00BC6524 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				C7FBE6E71502BFC0009F39E4 /* FacebookSDK */,
 				C75E2F0B14F591350031A189 /* Base64 Encoding */,
 				D2B61C9514DB99F800DDA2CF /* ViewDeck */,
 				D2FDBFE214CFD2B700BC6524 /* TestFlight */,
@@ -553,6 +712,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = C7FBE6EA1502BFCC009F39E4 /* Products */;
+					ProjectRef = C7FBE6E91502BFCC009F39E4 /* facebook-ios-sdk.xcodeproj */;
+				},
+				{
 					ProductGroup = D2FDBFB614CFD1B700BC6524 /* Products */;
 					ProjectRef = D2FDBFB514CFD1B700BC6524 /* RestKit.xcodeproj */;
 				},
@@ -567,6 +730,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		C7FBE7181502BFCD009F39E4 /* libfacebook_ios_sdk.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfacebook_ios_sdk.a;
+			remoteRef = C7FBE7171502BFCD009F39E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D2FDBFC014CFD1B700BC6524 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -603,6 +773,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FDBFAD14CFD05B00BC6524 /* InfoPlist.strings in Resources */,
+				C7FBE70B1502BFCC009F39E4 /* FBDialog.bundle in Resources */,
+				C71F262E150653B3004E053D /* GSAddFriendsViewController.xib in Resources */,
+				C77258461506B7E60008E2CB /* GSContactsViewController.xib in Resources */,
+				C7A504CA15096F0300DD88C9 /* GSEmailInviteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +828,6 @@
 				D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */,
 				C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */,
 				D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */,
-				D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */,
 				D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */,
 				D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */,
 				D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */,
@@ -676,6 +849,22 @@
 				C79CCDC914FEF75100E83DAF /* GSActivity.m in Sources */,
 				C79CCDCF14FEF99C00E83DAF /* _GSActivity.m in Sources */,
 				C77BA30B15001F2600AF0F6D /* GSActivitesViewController.m in Sources */,
+				C7FBE70A1502BFCC009F39E4 /* Facebook.m in Sources */,
+				C7FBE70C1502BFCC009F39E4 /* FBDialog.m in Sources */,
+				C7FBE70D1502BFCC009F39E4 /* FBFrictionlessRequestSettings.m in Sources */,
+				C7FBE70E1502BFCC009F39E4 /* FBLoginDialog.m in Sources */,
+				C7FBE70F1502BFCC009F39E4 /* FBRequest.m in Sources */,
+				C7FBE7101502BFCC009F39E4 /* NSObject+SBJSON.m in Sources */,
+				C7FBE7111502BFCC009F39E4 /* NSString+SBJSON.m in Sources */,
+				C7FBE7121502BFCC009F39E4 /* SBJSON.m in Sources */,
+				C7FBE7131502BFCC009F39E4 /* SBJsonBase.m in Sources */,
+				C7FBE7141502BFCC009F39E4 /* SBJsonParser.m in Sources */,
+				C7FBE7151502BFCC009F39E4 /* SBJsonWriter.m in Sources */,
+				C71F262615064E17004E053D /* GSFriendsViewController.m in Sources */,
+				C71F262A15064E56004E053D /* GSAddFriendsViewController.m in Sources */,
+				C77258431506B7C60008E2CB /* GSContactsViewController.m in Sources */,
+				C772584D1506C8C20008E2CB /* GSContact.m in Sources */,
+				C7AB0A421508604700701EAD /* GSEmailInviteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

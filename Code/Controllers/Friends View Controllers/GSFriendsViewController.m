@@ -8,6 +8,8 @@
 
 #import "GSFriendsViewController.h"
 #import "GSUser.h"
+#import "GSAddFriendsViewController.h"
+#import "GSEmailInviteViewController.h"
 
 @interface GSFriendsViewController ()
 
@@ -46,9 +48,9 @@
     [self.view setBackgroundColor:[UIColor blueColor]];
     
     _tableView = [[UITableView alloc] initWithFrame:(CGRect){44, 0, self.view.frame.size.width - 44, self.view.frame.size.height} style:UITableViewStylePlain];
-    [self.tableView setDelegate:self];
-    [self.tableView setDataSource:self];
-    [self.view addSubview:self.tableView];
+    [_tableView setDataSource:self];
+    [_tableView setDelegate:self];
+    [self.view addSubview:_tableView];
     
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/friends" delegate:self];
 }
@@ -61,6 +63,14 @@
 }
 
 #pragma mark - UITableViewDelegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row == 0 && indexPath.section == 0) {
+        GSAddFriendsViewController* addFriendsViewController = [[[GSAddFriendsViewController alloc] initWithNibName:nil bundle:nil]autorelease];
+        [self.navigationController pushViewController:addFriendsViewController animated:YES];
+    }
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -83,7 +93,7 @@
     NSString *cellIdentifier = @"AddFriendsCellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
     switch (indexPath.section) {
         case 0:

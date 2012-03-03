@@ -7,6 +7,7 @@ const struct GSUserAttributes GSUserAttributes = {
 	.authToken = @"authToken",
 	.email = @"email",
 	.facebookToken = @"facebookToken",
+	.facebookTokenExpiationDate = @"facebookTokenExpiationDate",
 	.firstName = @"firstName",
 	.lastName = @"lastName",
 	.username = @"username",
@@ -67,6 +68,13 @@ const struct GSUserFetchedProperties GSUserFetchedProperties = {
 
 
 @dynamic facebookToken;
+
+
+
+
+
+
+@dynamic facebookTokenExpiationDate;
 
 
 

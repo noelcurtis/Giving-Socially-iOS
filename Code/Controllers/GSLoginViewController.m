@@ -8,11 +8,15 @@
 
 #import "GSLoginViewController.h"
 #import "GSUser.h"
+#import "Facebook.h"
+#import "GSAppDelegate.h"
 
 @interface GSLoginViewController ()
 
 @property (nonatomic, retain) UITextField* emailTextField;
 @property (nonatomic, retain) UITextField* passwordTextField;
+@property (nonatomic, assign) BOOL isLoggingInWithFacebook;
+@property (nonatomic, retain) NSMutableDictionary* facebookSigninCredentials;
 
 @end
 
@@ -20,6 +24,8 @@
 
 @synthesize emailTextField = _emailTextField;
 @synthesize passwordTextField = _passwordTextField;
+@synthesize facebookSigninCredentials;
+@synthesize isLoggingInWithFacebook;
 
 - (id)init 
 {
@@ -31,11 +37,19 @@
     return self;
 }
 
+-(void)dealloc{
+    [_emailTextField release];
+    [_passwordTextField release];
+    [super dealloc];
+}
+
 - (void)loadView
 {
     [super loadView];
     
     [self.view setBackgroundColor:[UIColor greenColor]];
+    
+    self.isLoggingInWithFacebook = NO;
     
     [self.emailTextField setFrame:(CGRect){ 10, 30, 300, 20 }];
     [self.emailTextField setPlaceholder:@"email"];
@@ -66,10 +80,16 @@
         loader.delegate = self;
         loader.method = RKRequestMethodPOST;
         
-        NSDictionary* userParams = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    self.emailTextField.text, @"email",
-                                    self.passwordTextField.text, @"password",
-                                    nil];
+        NSDictionary* userParams;
+        
+        if(!self.isLoggingInWithFacebook){
+            userParams = [NSDictionary dictionaryWithObjectsAndKeys:
+                          self.emailTextField.text, @"email",
+                          self.passwordTextField.text, @"password",
+                          nil];
+        }else{
+            userParams = self.facebookSigninCredentials;
+        }
         
         NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:userParams, @"user", nil];
         loader.params = params;
@@ -81,11 +101,75 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark - Facebook Delegate
+
+-(void)fbDidLogin {
+    [self setupFacebookSigninCredentials];
+    self.isLoggingInWithFacebook = YES;
+    // Pass on facebook information to the backend and sign_in to the app.
+}
+
+-(void)fbDidNotLogin:(BOOL)cancelled{
+    NSLog(@"Did not log in to Facebook.");
+}
+
+
+-(void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt{
+    NSLog(@"Extended Facebook token, update cached token please!");
+}
+
+-(void)fbSessionInvalidated{
+    NSLog(@"Facebook session has been invalidated.");
+}
+
+-(void)fbDidLogout{
+    NSLog(@"Logged out of Facebook!");
+}
+
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error{
+    
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result{
+    NSDictionary *userData = [NSDictionary dictionaryWithDictionary:(NSDictionary*)result];
+    // fill up the rest of the required credentials for Facebook sign in.
+    [self.facebookSigninCredentials setValue:[userData valueForKey:@"first_name"] forKey:@"first_name"];
+    [self.facebookSigninCredentials setValue:[userData valueForKey:@"last_name"] forKey:@"last_name"];
+    [self.facebookSigninCredentials setValue:[userData valueForKey:@"email"] forKey:@"email"];
+    NSLog(@"loaded user data from Facebook.");
+    // Pass on facebook information to the backend and sign_in to the app.
+    [self login];
+}
+
 #pragma mark - Button Actions
 
-- (void)facebookLoginButtonTouched:(id)sender
-{
+- (void)facebookLoginButtonTouched:(id)sender{
+
     NSLog(@"Facebook login");
+    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    if(![appDelegateInstance.facebook isSessionValid]){
+        [appDelegateInstance.facebook authorize:[NSArray arrayWithObjects:@"publish_stream",@"offline_access",@"email", nil]];
+    }else {
+        [self setupFacebookSigninCredentials];
+        self.isLoggingInWithFacebook = YES;
+    }
+}
+
+-(void) setupFacebookSigninCredentials{
+    #warning TODO: Use RKObjectmMapping defult date formatter when its fixed! 
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle: NSDateFormatterShortStyle];
+    
+    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    // Initialize a dictionary with Facebook credentials for Facebook sign_in.
+    self.facebookSigninCredentials = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                      appDelegateInstance.facebook.accessToken, @"facebook_token",
+                                      [dateFormatter stringFromDate:appDelegateInstance.facebook.expirationDate], @"facebook_token_expire_at",
+                                      nil]; 
+    [appDelegateInstance.facebook requestWithGraphPath:@"me" andDelegate:self];
+    [dateFormatter release];
 }
 
 #pragma mark - RKObjectLoaderDelegate

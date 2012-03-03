@@ -7,7 +7,8 @@
 //
 
 #import <RestKit/RestKit.h>
+#import "Facebook.h"
 
-@interface GSLoginViewController : UIViewController <RKObjectLoaderDelegate>
+@interface GSLoginViewController : UIViewController <RKObjectLoaderDelegate, FBSessionDelegate, FBRequestDelegate>
 
 @end

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "IIViewDeckController.h"
+#import "FBConnect.h"
 
 @interface GSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, readonly) IIViewDeckController *deckControllerInstance;
+@property (nonatomic, retain) Facebook *facebook;
 
 @end

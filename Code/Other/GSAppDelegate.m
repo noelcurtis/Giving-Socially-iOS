@@ -33,6 +33,7 @@
 
 - (void)setupRestKit;
 - (void)setupRestKitRoutes;
+- (void)setupFacebook;
 
 @end
 
@@ -40,6 +41,7 @@
 
 @synthesize window = _window;
 @synthesize friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController, activitiesViewController = _activitiesViewController;
+@synthesize facebook = _facebook;
 
 - (void)dealloc
 {
@@ -70,9 +72,10 @@
     _activitiesViewController = [[GSActivitesViewController alloc] init];
     UINavigationController* centerNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.activitiesViewController] autorelease];
     
+    UINavigationController* rightNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.friendsViewController] autorelease];
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerNavigationController 
                                                                                     leftViewController:self.accountViewController
-                                                                                   rightViewController:self.friendsViewController];
+                                                                                   rightViewController:rightNavigationController];
     [self.window setRootViewController:deckController];
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -86,6 +89,7 @@
     // Throw up login if not logged in
     if (nil == [GSUser currentUser]) {
         _loginViewController = [[GSLoginViewController alloc] init];
+        [self setupFacebook];
         [centerNavigationController presentModalViewController:_loginViewController animated:YES];
     }
     
@@ -131,6 +135,19 @@
     
     // Gift Routes
     [router routeClass:[GSGift class] toResourcePath:@"/gift_lists/:giftListID/gifts" forMethod:RKRequestMethodPOST];
+}
+
+-(void) setupFacebook{
+    _facebook = [[Facebook alloc] initWithAppId:@"362526673776223" andDelegate:_loginViewController];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [_facebook handleOpenURL:url]; 
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [_facebook handleOpenURL:url]; 
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
