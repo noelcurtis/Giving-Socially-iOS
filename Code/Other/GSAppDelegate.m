@@ -123,6 +123,9 @@
     
     // User Routes
     [router routeClass:[GSUser class] toResourcePath:@"/users/sign_in" forMethod:RKRequestMethodPOST];
+    
+    // Gift Routes
+    [router routeClass:[GSGift class] toResourcePath:@"/gift_lists/:giftListID/gifts" forMethod:RKRequestMethodPOST];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

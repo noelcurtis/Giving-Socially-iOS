@@ -32,7 +32,6 @@
         [self setMapping:user forKeyPath:@"users.user"];
         [self registerMapping:user withRootKeyPath:@"user"];
         
-        
         // GiftList Mapping
         RKManagedObjectMapping* giftlist = [RKManagedObjectMapping mappingForClass:[GSGiftList class] inManagedObjectStore:objectStore];
         [giftlist setPrimaryKeyAttribute:@"giftListID"];
@@ -58,6 +57,10 @@
         [gift mapAttributes:@"name", nil];
         [self setMapping:gift forKeyPath:@"gift"];
         [self setMapping:gift forKeyPath:@"gifts.gift"];
+        [self registerObjectMapping:gift withRootKeyPath:@"gift"];
+        
+        RKObjectMapping *giftSerialization = [gift inverseMapping];
+        [self setSerializationMapping:giftSerialization forClass:[GSGift class]];
     }
     
     return self;
