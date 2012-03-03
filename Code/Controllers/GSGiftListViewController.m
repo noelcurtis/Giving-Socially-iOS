@@ -9,6 +9,7 @@
 #import "GSGiftListViewController.h"
 #import "GSGift.h"
 #import "GSGiftListView.h"
+#import "GSAddGiftViewController.h"
 
 @interface GSGiftListViewController ()
 
@@ -46,9 +47,9 @@
 
 - (void)loadView
 {
-    [super loadView];
+    self.view = [[[UIView alloc] initWithFrame:(CGRect){0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 44}] autorelease];
     
-    [self.view setBackgroundColor:[UIColor purpleColor]];
+    [self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGiftButtonTouched:)] autorelease]];
     
     _giftListHeaderView = [[GSGiftListView alloc] initWithFrame:CGRectZero giftList:self.giftList];
     
@@ -59,6 +60,15 @@
     [self.view addSubview:self.tableView];
     
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[NSString stringWithFormat:@"/gift_lists/%@/gifts", self.giftList.giftListID] delegate:self];
+}
+
+#pragma mark - Button Actions
+
+- (void)addGiftButtonTouched:(id)sender
+{
+    GSAddGiftViewController* addGiftVC = [[[GSAddGiftViewController alloc] initWithGiftListID:self.giftList.giftListID] autorelease];
+    UINavigationController* navController = [[[UINavigationController alloc] initWithRootViewController:addGiftVC] autorelease];
+    [self presentModalViewController:navController animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

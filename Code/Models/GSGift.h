@@ -10,4 +10,6 @@
 
 @interface GSGift : _GSGift
 
+@property (nonatomic, retain) NSNumber *giftListID;
+
 @end
