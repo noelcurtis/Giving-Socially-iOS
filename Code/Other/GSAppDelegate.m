@@ -33,6 +33,7 @@
 
 - (void)setupRestKit;
 - (void)setupRestKitRoutes;
+- (void)setupFacebook;
 
 @end
 
@@ -40,6 +41,7 @@
 
 @synthesize window = _window;
 @synthesize friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController, activitiesViewController = _activitiesViewController;
+@synthesize facebook = _facebook;
 
 - (void)dealloc
 {
@@ -131,6 +133,10 @@
     
     // Gift Routes
     [router routeClass:[GSGift class] toResourcePath:@"/gift_lists/:giftListID/gifts" forMethod:RKRequestMethodPOST];
+}
+
+-(void) setupFacebook{
+    _facebook = [[Facebook alloc] initWithAppId:@"362526673776223" andDelegate:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
