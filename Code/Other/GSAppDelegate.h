@@ -10,7 +10,7 @@
 #import "IIViewDeckController.h"
 #import "FBConnect.h"
 
-@interface GSAppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate>
+@interface GSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, readonly) IIViewDeckController *deckControllerInstance;

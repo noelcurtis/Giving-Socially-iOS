@@ -63,6 +63,7 @@
 #endif
     
     [self setupRestKit];
+    [self setupFacebook];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     

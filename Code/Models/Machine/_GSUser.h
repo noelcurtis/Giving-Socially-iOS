@@ -8,6 +8,7 @@ extern const struct GSUserAttributes {
 	 NSString *authToken;
 	 NSString *email;
 	 NSString *facebookToken;
+	 NSString *facebookTokenExpiationDate;
 	 NSString *firstName;
 	 NSString *lastName;
 	 NSString *username;
@@ -21,6 +22,7 @@ extern const struct GSUserFetchedProperties {
 } GSUserFetchedProperties;
 
 @class GSUser;
+
 
 
 
@@ -61,6 +63,14 @@ extern const struct GSUserFetchedProperties {
 
 
 //- (BOOL)validateFacebookToken:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, retain) NSDate *facebookTokenExpiationDate;
+
+
+//- (BOOL)validateFacebookTokenExpiationDate:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -126,6 +136,12 @@ extern const struct GSUserFetchedProperties {
 
 - (NSString *)primitiveFacebookToken;
 - (void)setPrimitiveFacebookToken:(NSString *)value;
+
+
+
+
+- (NSDate *)primitiveFacebookTokenExpiationDate;
+- (void)setPrimitiveFacebookTokenExpiationDate:(NSDate *)value;
 
 
 
