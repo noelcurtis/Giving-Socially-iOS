@@ -15,9 +15,8 @@
 
 @property (nonatomic, retain) UITextField* emailTextField;
 @property (nonatomic, retain) UITextField* passwordTextField;
-@property (nonatomic, retain) NSString* facebookToken;
-@property (nonatomic, retain) NSDate* facebookTokenExipryDate;
 @property (nonatomic, assign) BOOL isLoggingInWithFacebook;
+@property (nonatomic, retain) NSDictionary* facebookSigninCredentials;
 
 @end
 
@@ -25,9 +24,8 @@
 
 @synthesize emailTextField = _emailTextField;
 @synthesize passwordTextField = _passwordTextField;
-@synthesize facebookToken = _facebookToken;
-@synthesize facebookTokenExipryDate = _facebookTokenExipryDate;
-@synthesize isLoggingInWithFacebook = _isLoggingInWithFacebook;
+@synthesize facebookSigninCredentials;
+@synthesize isLoggingInWithFacebook;
 
 - (id)init 
 {
@@ -42,8 +40,6 @@
 -(void)dealloc{
     [_emailTextField release];
     [_passwordTextField release];
-    [_facebookToken release];
-    [_facebookTokenExipryDate release];
     [super dealloc];
 }
 
@@ -53,7 +49,7 @@
     
     [self.view setBackgroundColor:[UIColor greenColor]];
     
-    _isLoggingInWithFacebook = NO;
+    self.isLoggingInWithFacebook = NO;
     
     [self.emailTextField setFrame:(CGRect){ 10, 30, 300, 20 }];
     [self.emailTextField setPlaceholder:@"email"];
@@ -84,24 +80,15 @@
         loader.delegate = self;
         loader.method = RKRequestMethodPOST;
         
-        NSDictionary* userParams = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    self.emailTextField.text, @"email",
-                                    self.passwordTextField.text, @"password",
-                                    nil];
+        NSDictionary* userParams;
         
-        if(!_isLoggingInWithFacebook){
+        if(!self.isLoggingInWithFacebook){
             userParams = [NSDictionary dictionaryWithObjectsAndKeys:
                           self.emailTextField.text, @"email",
                           self.passwordTextField.text, @"password",
                           nil];
         }else{
-            userParams = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"emailfromfacebook@facebook.com", @"email",
-                          @"someDate", @"facebook_token_expire_at",
-                          _facebookToken, @"facebook_token",
-                          @"firstNameFromFacebook", @"first_name",
-                          @"lastNameFromFacebook", @"last_name",
-                          nil];
+            userParams = self.facebookSigninCredentials;
         }
         
         NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:userParams, @"user", nil];
@@ -117,18 +104,41 @@
 #pragma mark - Facebook Delegate
 
 -(void)fbDidLogin {
-    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
-    _facebookToken = [appDelegateInstance.facebook accessToken];
-    _facebookTokenExipryDate = [appDelegateInstance.facebook expirationDate];
-    _isLoggingInWithFacebook = YES;
+    [self setupFacebookSigninCredentials];
+    self.isLoggingInWithFacebook = YES;
     // Pass on facebook information to the backend and sign_in to the app.
-    [self login];
+    //[self login];
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
-    return [appDelegateInstance.facebook handleOpenURL:url]; 
+-(void)fbDidNotLogin:(BOOL)cancelled{
+    NSLog(@"Did not log in to Facebook.");
+}
+
+
+-(void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt{
+    NSLog(@"Extended Facebook token, update cached token please!");
+}
+
+-(void)fbSessionInvalidated{
+    NSLog(@"Facebook session has been invalidated.");
+}
+
+-(void)fbDidLogout{
+    NSLog(@"Logged out of Facebook!");
+}
+
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error{
+    
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result{
+    NSDictionary *userData = [NSDictionary dictionaryWithDictionary:(NSDictionary*)result];
+    // fill up the rest of the required credentials for Facebook sign in.
+    [self.facebookSigninCredentials setValue:[userData valueForKey:@"first_name"] forKey:@"first_name"];
+    [self.facebookSigninCredentials setValue:[userData valueForKey:@"last_name"] forKey:@"last_name"];
+    [self.facebookSigninCredentials setValue:[userData valueForKey:@"email"] forKey:@"email"];
+    NSLog(@"loaded user data from Facebook.");
 }
 
 #pragma mark - Button Actions
@@ -138,14 +148,28 @@
     NSLog(@"Facebook login");
     GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
     if(![appDelegateInstance.facebook isSessionValid]){
-        [appDelegateInstance.facebook authorize:nil];
+        [appDelegateInstance.facebook authorize:[NSArray arrayWithObjects:@"publish_stream",@"offline_access",@"email", nil]];
     }else {
-        _facebookToken = [appDelegateInstance.facebook accessToken];
-        _facebookTokenExipryDate = [appDelegateInstance.facebook expirationDate];
-        _isLoggingInWithFacebook = YES;
+        [self setupFacebookSigninCredentials];
+        self.isLoggingInWithFacebook = YES;
         // Pass on facebook information to the backend and sign_in to the app.
-        [self login];
+        //[self login];
     }
+}
+
+-(void) setupFacebookSigninCredentials{
+    #warning TODO: Use RKObjectmMapping defult date formatter when its fixed! 
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy"];
+    
+    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    // Initialize a dictionary with Facebook credentials for Facebook sign_in.
+    self.facebookSigninCredentials = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      appDelegateInstance.facebook.accessToken, @"facebook_token",
+                                      [dateFormatter stringFromDate:appDelegateInstance.facebook.expirationDate], @"facebook_token_expire_at",
+                                      nil]; 
+    [appDelegateInstance.facebook requestWithGraphPath:@"me" andDelegate:self];
+    [dateFormatter release];
 }
 
 #pragma mark - RKObjectLoaderDelegate

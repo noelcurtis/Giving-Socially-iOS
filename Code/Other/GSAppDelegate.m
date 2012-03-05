@@ -63,7 +63,6 @@
 #endif
     
     [self setupRestKit];
-    [self setupFacebook];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
@@ -89,6 +88,7 @@
     // Throw up login if not logged in
     if (nil == [GSUser currentUser]) {
         _loginViewController = [[GSLoginViewController alloc] init];
+        [self setupFacebook];
         [centerNavigationController presentModalViewController:_loginViewController animated:YES];
     }
     
@@ -137,7 +137,16 @@
 }
 
 -(void) setupFacebook{
-    _facebook = [[Facebook alloc] initWithAppId:@"362526673776223" andDelegate:self];
+    _facebook = [[Facebook alloc] initWithAppId:@"362526673776223" andDelegate:_loginViewController];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [_facebook handleOpenURL:url]; 
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [_facebook handleOpenURL:url]; 
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
