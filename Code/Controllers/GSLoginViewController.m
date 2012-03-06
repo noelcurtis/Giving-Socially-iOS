@@ -16,7 +16,7 @@
 @property (nonatomic, retain) UITextField* emailTextField;
 @property (nonatomic, retain) UITextField* passwordTextField;
 @property (nonatomic, assign) BOOL isLoggingInWithFacebook;
-@property (nonatomic, retain) NSDictionary* facebookSigninCredentials;
+@property (nonatomic, retain) NSMutableDictionary* facebookSigninCredentials;
 
 @end
 
@@ -107,7 +107,6 @@
     [self setupFacebookSigninCredentials];
     self.isLoggingInWithFacebook = YES;
     // Pass on facebook information to the backend and sign_in to the app.
-    //[self login];
 }
 
 -(void)fbDidNotLogin:(BOOL)cancelled{
@@ -139,6 +138,8 @@
     [self.facebookSigninCredentials setValue:[userData valueForKey:@"last_name"] forKey:@"last_name"];
     [self.facebookSigninCredentials setValue:[userData valueForKey:@"email"] forKey:@"email"];
     NSLog(@"loaded user data from Facebook.");
+    // Pass on facebook information to the backend and sign_in to the app.
+    [self login];
 }
 
 #pragma mark - Button Actions
@@ -152,8 +153,6 @@
     }else {
         [self setupFacebookSigninCredentials];
         self.isLoggingInWithFacebook = YES;
-        // Pass on facebook information to the backend and sign_in to the app.
-        //[self login];
     }
 }
 
@@ -164,7 +163,7 @@
     
     GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
     // Initialize a dictionary with Facebook credentials for Facebook sign_in.
-    self.facebookSigninCredentials = [NSDictionary dictionaryWithObjectsAndKeys:
+    self.facebookSigninCredentials = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                       appDelegateInstance.facebook.accessToken, @"facebook_token",
                                       [dateFormatter stringFromDate:appDelegateInstance.facebook.expirationDate], @"facebook_token_expire_at",
                                       nil]; 
