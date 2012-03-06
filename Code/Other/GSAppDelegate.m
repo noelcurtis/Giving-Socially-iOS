@@ -72,9 +72,10 @@
     _activitiesViewController = [[GSActivitesViewController alloc] init];
     UINavigationController* centerNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.activitiesViewController] autorelease];
     
+    UINavigationController* rightNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.friendsViewController] autorelease];
     IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerNavigationController 
                                                                                     leftViewController:self.accountViewController
-                                                                                   rightViewController:self.friendsViewController];
+                                                                                   rightViewController:rightNavigationController];
     [self.window setRootViewController:deckController];
     self.window.backgroundColor = [UIColor whiteColor];
     

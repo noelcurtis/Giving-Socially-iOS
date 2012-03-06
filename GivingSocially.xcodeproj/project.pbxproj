@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		C71F261B1505B373004E053D /* GSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71F261A1505B373004E053D /* GSFriendsViewController.m */; };
+		C71F261E1505B386004E053D /* GSAddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71F261D1505B386004E053D /* GSAddFriendsViewController.m */; };
 		C721A0CC14D2F29400601BCB /* RKSpecResponseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */; };
 		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
 		C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */; };
@@ -53,7 +55,6 @@
 		D2B2561414E799BC00619FE8 /* GSGiftListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561314E799BC00619FE8 /* GSGiftListView.m */; };
 		D2B2561714E81F3E00619FE8 /* GSAccountHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */; };
 		D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */; };
-		D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */; };
 		D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */; };
 		D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA314DB9B7E00DDA2CF /* GSAccountViewController.m */; };
 		D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B61CA614DBA12400DDA2CF /* GSHomeViewController.m */; };
@@ -133,6 +134,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C71F26191505B373004E053D /* GSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFriendsViewController.h; sourceTree = "<group>"; };
+		C71F261A1505B373004E053D /* GSFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFriendsViewController.m; sourceTree = "<group>"; };
+		C71F261C1505B386004E053D /* GSAddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAddFriendsViewController.h; sourceTree = "<group>"; };
+		C71F261D1505B386004E053D /* GSAddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAddFriendsViewController.m; sourceTree = "<group>"; };
 		C721A0C914D2F09800601BCB /* RKSpecResponseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSpecResponseLoader.h; sourceTree = "<group>"; };
 		C721A0CA14D2F09800601BCB /* RKSpecResponseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSpecResponseLoader.m; sourceTree = "<group>"; };
 		C7424CB414D096CC003EA7C2 /* GSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSMappingProvider.h; path = "Mapping Provider/GSMappingProvider.h"; sourceTree = "<group>"; };
@@ -193,8 +198,6 @@
 		D2B2561614E81F3E00619FE8 /* GSAccountHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAccountHeaderView.m; sourceTree = "<group>"; };
 		D2B61C9614DB9A1900DDA2CF /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
 		D2B61C9714DB9A1900DDA2CF /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
-		D2B61C9C14DB9AF800DDA2CF /* GSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFriendsViewController.h; sourceTree = "<group>"; };
-		D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFriendsViewController.m; sourceTree = "<group>"; };
 		D2B61C9F14DB9B6B00DDA2CF /* GSMyListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMyListsViewController.h; sourceTree = "<group>"; };
 		D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMyListsViewController.m; sourceTree = "<group>"; };
 		D2B61CA214DB9B7E00DDA2CF /* GSAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAccountViewController.h; sourceTree = "<group>"; };
@@ -270,6 +273,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71F26181505B353004E053D /* FriendsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C71F261C1505B386004E053D /* GSAddFriendsViewController.h */,
+				C71F261D1505B386004E053D /* GSAddFriendsViewController.m */,
+				C71F26191505B373004E053D /* GSFriendsViewController.h */,
+				C71F261A1505B373004E053D /* GSFriendsViewController.m */,
+			);
+			name = FriendsViewControllers;
+			sourceTree = "<group>";
+		};
 		C7424CB314D09659003EA7C2 /* Mapping Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,8 +455,7 @@
 		D2FDBF9414CFD04C00BC6524 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2B61C9C14DB9AF800DDA2CF /* GSFriendsViewController.h */,
-				D2B61C9D14DB9AF800DDA2CF /* GSFriendsViewController.m */,
+				C71F26181505B353004E053D /* FriendsViewControllers */,
 				D2B61C9F14DB9B6B00DDA2CF /* GSMyListsViewController.h */,
 				D2B61CA014DB9B6B00DDA2CF /* GSMyListsViewController.m */,
 				D2B61CA214DB9B7E00DDA2CF /* GSAccountViewController.h */,
@@ -772,7 +785,6 @@
 				D2FDBF9D14CFD04C00BC6524 /* main.m in Sources */,
 				C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */,
 				D2B61C9A14DB9A1900DDA2CF /* IIViewDeckController.m in Sources */,
-				D2B61C9E14DB9AF800DDA2CF /* GSFriendsViewController.m in Sources */,
 				D2B61CA114DB9B6B00DDA2CF /* GSMyListsViewController.m in Sources */,
 				D2B61CA414DB9B7E00DDA2CF /* GSAccountViewController.m in Sources */,
 				D2B61CA714DBA12400DDA2CF /* GSHomeViewController.m in Sources */,
@@ -805,6 +817,8 @@
 				C7FBE7131502BFCC009F39E4 /* SBJsonBase.m in Sources */,
 				C7FBE7141502BFCC009F39E4 /* SBJsonParser.m in Sources */,
 				C7FBE7151502BFCC009F39E4 /* SBJsonWriter.m in Sources */,
+				C71F261B1505B373004E053D /* GSFriendsViewController.m in Sources */,
+				C71F261E1505B386004E053D /* GSAddFriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
