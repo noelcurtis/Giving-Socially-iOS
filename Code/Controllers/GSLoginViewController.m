@@ -159,7 +159,8 @@
 -(void) setupFacebookSigninCredentials{
     #warning TODO: Use RKObjectmMapping defult date formatter when its fixed! 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy"];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle: NSDateFormatterShortStyle];
     
     GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
     // Initialize a dictionary with Facebook credentials for Facebook sign_in.

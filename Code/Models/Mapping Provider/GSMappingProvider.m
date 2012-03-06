@@ -26,6 +26,8 @@
         [user mapKeyPath:@"username" toAttribute:@"username"];
         [user mapKeyPath:@"email" toAttribute:@"email"];
         [user mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
+        [user mapKeyPath:@"facebook_token" toAttribute:@"facebookToken"];
+        [user mapKeyPath:@"facebook_token_expire_at" toAttribute:@"facebookTokenExpiationDate"];
         [user mapKeyPath:@"first_name" toAttribute:@"firstName"];
         [user mapKeyPath:@"last_name" toAttribute:@"lastName"];
         [self setMapping:user forKeyPath:@"user"];
