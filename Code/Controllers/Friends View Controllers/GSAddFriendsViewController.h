@@ -2,7 +2,7 @@
 //  GSAddFriendsViewController.h
 //  GivingSocially
 //
-//  Created by Noel Curtis on 3/5/12.
+//  Created by Noel Curtis on 3/6/12.
 //  Copyright (c) 2012 Scott Penrose. All rights reserved.
 //
 

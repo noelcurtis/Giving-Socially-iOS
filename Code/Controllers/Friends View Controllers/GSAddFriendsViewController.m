@@ -2,59 +2,63 @@
 //  GSAddFriendsViewController.m
 //  GivingSocially
 //
-//  Created by Noel Curtis on 3/5/12.
+//  Created by Noel Curtis on 3/6/12.
 //  Copyright (c) 2012 Scott Penrose. All rights reserved.
 //
 
 #import "GSAddFriendsViewController.h"
 
 @interface GSAddFriendsViewController ()
-@property (nonatomic, retain) UITableView* tableView;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation GSAddFriendsViewController
-
 @synthesize tableView = _tableView;
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
     return self;
-}
-
-
-- (void)loadView
-{
-    _tableView = [[UITableView alloc] initWithFrame:(CGRect){44, 0, self.view.frame.size.width - 44, self.view.frame.size.height} style:UITableViewStylePlain];
-    [_tableView setDelegate:self];
-    [_tableView setDataSource:self];
-    [self.view addSubview:_tableView];
-
-}
-
-- (void)dealloc
-{
-    [_tableView release];
-    [super dealloc];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)dealloc {
+    [self.tableView release];
+    [super dealloc];
+}
+
+
 #pragma mark - UITableViewDataSource
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        return @"Friend Suggestions";
+    }else {
+        return nil;
+    }
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -102,7 +106,8 @@
             }
             break;
         case 1:
-           [cell.textLabel setText:@"Friend Suggestion"]; 
+            [cell.textLabel setText:@"Friend Suggestion"]; 
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
             break; 
             
         default:
@@ -117,6 +122,5 @@
 {
     
 }
-
 
 @end
