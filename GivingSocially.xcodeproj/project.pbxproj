@@ -28,6 +28,11 @@
 		C7424CB614D096CC003EA7C2 /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CB514D096CC003EA7C2 /* GSMappingProvider.m */; };
 		C7424CBD14D09CAD003EA7C2 /* ApiUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */; };
 		C75E2F0E14F591560031A189 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C75E2F0D14F591560031A189 /* NSData+Base64.m */; };
+		C77258431506B7C60008E2CB /* GSContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77258411506B7C60008E2CB /* GSContactsViewController.m */; };
+		C77258461506B7E60008E2CB /* GSContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77258451506B7E60008E2CB /* GSContactsViewController.xib */; };
+		C77258481506B7FB0008E2CB /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77258471506B7FB0008E2CB /* AddressBook.framework */; };
+		C772584A1506B8020008E2CB /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77258491506B8020008E2CB /* AddressBookUI.framework */; };
+		C772584D1506C8C20008E2CB /* GSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = C772584C1506C8C20008E2CB /* GSContact.m */; };
 		C77BA30B15001F2600AF0F6D /* GSActivitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BA30A15001F2600AF0F6D /* GSActivitesViewController.m */; };
 		C79CCDC914FEF75100E83DAF /* GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C79CCDC814FEF75100E83DAF /* GSActivity.m */; };
 		C79CCDCF14FEF99C00E83DAF /* _GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C79CCDCE14FEF99C00E83DAF /* _GSActivity.m */; };
@@ -148,6 +153,13 @@
 		C7424CBC14D09CAD003EA7C2 /* ApiUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiUserTests.m; path = ApiTests/ApiUserTests.m; sourceTree = "<group>"; };
 		C75E2F0C14F591560031A189 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Base64 Encoding/NSData+Base64.h"; sourceTree = "<group>"; };
 		C75E2F0D14F591560031A189 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Base64 Encoding/NSData+Base64.m"; sourceTree = "<group>"; };
+		C77258401506B7C60008E2CB /* GSContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSContactsViewController.h; path = "Friends View Controllers/GSContactsViewController.h"; sourceTree = "<group>"; };
+		C77258411506B7C60008E2CB /* GSContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSContactsViewController.m; path = "Friends View Controllers/GSContactsViewController.m"; sourceTree = "<group>"; };
+		C77258451506B7E60008E2CB /* GSContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSContactsViewController.xib; sourceTree = "<group>"; };
+		C77258471506B7FB0008E2CB /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		C77258491506B8020008E2CB /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		C772584B1506C8C20008E2CB /* GSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSContact.h; sourceTree = "<group>"; };
+		C772584C1506C8C20008E2CB /* GSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSContact.m; sourceTree = "<group>"; };
 		C77BA30915001F2600AF0F6D /* GSActivitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSActivitesViewController.h; sourceTree = "<group>"; };
 		C77BA30A15001F2600AF0F6D /* GSActivitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSActivitesViewController.m; sourceTree = "<group>"; };
 		C79CCDC714FEF75100E83DAF /* GSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSActivity.h; sourceTree = "<group>"; };
@@ -247,6 +259,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C772584A1506B8020008E2CB /* AddressBookUI.framework in Frameworks */,
+				C77258481506B7FB0008E2CB /* AddressBook.framework in Frameworks */,
 				D2B2561114E7971100619FE8 /* QuartzCore.framework in Frameworks */,
 				D2FDBFD514CFD20E00BC6524 /* SystemConfiguration.framework in Frameworks */,
 				D2FDBFCF14CFD1FE00BC6524 /* CFNetwork.framework in Frameworks */,
@@ -282,6 +296,8 @@
 				C71F262515064E17004E053D /* GSFriendsViewController.m */,
 				C71F262715064E56004E053D /* GSAddFriendsViewController.h */,
 				C71F262815064E56004E053D /* GSAddFriendsViewController.m */,
+				C77258401506B7C60008E2CB /* GSContactsViewController.h */,
+				C77258411506B7C60008E2CB /* GSContactsViewController.m */,
 			);
 			name = "Friends View Controllers";
 			sourceTree = "<group>";
@@ -289,6 +305,7 @@
 		C71F262C150653B3004E053D /* Friends View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C77258451506B7E60008E2CB /* GSContactsViewController.xib */,
 				C71F262D150653B3004E053D /* GSAddFriendsViewController.xib */,
 			);
 			path = "Friends View Controllers";
@@ -404,6 +421,8 @@
 		D226206714CFCC1B009AB9BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C77258491506B8020008E2CB /* AddressBookUI.framework */,
+				C77258471506B7FB0008E2CB /* AddressBook.framework */,
 				D2B2561014E7971100619FE8 /* QuartzCore.framework */,
 				D2FDBFD414CFD20E00BC6524 /* SystemConfiguration.framework */,
 				D2FDBFCA14CFD1FE00BC6524 /* CFNetwork.framework */,
@@ -497,6 +516,8 @@
 				D2F6452314FC80BE0056D869 /* GSUser.m */,
 				D2F6452614FC80D10056D869 /* Machine */,
 				C7424CB314D09659003EA7C2 /* Mapping Provider */,
+				C772584B1506C8C20008E2CB /* GSContact.h */,
+				C772584C1506C8C20008E2CB /* GSContact.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -746,6 +767,7 @@
 				D2FDBFAD14CFD05B00BC6524 /* InfoPlist.strings in Resources */,
 				C7FBE70B1502BFCC009F39E4 /* FBDialog.bundle in Resources */,
 				C71F262E150653B3004E053D /* GSAddFriendsViewController.xib in Resources */,
+				C77258461506B7E60008E2CB /* GSContactsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,6 +853,8 @@
 				C7FBE7151502BFCC009F39E4 /* SBJsonWriter.m in Sources */,
 				C71F262615064E17004E053D /* GSFriendsViewController.m in Sources */,
 				C71F262A15064E56004E053D /* GSAddFriendsViewController.m in Sources */,
+				C77258431506B7C60008E2CB /* GSContactsViewController.m in Sources */,
+				C772584D1506C8C20008E2CB /* GSContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

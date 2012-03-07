@@ -7,6 +7,7 @@
 //
 
 #import "GSAddFriendsViewController.h"
+#import "GSContactsViewController.h"
 
 @interface GSAddFriendsViewController ()
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
@@ -72,6 +73,7 @@
             break;
         case 1:
             return 10;
+            break;
         default:
             return 0;
             break;
@@ -120,6 +122,31 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.section == 0){
+        switch (indexPath.row) {
+            case 0:
+            {
+                GSContactsViewController* contactsViewController = [[GSContactsViewController alloc] initWithNibName:nil bundle:nil];
+                [self.navigationController pushViewController:contactsViewController animated:YES];
+                break; 
+            }
+            case 1:
+            {
+                // TODO: Push Facebook Friends Controller 
+                break; 
+            }
+            case 2:
+            {
+                // TODO: Push Invitation Controller
+                break; 
+            }
+            
+            default:
+                break;
+        }
+    }else {
+        return;
+    }
     
 }
 
