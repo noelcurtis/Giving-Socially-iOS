@@ -30,7 +30,7 @@
         _firstNameTextField = [[UITextField alloc] initWithFrame:(CGRect){20, 10, 280, 34}];
         _lastNameTextField = [[UITextField alloc] initWithFrame:(CGRect){20, 10, 280, 34}];
         _emailTextField = [[UITextField alloc] initWithFrame:(CGRect){20, 10, 280, 34}];
-        [self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonItemStyleDone target:self action:@selector(sendInvitationEmail)] autorelease]]; 
+        [self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(sendInvitationEmail)] autorelease]]; 
         
     }
     return self;
@@ -117,7 +117,9 @@
                       email, @"email",
                       nil];
         
-        loader.params = userParams;
+        NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:userParams, @"user", nil];
+        loader.params = params;
+        self.navigationItem.rightBarButtonItem.enabled = NO;
     }];
 }
 
@@ -133,6 +135,7 @@
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error
 {
     NSLog(@"Failed to send email: %@", [error localizedDescription]);
+    self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects
@@ -142,6 +145,7 @@
     _emailTextField.text = @"";
     _firstNameTextField.text = @"";
     _lastNameTextField.text = @"";
+    self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
 

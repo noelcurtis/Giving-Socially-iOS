@@ -88,6 +88,25 @@
     STAssertTrue([[gifts objectAtIndex:0] isKindOfClass:[GSGift class]], @"Something other than a Gift was returned from the API!");
 }
 
+//-(void) testSendEmailInvitation
+//{
+//    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[NSString stringWithFormat:@"/users/invite%@", self.authTokenParam] usingBlock:^(RKObjectLoader *loader) {
+//        loader.delegate = _loaderDelegate;
+//        loader.method = RKRequestMethodPOST;
+//        
+//        NSDictionary*  userParams = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                     @"Noel", @"first_name",
+//                                     @"Curtis", @"last_name",
+//                                     @"noelcurtis@gmail.com", @"email",
+//                                     nil];
+//        
+//        NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:userParams, @"user", nil];
+//        loader.params = params;
+//    }];
+//    
+//    [_loaderDelegate waitForResponse];
+//}
+
 //-(void) testShowActivities
 //{
 //    NSString *showActivities = [NSString stringWithFormat:@"/activities%@", self.authTokenParam];
