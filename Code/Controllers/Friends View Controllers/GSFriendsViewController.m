@@ -9,6 +9,7 @@
 #import "GSFriendsViewController.h"
 #import "GSUser.h"
 #import "GSAddFriendsViewController.h"
+#import "GSEmailInviteViewController.h"
 
 @interface GSFriendsViewController ()
 
@@ -65,7 +66,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row ==0 && indexPath.section == 0) {
+    if (indexPath.row == 0 && indexPath.section == 0) {
         GSAddFriendsViewController* addFriendsViewController = [[[GSAddFriendsViewController alloc] initWithNibName:nil bundle:nil]autorelease];
         [self.navigationController pushViewController:addFriendsViewController animated:YES];
     }

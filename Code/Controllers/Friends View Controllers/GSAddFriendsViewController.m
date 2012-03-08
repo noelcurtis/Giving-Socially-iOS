@@ -8,6 +8,7 @@
 
 #import "GSAddFriendsViewController.h"
 #import "GSContactsViewController.h"
+#import "GSEmailInviteViewController.h"
 
 @interface GSAddFriendsViewController ()
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
@@ -137,7 +138,8 @@
             }
             case 2:
             {
-                // TODO: Push Invitation Controller
+                GSEmailInviteViewController* emailInviteViewController = [[GSEmailInviteViewController alloc] initWithNibName:nil bundle:nil];
+                [self.navigationController pushViewController:emailInviteViewController animated:YES];
                 break; 
             }
             

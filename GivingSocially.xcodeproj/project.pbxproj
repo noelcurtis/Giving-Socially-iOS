@@ -36,6 +36,8 @@
 		C77BA30B15001F2600AF0F6D /* GSActivitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BA30A15001F2600AF0F6D /* GSActivitesViewController.m */; };
 		C79CCDC914FEF75100E83DAF /* GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C79CCDC814FEF75100E83DAF /* GSActivity.m */; };
 		C79CCDCF14FEF99C00E83DAF /* _GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C79CCDCE14FEF99C00E83DAF /* _GSActivity.m */; };
+		C7AB0A421508604700701EAD /* GSEmailInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AB0A401508604700701EAD /* GSEmailInviteViewController.m */; };
+		C7AB0A431508604700701EAD /* GSEmailInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7AB0A411508604700701EAD /* GSEmailInviteViewController.xib */; };
 		C7FBE70A1502BFCC009F39E4 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6ED1502BFCC009F39E4 /* Facebook.m */; };
 		C7FBE70B1502BFCC009F39E4 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7FBE6F01502BFCC009F39E4 /* FBDialog.bundle */; };
 		C7FBE70C1502BFCC009F39E4 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7FBE6F21502BFCC009F39E4 /* FBDialog.m */; };
@@ -166,6 +168,9 @@
 		C79CCDC814FEF75100E83DAF /* GSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSActivity.m; sourceTree = "<group>"; };
 		C79CCDCD14FEF99C00E83DAF /* _GSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _GSActivity.h; path = Machine/_GSActivity.h; sourceTree = "<group>"; };
 		C79CCDCE14FEF99C00E83DAF /* _GSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _GSActivity.m; path = Machine/_GSActivity.m; sourceTree = "<group>"; };
+		C7AB0A3F1508604700701EAD /* GSEmailInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSEmailInviteViewController.h; path = "Friends View Controllers/GSEmailInviteViewController.h"; sourceTree = "<group>"; };
+		C7AB0A401508604700701EAD /* GSEmailInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSEmailInviteViewController.m; path = "Friends View Controllers/GSEmailInviteViewController.m"; sourceTree = "<group>"; };
+		C7AB0A411508604700701EAD /* GSEmailInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GSEmailInviteViewController.xib; path = "Friends View Controllers/GSEmailInviteViewController.xib"; sourceTree = "<group>"; };
 		C7FBE6E91502BFCC009F39E4 /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 		C7FBE6EC1502BFCC009F39E4 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		C7FBE6ED1502BFCC009F39E4 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
@@ -298,6 +303,9 @@
 				C71F262815064E56004E053D /* GSAddFriendsViewController.m */,
 				C77258401506B7C60008E2CB /* GSContactsViewController.h */,
 				C77258411506B7C60008E2CB /* GSContactsViewController.m */,
+				C7AB0A3F1508604700701EAD /* GSEmailInviteViewController.h */,
+				C7AB0A401508604700701EAD /* GSEmailInviteViewController.m */,
+				C7AB0A411508604700701EAD /* GSEmailInviteViewController.xib */,
 			);
 			name = "Friends View Controllers";
 			sourceTree = "<group>";
@@ -768,6 +776,7 @@
 				C7FBE70B1502BFCC009F39E4 /* FBDialog.bundle in Resources */,
 				C71F262E150653B3004E053D /* GSAddFriendsViewController.xib in Resources */,
 				C77258461506B7E60008E2CB /* GSContactsViewController.xib in Resources */,
+				C7AB0A431508604700701EAD /* GSEmailInviteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -855,6 +864,7 @@
 				C71F262A15064E56004E053D /* GSAddFriendsViewController.m in Sources */,
 				C77258431506B7C60008E2CB /* GSContactsViewController.m in Sources */,
 				C772584D1506C8C20008E2CB /* GSContact.m in Sources */,
+				C7AB0A421508604700701EAD /* GSEmailInviteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
