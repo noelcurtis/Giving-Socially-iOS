@@ -10,12 +10,12 @@
 
 @implementation GSContact
 
-@synthesize firstName, lastName, emailAddresses;
+@synthesize firstName = _firstName, lastName = _lastName, emailAddresses = _emailAddresses;
 
 -(void)dealloc{
-    self.firstName = nil;
-    self.lastName = nil;
-    self.emailAddresses = nil;
+    [_firstName release];
+    [_lastName release];
+    [_emailAddresses release];
     [super dealloc];
 }
 

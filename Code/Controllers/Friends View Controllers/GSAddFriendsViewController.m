@@ -47,7 +47,7 @@
 }
 
 - (void)dealloc {
-    [self.tableView release];
+    [_tableView release];
     [super dealloc];
 }
 
