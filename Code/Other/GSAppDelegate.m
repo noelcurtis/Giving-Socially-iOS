@@ -131,6 +131,9 @@
     
     // Gift Routes
     [router routeClass:[GSGift class] toResourcePath:@"/gift_lists/:giftListID/gifts" forMethod:RKRequestMethodPOST];
+    
+    // Gift List
+    [router routeClass:[GSGiftList class] toResourcePath:@"/gift_lists" forMethod:RKRequestMethodPOST];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -9,6 +9,7 @@
 #import "GSHomeViewController.h"
 #import "GSGiftList.h"
 #import "GSGiftListViewController.h"
+#import "GSAddGiftListViewController.h"
 
 @interface GSHomeViewController ()
 
@@ -40,9 +41,9 @@
 
 - (void)loadView
 {
-    [super loadView];
-    
-    [self.view setBackgroundColor:[UIColor purpleColor]];
+    self.view = [[[UIView alloc] initWithFrame:(CGRect){0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 20}] autorelease];
+    [self.view setBackgroundColor:[UIColor clearColor]];
+    [self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createGiftList:)] autorelease]];
     
     _tableView = [[UITableView alloc] initWithFrame:(CGRect){0, 0, self.view.frame.size.width, self.view.frame.size.height - 44} style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
@@ -58,6 +59,19 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - Buttons
+
+- (void)createGiftList:(id)sender
+{
+    NSLog(@"Create gift lists");
+    GSAddGiftListViewController *addGiftListVC = [[[GSAddGiftListViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    [addGiftListVC setDismissHandler:^(UIViewController *viewController) {
+        [viewController dismissModalViewControllerAnimated:YES];
+    }];
+    UINavigationController* navController = [[[UINavigationController alloc] initWithRootViewController:addGiftListVC] autorelease];
+    [self presentModalViewController:navController animated:YES];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -67,12 +81,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* cellIdentifier = @"GiftListCellIdentifier";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSString *cellIdentifier = @"GiftListCellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (nil == cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
     }
-    GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
+    GSGiftList *giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
     NSLog(@"Gift list id:%@, name:%@", giftList.giftListID, giftList.name);
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", giftList.name]];
     return cell;
@@ -82,7 +96,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
+    GSGiftList *giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
     GSGiftListViewController* giftListVC = [[[GSGiftListViewController alloc] initWithGiftList:giftList] autorelease];
     [self.navigationController pushViewController:giftListVC animated:YES];
 }

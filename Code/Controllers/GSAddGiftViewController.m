@@ -58,7 +58,7 @@
 
 - (void)loadView
 {
-    self.view = [[[UIView alloc] initWithFrame:(CGRect){0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 44}] autorelease];
+    self.view = [[[UIView alloc] initWithFrame:(CGRect){0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 20}] autorelease];
     [self.view setBackgroundColor:[UIColor redColor]];
     
     [self.navigationItem setLeftBarButtonItem:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss:)] autorelease]];
@@ -78,7 +78,7 @@
     [self.urlTextField setPlaceholder:@"URL"];
     [self.descriptionTextField setPlaceholder:@"Description"];
     
-    [_tableView setFrame:self.view.frame];
+    [_tableView setFrame:(CGRect){0, 0, self.view.frame.size.width, self.view.frame.size.height - 44}];
     [self.tableView setTableHeaderView:self.addGiftImageView];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];

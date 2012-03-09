@@ -8,5 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^GSDismissHandler)(UIViewController *viewController);
+
 extern NSString* const GSBaseURL;
 extern NSString* const GSAuthTokenHeaderKey;
