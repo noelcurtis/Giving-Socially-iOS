@@ -45,12 +45,13 @@
         [giftlist mapKeyPath:@"due_date" toAttribute:@"dueDate"];
         [giftlist mapAttributes:@"purpose", nil];
         [self setMapping:giftlist forKeyPath:@"gift_list"];
-        [self setMapping:giftlist forKeyPath:@"gift_lists.gift_list"];
-        [self registerObjectMapping:giftlist withRootKeyPath:@"gift_list"];
-        
         RKObjectMapping *giftListSerialization = [giftlist inverseMapping];
         [giftListSerialization removeMappingForKeyPath:@"giftListID"];
         [self setSerializationMapping:giftListSerialization forClass:[GSGiftList class]];
+        [self setMapping:giftlist forKeyPath:@"gift_lists.gift_list"];
+        [self registerObjectMapping:giftlist withRootKeyPath:@"gift_list"];
+        
+        
         
         // Gift Mapping
         RKManagedObjectMapping* gift = [RKManagedObjectMapping mappingForClass:[GSGift class] inManagedObjectStore:objectStore];
