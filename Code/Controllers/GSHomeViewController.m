@@ -44,7 +44,7 @@
     
     [self.view setBackgroundColor:[UIColor purpleColor]];
     
-    _tableView = [[UITableView alloc] initWithFrame:(CGRect){0, 0, self.view.frame.size.width, self.view.frame.size.height - 44} style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:(CGRect){0, 44, self.view.frame.size.width, self.view.frame.size.height - 44} style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.view addSubview:self.tableView];

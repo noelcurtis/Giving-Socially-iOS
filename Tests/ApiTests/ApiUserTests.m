@@ -12,6 +12,7 @@
 #import "GSGift.h"
 #import "NSData+Base64.h"
 #import "GSActivity.h"
+#import "GSAppDelegate.h"
 
 @interface ApiUserTests ()
 
@@ -115,6 +116,24 @@
 //    STAssertTrue([[activities objectAtIndex:0] isKindOfClass:[GSActivity class]], @"Something other than a Activity was returned from the API!");
 //
 //}
+
+-(void) facebookTest
+{
+    GSAppDelegate* appDelegateInstance = (GSAppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegateInstance.facebook setAccessToken:@"AAAAAAITEghMBAP1dZC3XqEFiLpC4H7zCxQbQX2uYiAtYqKDQZCovfPqBZAx97MrVT6FQIBbBMAGRd3NdUMDRo5j2Tc8dbHr2kOzOS9I3AZDZD"];
+    [appDelegateInstance.facebook requestWithGraphPath:@"me" andDelegate:self];
+}
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error{
+    NSLog(@"Recieved error %@", error.description);     
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result{
+    NSDictionary *userData = [NSDictionary dictionaryWithDictionary:(NSDictionary*)result];
+    // fill up the rest of the required credentials for Facebook sign in.
+    NSLog(@"Recieved result from Facebook.");
+}
+
  
 
 -(NSArray*) sendApiRequest:(NSString*) requestUri

@@ -9,8 +9,9 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "GSMappingProvider.h"
 #import "RKSpecResponseLoader.h"
+#import "Facebook.h"
 
-@interface ApiUserTests : SenTestCase{
+@interface ApiUserTests : SenTestCase<FBRequestDelegate>{
 }
 
 
