@@ -1,9 +1,9 @@
 [submodule "Libraries/RestKit"]
-	path = Libraries/RestKit
+	path = Code/Libraries/RestKit
 	url = https://github.com/RestKit/RestKit.git
 [submodule "Libraries/ViewDeck"]
-	path = Libraries/ViewDeck
+	path = Code/Libraries/ViewDeck
 	url = https://github.com/Inferis/ViewDeck.git
 [submodule "Libraries/FacebookSDK"]
-	path = Libraries/FacebookSDK
+	path = Code/Libraries/FacebookSDK
 	url = https://github.com/facebook/facebook-ios-sdk.git

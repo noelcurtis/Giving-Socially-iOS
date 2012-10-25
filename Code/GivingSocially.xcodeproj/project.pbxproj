@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D21038DB1638D61000DE1E3B /* GSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038911638D61000DE1E3B /* GSAppDelegate.m */; };
+		D21038DC1638D61000DE1E3B /* GSEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038931638D61000DE1E3B /* GSEnvironment.m */; };
+		D21038DD1638D61000DE1E3B /* GSMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038961638D61000DE1E3B /* GSMappingProvider.m */; };
+		D21038DE1638D61000DE1E3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D210389B1638D61000DE1E3B /* Default-568h@2x.png */; };
+		D21038DF1638D61000DE1E3B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D210389C1638D61000DE1E3B /* Default.png */; };
+		D21038E01638D61000DE1E3B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D210389D1638D61000DE1E3B /* Default@2x.png */; };
+		D21038E11638D61000DE1E3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D210389F1638D61000DE1E3B /* InfoPlist.strings */; };
+		D21038E21638D61000DE1E3B /* GivingSocially-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D21038A11638D61000DE1E3B /* GivingSocially-Info.plist */; };
+		D21038E31638D61000DE1E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038A31638D61000DE1E3B /* main.m */; };
+		D21038E41638D61000DE1E3B /* GSAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038A61638D61000DE1E3B /* GSAccountViewController.m */; };
+		D21038E51638D61000DE1E3B /* GSActivitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038A81638D61000DE1E3B /* GSActivitesViewController.m */; };
+		D21038E61638D61000DE1E3B /* GSAddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038AA1638D61000DE1E3B /* GSAddFriendsViewController.m */; };
+		D21038E71638D61000DE1E3B /* GSAddGiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038AC1638D61000DE1E3B /* GSAddGiftViewController.m */; };
+		D21038E81638D61000DE1E3B /* GSContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038AE1638D61000DE1E3B /* GSContactsViewController.m */; };
+		D21038E91638D61000DE1E3B /* GSEmailInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038B01638D61000DE1E3B /* GSEmailInviteViewController.m */; };
+		D21038EA1638D61000DE1E3B /* GSFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038B21638D61000DE1E3B /* GSFriendsViewController.m */; };
+		D21038EB1638D61000DE1E3B /* GSGiftListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038B41638D61000DE1E3B /* GSGiftListViewController.m */; };
+		D21038EC1638D61000DE1E3B /* GSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038B61638D61000DE1E3B /* GSHomeViewController.m */; };
+		D21038ED1638D61000DE1E3B /* GSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038B81638D61000DE1E3B /* GSLoginViewController.m */; };
+		D21038EE1638D61000DE1E3B /* GSMyListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038BA1638D61000DE1E3B /* GSMyListsViewController.m */; };
+		D21038F01638D61000DE1E3B /* GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038BF1638D61000DE1E3B /* GSActivity.m */; };
+		D21038F11638D61000DE1E3B /* GSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038C11638D61000DE1E3B /* GSContact.m */; };
+		D21038F21638D61000DE1E3B /* GSGift.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038C31638D61000DE1E3B /* GSGift.m */; };
+		D21038F31638D61000DE1E3B /* GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038C51638D61000DE1E3B /* GSGiftList.m */; };
+		D21038F41638D61000DE1E3B /* GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038C71638D61000DE1E3B /* GSUser.m */; };
+		D21038F51638D61000DE1E3B /* _GSActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038CA1638D61000DE1E3B /* _GSActivity.m */; };
+		D21038F61638D61000DE1E3B /* _GSGift.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038CC1638D61000DE1E3B /* _GSGift.m */; };
+		D21038F71638D61000DE1E3B /* _GSGiftList.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038CE1638D61000DE1E3B /* _GSGiftList.m */; };
+		D21038F81638D61000DE1E3B /* _GSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038D01638D61000DE1E3B /* _GSUser.m */; };
+		D21038F91638D61000DE1E3B /* GSAccountHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038D31638D61000DE1E3B /* GSAccountHeaderView.m */; };
+		D21038FA1638D61000DE1E3B /* GSAddFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21038D41638D61000DE1E3B /* GSAddFriendsViewController.xib */; };
+		D21038FB1638D61000DE1E3B /* GSAddGiftImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038D61638D61000DE1E3B /* GSAddGiftImageView.m */; };
+		D21038FC1638D61000DE1E3B /* GSContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21038D71638D61000DE1E3B /* GSContactsViewController.xib */; };
+		D21038FD1638D61000DE1E3B /* GSEmailInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21038D81638D61000DE1E3B /* GSEmailInviteViewController.xib */; };
+		D21038FE1638D61000DE1E3B /* GSGiftListView.m in Sources */ = {isa = PBXBuildFile; fileRef = D21038DA1638D61000DE1E3B /* GSGiftListView.m */; };
+		D21039061638D61D00DE1E3B /* GivingSociallyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D21039011638D61D00DE1E3B /* GivingSociallyTests.m */; };
+		D21039081638D61D00DE1E3B /* GivingSociallyTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D21039051638D61D00DE1E3B /* GivingSociallyTests-Info.plist */; };
+		D272B78F1638BD5800FF36E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D272B78E1638BD5800FF36E4 /* UIKit.framework */; };
+		D272B7911638BD5800FF36E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D272B7901638BD5800FF36E4 /* Foundation.framework */; };
+		D272B7931638BD5800FF36E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D272B7921638BD5800FF36E4 /* CoreGraphics.framework */; };
+		D272B7AD1638BD5800FF36E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D272B7AC1638BD5800FF36E4 /* SenTestingKit.framework */; };
+		D272B7AE1638BD5800FF36E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D272B78E1638BD5800FF36E4 /* UIKit.framework */; };
+		D272B7AF1638BD5800FF36E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D272B7901638BD5800FF36E4 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D272B7B01638BD5800FF36E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D272B7811638BD5800FF36E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D272B7891638BD5800FF36E4;
+			remoteInfo = GivingSocially;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D21038901638D61000DE1E3B /* GSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAppDelegate.h; sourceTree = "<group>"; };
+		D21038911638D61000DE1E3B /* GSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAppDelegate.m; sourceTree = "<group>"; };
+		D21038921638D61000DE1E3B /* GSEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEnvironment.h; sourceTree = "<group>"; };
+		D21038931638D61000DE1E3B /* GSEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSEnvironment.m; sourceTree = "<group>"; };
+		D21038951638D61000DE1E3B /* GSMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMappingProvider.h; sourceTree = "<group>"; };
+		D21038961638D61000DE1E3B /* GSMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMappingProvider.m; sourceTree = "<group>"; };
+		D210389B1638D61000DE1E3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D210389C1638D61000DE1E3B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D210389D1638D61000DE1E3B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D21038A01638D61000DE1E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D21038A11638D61000DE1E3B /* GivingSocially-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GivingSocially-Info.plist"; sourceTree = "<group>"; };
+		D21038A21638D61000DE1E3B /* GivingSocially-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GivingSocially-Prefix.pch"; sourceTree = "<group>"; };
+		D21038A31638D61000DE1E3B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D21038A51638D61000DE1E3B /* GSAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAccountViewController.h; sourceTree = "<group>"; };
+		D21038A61638D61000DE1E3B /* GSAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAccountViewController.m; sourceTree = "<group>"; };
+		D21038A71638D61000DE1E3B /* GSActivitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSActivitesViewController.h; sourceTree = "<group>"; };
+		D21038A81638D61000DE1E3B /* GSActivitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSActivitesViewController.m; sourceTree = "<group>"; };
+		D21038A91638D61000DE1E3B /* GSAddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAddFriendsViewController.h; sourceTree = "<group>"; };
+		D21038AA1638D61000DE1E3B /* GSAddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAddFriendsViewController.m; sourceTree = "<group>"; };
+		D21038AB1638D61000DE1E3B /* GSAddGiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAddGiftViewController.h; sourceTree = "<group>"; };
+		D21038AC1638D61000DE1E3B /* GSAddGiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAddGiftViewController.m; sourceTree = "<group>"; };
+		D21038AD1638D61000DE1E3B /* GSContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSContactsViewController.h; sourceTree = "<group>"; };
+		D21038AE1638D61000DE1E3B /* GSContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSContactsViewController.m; sourceTree = "<group>"; };
+		D21038AF1638D61000DE1E3B /* GSEmailInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEmailInviteViewController.h; sourceTree = "<group>"; };
+		D21038B01638D61000DE1E3B /* GSEmailInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSEmailInviteViewController.m; sourceTree = "<group>"; };
+		D21038B11638D61000DE1E3B /* GSFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFriendsViewController.h; sourceTree = "<group>"; };
+		D21038B21638D61000DE1E3B /* GSFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSFriendsViewController.m; sourceTree = "<group>"; };
+		D21038B31638D61000DE1E3B /* GSGiftListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftListViewController.h; sourceTree = "<group>"; };
+		D21038B41638D61000DE1E3B /* GSGiftListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftListViewController.m; sourceTree = "<group>"; };
+		D21038B51638D61000DE1E3B /* GSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHomeViewController.h; sourceTree = "<group>"; };
+		D21038B61638D61000DE1E3B /* GSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSHomeViewController.m; sourceTree = "<group>"; };
+		D21038B71638D61000DE1E3B /* GSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLoginViewController.h; sourceTree = "<group>"; };
+		D21038B81638D61000DE1E3B /* GSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSLoginViewController.m; sourceTree = "<group>"; };
+		D21038B91638D61000DE1E3B /* GSMyListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMyListsViewController.h; sourceTree = "<group>"; };
+		D21038BA1638D61000DE1E3B /* GSMyListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMyListsViewController.m; sourceTree = "<group>"; };
+		D21038BE1638D61000DE1E3B /* GSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSActivity.h; sourceTree = "<group>"; };
+		D21038BF1638D61000DE1E3B /* GSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSActivity.m; sourceTree = "<group>"; };
+		D21038C01638D61000DE1E3B /* GSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSContact.h; sourceTree = "<group>"; };
+		D21038C11638D61000DE1E3B /* GSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSContact.m; sourceTree = "<group>"; };
+		D21038C21638D61000DE1E3B /* GSGift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGift.h; sourceTree = "<group>"; };
+		D21038C31638D61000DE1E3B /* GSGift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGift.m; sourceTree = "<group>"; };
+		D21038C41638D61000DE1E3B /* GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftList.h; sourceTree = "<group>"; };
+		D21038C51638D61000DE1E3B /* GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftList.m; sourceTree = "<group>"; };
+		D21038C61638D61000DE1E3B /* GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSUser.h; sourceTree = "<group>"; };
+		D21038C71638D61000DE1E3B /* GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSUser.m; sourceTree = "<group>"; };
+		D21038C91638D61000DE1E3B /* _GSActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _GSActivity.h; sourceTree = "<group>"; };
+		D21038CA1638D61000DE1E3B /* _GSActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _GSActivity.m; sourceTree = "<group>"; };
+		D21038CB1638D61000DE1E3B /* _GSGift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _GSGift.h; sourceTree = "<group>"; };
+		D21038CC1638D61000DE1E3B /* _GSGift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _GSGift.m; sourceTree = "<group>"; };
+		D21038CD1638D61000DE1E3B /* _GSGiftList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _GSGiftList.h; sourceTree = "<group>"; };
+		D21038CE1638D61000DE1E3B /* _GSGiftList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _GSGiftList.m; sourceTree = "<group>"; };
+		D21038CF1638D61000DE1E3B /* _GSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _GSUser.h; sourceTree = "<group>"; };
+		D21038D01638D61000DE1E3B /* _GSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _GSUser.m; sourceTree = "<group>"; };
+		D21038D21638D61000DE1E3B /* GSAccountHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAccountHeaderView.h; sourceTree = "<group>"; };
+		D21038D31638D61000DE1E3B /* GSAccountHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAccountHeaderView.m; sourceTree = "<group>"; };
+		D21038D41638D61000DE1E3B /* GSAddFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSAddFriendsViewController.xib; sourceTree = "<group>"; };
+		D21038D51638D61000DE1E3B /* GSAddGiftImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAddGiftImageView.h; sourceTree = "<group>"; };
+		D21038D61638D61000DE1E3B /* GSAddGiftImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAddGiftImageView.m; sourceTree = "<group>"; };
+		D21038D71638D61000DE1E3B /* GSContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSContactsViewController.xib; sourceTree = "<group>"; };
+		D21038D81638D61000DE1E3B /* GSEmailInviteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSEmailInviteViewController.xib; sourceTree = "<group>"; };
+		D21038D91638D61000DE1E3B /* GSGiftListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGiftListView.h; sourceTree = "<group>"; };
+		D21038DA1638D61000DE1E3B /* GSGiftListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSGiftListView.m; sourceTree = "<group>"; };
+		D21039001638D61D00DE1E3B /* GivingSociallyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GivingSociallyTests.h; sourceTree = "<group>"; };
+		D21039011638D61D00DE1E3B /* GivingSociallyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GivingSociallyTests.m; sourceTree = "<group>"; };
+		D21039041638D61D00DE1E3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D21039051638D61D00DE1E3B /* GivingSociallyTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GivingSociallyTests-Info.plist"; sourceTree = "<group>"; };
+		D272B78A1638BD5800FF36E4 /* GivingSocially.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivingSocially.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D272B78E1638BD5800FF36E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D272B7901638BD5800FF36E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D272B7921638BD5800FF36E4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D272B7AB1638BD5800FF36E4 /* GivingSociallyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GivingSociallyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D272B7AC1638BD5800FF36E4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D272B7871638BD5800FF36E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D272B78F1638BD5800FF36E4 /* UIKit.framework in Frameworks */,
+				D272B7911638BD5800FF36E4 /* Foundation.framework in Frameworks */,
+				D272B7931638BD5800FF36E4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D272B7A71638BD5800FF36E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D272B7AD1638BD5800FF36E4 /* SenTestingKit.framework in Frameworks */,
+				D272B7AE1638BD5800FF36E4 /* UIKit.framework in Frameworks */,
+				D272B7AF1638BD5800FF36E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D210388E1638D61000DE1E3B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D210388F1638D61000DE1E3B /* Categories */,
+				D21038901638D61000DE1E3B /* GSAppDelegate.h */,
+				D21038911638D61000DE1E3B /* GSAppDelegate.m */,
+				D21038921638D61000DE1E3B /* GSEnvironment.h */,
+				D21038931638D61000DE1E3B /* GSEnvironment.m */,
+				D21038941638D61000DE1E3B /* Networking */,
+				D21038971638D61000DE1E3B /* Protocols */,
+				D21038981638D61000DE1E3B /* Resources */,
+				D210389E1638D61000DE1E3B /* Supporting Files */,
+			);
+			name = Application;
+			path = GivingSocially/Application;
+			sourceTree = "<group>";
+		};
+		D210388F1638D61000DE1E3B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D21038941638D61000DE1E3B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D21038951638D61000DE1E3B /* GSMappingProvider.h */,
+				D21038961638D61000DE1E3B /* GSMappingProvider.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D21038971638D61000DE1E3B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D21038981638D61000DE1E3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D21038991638D61000DE1E3B /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D21038991638D61000DE1E3B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D210389A1638D61000DE1E3B /* Icons */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D210389A1638D61000DE1E3B /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D210389B1638D61000DE1E3B /* Default-568h@2x.png */,
+				D210389C1638D61000DE1E3B /* Default.png */,
+				D210389D1638D61000DE1E3B /* Default@2x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		D210389E1638D61000DE1E3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D210389F1638D61000DE1E3B /* InfoPlist.strings */,
+				D21038A11638D61000DE1E3B /* GivingSocially-Info.plist */,
+				D21038A21638D61000DE1E3B /* GivingSocially-Prefix.pch */,
+				D21038A31638D61000DE1E3B /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D21038A41638D61000DE1E3B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D21038A51638D61000DE1E3B /* GSAccountViewController.h */,
+				D21038A61638D61000DE1E3B /* GSAccountViewController.m */,
+				D21038A71638D61000DE1E3B /* GSActivitesViewController.h */,
+				D21038A81638D61000DE1E3B /* GSActivitesViewController.m */,
+				D21038A91638D61000DE1E3B /* GSAddFriendsViewController.h */,
+				D21038AA1638D61000DE1E3B /* GSAddFriendsViewController.m */,
+				D21038AB1638D61000DE1E3B /* GSAddGiftViewController.h */,
+				D21038AC1638D61000DE1E3B /* GSAddGiftViewController.m */,
+				D21038AD1638D61000DE1E3B /* GSContactsViewController.h */,
+				D21038AE1638D61000DE1E3B /* GSContactsViewController.m */,
+				D21038AF1638D61000DE1E3B /* GSEmailInviteViewController.h */,
+				D21038B01638D61000DE1E3B /* GSEmailInviteViewController.m */,
+				D21038B11638D61000DE1E3B /* GSFriendsViewController.h */,
+				D21038B21638D61000DE1E3B /* GSFriendsViewController.m */,
+				D21038B31638D61000DE1E3B /* GSGiftListViewController.h */,
+				D21038B41638D61000DE1E3B /* GSGiftListViewController.m */,
+				D21038B51638D61000DE1E3B /* GSHomeViewController.h */,
+				D21038B61638D61000DE1E3B /* GSHomeViewController.m */,
+				D21038B71638D61000DE1E3B /* GSLoginViewController.h */,
+				D21038B81638D61000DE1E3B /* GSLoginViewController.m */,
+				D21038B91638D61000DE1E3B /* GSMyListsViewController.h */,
+				D21038BA1638D61000DE1E3B /* GSMyListsViewController.m */,
+			);
+			name = Controllers;
+			path = GivingSocially/Controllers;
+			sourceTree = "<group>";
+		};
+		D21038BD1638D61000DE1E3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D21038BE1638D61000DE1E3B /* GSActivity.h */,
+				D21038BF1638D61000DE1E3B /* GSActivity.m */,
+				D21038C01638D61000DE1E3B /* GSContact.h */,
+				D21038C11638D61000DE1E3B /* GSContact.m */,
+				D21038C21638D61000DE1E3B /* GSGift.h */,
+				D21038C31638D61000DE1E3B /* GSGift.m */,
+				D21038C41638D61000DE1E3B /* GSGiftList.h */,
+				D21038C51638D61000DE1E3B /* GSGiftList.m */,
+				D21038C61638D61000DE1E3B /* GSUser.h */,
+				D21038C71638D61000DE1E3B /* GSUser.m */,
+				D21038C81638D61000DE1E3B /* Machine */,
+			);
+			name = Models;
+			path = GivingSocially/Models;
+			sourceTree = "<group>";
+		};
+		D21038C81638D61000DE1E3B /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				D21038C91638D61000DE1E3B /* _GSActivity.h */,
+				D21038CA1638D61000DE1E3B /* _GSActivity.m */,
+				D21038CB1638D61000DE1E3B /* _GSGift.h */,
+				D21038CC1638D61000DE1E3B /* _GSGift.m */,
+				D21038CD1638D61000DE1E3B /* _GSGiftList.h */,
+				D21038CE1638D61000DE1E3B /* _GSGiftList.m */,
+				D21038CF1638D61000DE1E3B /* _GSUser.h */,
+				D21038D01638D61000DE1E3B /* _GSUser.m */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
+		D21038D11638D61000DE1E3B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D21038D21638D61000DE1E3B /* GSAccountHeaderView.h */,
+				D21038D31638D61000DE1E3B /* GSAccountHeaderView.m */,
+				D21038D41638D61000DE1E3B /* GSAddFriendsViewController.xib */,
+				D21038D51638D61000DE1E3B /* GSAddGiftImageView.h */,
+				D21038D61638D61000DE1E3B /* GSAddGiftImageView.m */,
+				D21038D71638D61000DE1E3B /* GSContactsViewController.xib */,
+				D21038D81638D61000DE1E3B /* GSEmailInviteViewController.xib */,
+				D21038D91638D61000DE1E3B /* GSGiftListView.h */,
+				D21038DA1638D61000DE1E3B /* GSGiftListView.m */,
+			);
+			name = Views;
+			path = GivingSocially/Views;
+			sourceTree = "<group>";
+		};
+		D21038FF1638D61D00DE1E3B /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D21039021638D61D00DE1E3B /* Supporting Files */,
+				D21039001638D61D00DE1E3B /* GivingSociallyTests.h */,
+				D21039011638D61D00DE1E3B /* GivingSociallyTests.m */,
+			);
+			name = UnitTests;
+			path = "GivingSocially-UnitTests";
+			sourceTree = "<group>";
+		};
+		D21039021638D61D00DE1E3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D21039031638D61D00DE1E3B /* InfoPlist.strings */,
+				D21039051638D61D00DE1E3B /* GivingSociallyTests-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D272B77F1638BD5800FF36E4 = {
+			isa = PBXGroup;
+			children = (
+				D21038BD1638D61000DE1E3B /* Models */,
+				D21038D11638D61000DE1E3B /* Views */,
+				D21038A41638D61000DE1E3B /* Controllers */,
+				D210388E1638D61000DE1E3B /* Application */,
+				D21038FF1638D61D00DE1E3B /* UnitTests */,
+				D29ED9E51638D661008FEC6B /* Libraries */,
+				D272B78D1638BD5800FF36E4 /* Frameworks */,
+				D272B78B1638BD5800FF36E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D272B78B1638BD5800FF36E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D272B78A1638BD5800FF36E4 /* GivingSocially.app */,
+				D272B7AB1638BD5800FF36E4 /* GivingSociallyTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D272B78D1638BD5800FF36E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D272B78E1638BD5800FF36E4 /* UIKit.framework */,
+				D272B7901638BD5800FF36E4 /* Foundation.framework */,
+				D272B7921638BD5800FF36E4 /* CoreGraphics.framework */,
+				D272B7AC1638BD5800FF36E4 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D29ED9E51638D661008FEC6B /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D272B7891638BD5800FF36E4 /* GivingSocially */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D272B7BD1638BD5800FF36E4 /* Build configuration list for PBXNativeTarget "GivingSocially" */;
+			buildPhases = (
+				D272B7861638BD5800FF36E4 /* Sources */,
+				D272B7871638BD5800FF36E4 /* Frameworks */,
+				D272B7881638BD5800FF36E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GivingSocially;
+			productName = GivingSocially;
+			productReference = D272B78A1638BD5800FF36E4 /* GivingSocially.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D272B7AA1638BD5800FF36E4 /* GivingSociallyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D272B7C01638BD5800FF36E4 /* Build configuration list for PBXNativeTarget "GivingSociallyTests" */;
+			buildPhases = (
+				D272B7A61638BD5800FF36E4 /* Sources */,
+				D272B7A71638BD5800FF36E4 /* Frameworks */,
+				D272B7A81638BD5800FF36E4 /* Resources */,
+				D272B7A91638BD5800FF36E4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D272B7B11638BD5800FF36E4 /* PBXTargetDependency */,
+			);
+			name = GivingSociallyTests;
+			productName = GivingSociallyTests;
+			productReference = D272B7AB1638BD5800FF36E4 /* GivingSociallyTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D272B7811638BD5800FF36E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GS;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Giving Socially";
+			};
+			buildConfigurationList = D272B7841638BD5800FF36E4 /* Build configuration list for PBXProject "GivingSocially" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D272B77F1638BD5800FF36E4;
+			productRefGroup = D272B78B1638BD5800FF36E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D272B7891638BD5800FF36E4 /* GivingSocially */,
+				D272B7AA1638BD5800FF36E4 /* GivingSociallyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D272B7881638BD5800FF36E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21038DE1638D61000DE1E3B /* Default-568h@2x.png in Resources */,
+				D21038DF1638D61000DE1E3B /* Default.png in Resources */,
+				D21038E01638D61000DE1E3B /* Default@2x.png in Resources */,
+				D21038E11638D61000DE1E3B /* InfoPlist.strings in Resources */,
+				D21038E21638D61000DE1E3B /* GivingSocially-Info.plist in Resources */,
+				D21038FA1638D61000DE1E3B /* GSAddFriendsViewController.xib in Resources */,
+				D21038FC1638D61000DE1E3B /* GSContactsViewController.xib in Resources */,
+				D21038FD1638D61000DE1E3B /* GSEmailInviteViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D272B7A81638BD5800FF36E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21039081638D61D00DE1E3B /* GivingSociallyTests-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D272B7A91638BD5800FF36E4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D272B7861638BD5800FF36E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21038DB1638D61000DE1E3B /* GSAppDelegate.m in Sources */,
+				D21038DC1638D61000DE1E3B /* GSEnvironment.m in Sources */,
+				D21038DD1638D61000DE1E3B /* GSMappingProvider.m in Sources */,
+				D21038E31638D61000DE1E3B /* main.m in Sources */,
+				D21038E41638D61000DE1E3B /* GSAccountViewController.m in Sources */,
+				D21038E51638D61000DE1E3B /* GSActivitesViewController.m in Sources */,
+				D21038E61638D61000DE1E3B /* GSAddFriendsViewController.m in Sources */,
+				D21038E71638D61000DE1E3B /* GSAddGiftViewController.m in Sources */,
+				D21038E81638D61000DE1E3B /* GSContactsViewController.m in Sources */,
+				D21038E91638D61000DE1E3B /* GSEmailInviteViewController.m in Sources */,
+				D21038EA1638D61000DE1E3B /* GSFriendsViewController.m in Sources */,
+				D21038EB1638D61000DE1E3B /* GSGiftListViewController.m in Sources */,
+				D21038EC1638D61000DE1E3B /* GSHomeViewController.m in Sources */,
+				D21038ED1638D61000DE1E3B /* GSLoginViewController.m in Sources */,
+				D21038EE1638D61000DE1E3B /* GSMyListsViewController.m in Sources */,
+				D21038F01638D61000DE1E3B /* GSActivity.m in Sources */,
+				D21038F11638D61000DE1E3B /* GSContact.m in Sources */,
+				D21038F21638D61000DE1E3B /* GSGift.m in Sources */,
+				D21038F31638D61000DE1E3B /* GSGiftList.m in Sources */,
+				D21038F41638D61000DE1E3B /* GSUser.m in Sources */,
+				D21038F51638D61000DE1E3B /* _GSActivity.m in Sources */,
+				D21038F61638D61000DE1E3B /* _GSGift.m in Sources */,
+				D21038F71638D61000DE1E3B /* _GSGiftList.m in Sources */,
+				D21038F81638D61000DE1E3B /* _GSUser.m in Sources */,
+				D21038F91638D61000DE1E3B /* GSAccountHeaderView.m in Sources */,
+				D21038FB1638D61000DE1E3B /* GSAddGiftImageView.m in Sources */,
+				D21038FE1638D61000DE1E3B /* GSGiftListView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D272B7A61638BD5800FF36E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21039061638D61D00DE1E3B /* GivingSociallyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D272B7B11638BD5800FF36E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D272B7891638BD5800FF36E4 /* GivingSocially */;
+			targetProxy = D272B7B01638BD5800FF36E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D210389F1638D61000DE1E3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D21038A01638D61000DE1E3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D21039031638D61D00DE1E3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D21039041638D61D00DE1E3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D272B7BB1638BD5800FF36E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D272B7BC1638BD5800FF36E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D272B7BE1638BD5800FF36E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GivingSocially/Application/Supporting Files/GivingSocially-Prefix.pch";
+				INFOPLIST_FILE = "GivingSocially/Application/Supporting Files/GivingSocially-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D272B7BF1638BD5800FF36E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GivingSocially/Application/Supporting Files/GivingSocially-Prefix.pch";
+				INFOPLIST_FILE = "GivingSocially/Application/Supporting Files/GivingSocially-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D272B7C11638BD5800FF36E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GivingSocially.app/GivingSocially";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GivingSocially/Application/Supporting Files/GivingSocially-Prefix.pch";
+				INFOPLIST_FILE = "GivingSocially-UnitTests/Supporting Files/GivingSociallyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D272B7C21638BD5800FF36E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GivingSocially.app/GivingSocially";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GivingSocially/Application/Supporting Files/GivingSocially-Prefix.pch";
+				INFOPLIST_FILE = "GivingSocially-UnitTests/Supporting Files/GivingSociallyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D272B7841638BD5800FF36E4 /* Build configuration list for PBXProject "GivingSocially" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D272B7BB1638BD5800FF36E4 /* Debug */,
+				D272B7BC1638BD5800FF36E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D272B7BD1638BD5800FF36E4 /* Build configuration list for PBXNativeTarget "GivingSocially" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D272B7BE1638BD5800FF36E4 /* Debug */,
+				D272B7BF1638BD5800FF36E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D272B7C01638BD5800FF36E4 /* Build configuration list for PBXNativeTarget "GivingSociallyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D272B7C11638BD5800FF36E4 /* Debug */,
+				D272B7C21638BD5800FF36E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D272B7811638BD5800FF36E4 /* Project object */;
+}

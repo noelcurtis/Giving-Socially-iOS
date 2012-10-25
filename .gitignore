@@ -1,4 +1,4 @@
-# OSX
+# OS X folder attributes
 .DS_Store
 
 # Thumbnails
@@ -23,3 +23,4 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+DerivedData
