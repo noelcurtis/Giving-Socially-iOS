@@ -5,13 +5,13 @@
 
 
 extern const struct GSActivityAttributes {
-	 NSString *activityID;
-	 NSString *friendlyDescription;
+	__unsafe_unretained NSString *activityID;
+	__unsafe_unretained NSString *friendlyDescription;
 } GSActivityAttributes;
 
 extern const struct GSActivityRelationships {
-	 NSString *gift;
-	 NSString *giftList;
+	__unsafe_unretained NSString *gift;
+	__unsafe_unretained NSString *giftList;
 } GSActivityRelationships;
 
 extern const struct GSActivityFetchedProperties {
@@ -35,7 +35,7 @@ extern const struct GSActivityFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *activityID;
+@property (nonatomic, strong) NSNumber* activityID;
 
 
 @property int32_t activityIDValue;
@@ -47,7 +47,7 @@ extern const struct GSActivityFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *friendlyDescription;
+@property (nonatomic, strong) NSString* friendlyDescription;
 
 
 //- (BOOL)validateFriendlyDescription:(id*)value_ error:(NSError**)error_;
@@ -56,14 +56,14 @@ extern const struct GSActivityFetchedProperties {
 
 
 
-@property (nonatomic, retain) GSGift* gift;
+@property (nonatomic, strong) GSGift* gift;
 
 //- (BOOL)validateGift:(id*)value_ error:(NSError**)error_;
 
 
 
 
-@property (nonatomic, retain) GSGiftList* giftList;
+@property (nonatomic, strong) GSGiftList* giftList;
 
 //- (BOOL)validateGiftList:(id*)value_ error:(NSError**)error_;
 
@@ -80,8 +80,8 @@ extern const struct GSActivityFetchedProperties {
 @interface _GSActivity (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSNumber *)primitiveActivityID;
-- (void)setPrimitiveActivityID:(NSNumber *)value;
+- (NSNumber*)primitiveActivityID;
+- (void)setPrimitiveActivityID:(NSNumber*)value;
 
 - (int32_t)primitiveActivityIDValue;
 - (void)setPrimitiveActivityIDValue:(int32_t)value_;
@@ -89,8 +89,8 @@ extern const struct GSActivityFetchedProperties {
 
 
 
-- (NSString *)primitiveFriendlyDescription;
-- (void)setPrimitiveFriendlyDescription:(NSString *)value;
+- (NSString*)primitiveFriendlyDescription;
+- (void)setPrimitiveFriendlyDescription:(NSString*)value;
 
 
 

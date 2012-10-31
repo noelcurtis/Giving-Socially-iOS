@@ -7,7 +7,6 @@
 //
 
 #import "_GSUser.h"
-#import <RestKit/RestKit.h>
 
 @interface GSUser : _GSUser
 

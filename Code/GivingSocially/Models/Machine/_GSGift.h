@@ -5,12 +5,12 @@
 
 
 extern const struct GSGiftAttributes {
-	 NSString *amazonAffiliateURL;
-	 NSString *approximatePrice;
-	 NSString *exampleURL;
-	 NSString *giftID;
-	 NSString *name;
-	 NSString *purchased;
+	__unsafe_unretained NSString *amazonAffiliateURL;
+	__unsafe_unretained NSString *approximatePrice;
+	__unsafe_unretained NSString *exampleURL;
+	__unsafe_unretained NSString *giftID;
+	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *purchased;
 } GSGiftAttributes;
 
 extern const struct GSGiftRelationships {
@@ -39,7 +39,7 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *amazonAffiliateURL;
+@property (nonatomic, strong) NSString* amazonAffiliateURL;
 
 
 //- (BOOL)validateAmazonAffiliateURL:(id*)value_ error:(NSError**)error_;
@@ -47,7 +47,7 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *approximatePrice;
+@property (nonatomic, strong) NSNumber* approximatePrice;
 
 
 @property float approximatePriceValue;
@@ -59,7 +59,7 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *exampleURL;
+@property (nonatomic, strong) NSString* exampleURL;
 
 
 //- (BOOL)validateExampleURL:(id*)value_ error:(NSError**)error_;
@@ -67,7 +67,7 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *giftID;
+@property (nonatomic, strong) NSNumber* giftID;
 
 
 @property int32_t giftIDValue;
@@ -79,7 +79,7 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString* name;
 
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
@@ -87,7 +87,7 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *purchased;
+@property (nonatomic, strong) NSNumber* purchased;
 
 
 @property BOOL purchasedValue;
@@ -110,14 +110,14 @@ extern const struct GSGiftFetchedProperties {
 @interface _GSGift (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSString *)primitiveAmazonAffiliateURL;
-- (void)setPrimitiveAmazonAffiliateURL:(NSString *)value;
+- (NSString*)primitiveAmazonAffiliateURL;
+- (void)setPrimitiveAmazonAffiliateURL:(NSString*)value;
 
 
 
 
-- (NSNumber *)primitiveApproximatePrice;
-- (void)setPrimitiveApproximatePrice:(NSNumber *)value;
+- (NSNumber*)primitiveApproximatePrice;
+- (void)setPrimitiveApproximatePrice:(NSNumber*)value;
 
 - (float)primitiveApproximatePriceValue;
 - (void)setPrimitiveApproximatePriceValue:(float)value_;
@@ -125,14 +125,14 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-- (NSString *)primitiveExampleURL;
-- (void)setPrimitiveExampleURL:(NSString *)value;
+- (NSString*)primitiveExampleURL;
+- (void)setPrimitiveExampleURL:(NSString*)value;
 
 
 
 
-- (NSNumber *)primitiveGiftID;
-- (void)setPrimitiveGiftID:(NSNumber *)value;
+- (NSNumber*)primitiveGiftID;
+- (void)setPrimitiveGiftID:(NSNumber*)value;
 
 - (int32_t)primitiveGiftIDValue;
 - (void)setPrimitiveGiftIDValue:(int32_t)value_;
@@ -140,14 +140,14 @@ extern const struct GSGiftFetchedProperties {
 
 
 
-- (NSString *)primitiveName;
-- (void)setPrimitiveName:(NSString *)value;
+- (NSString*)primitiveName;
+- (void)setPrimitiveName:(NSString*)value;
 
 
 
 
-- (NSNumber *)primitivePurchased;
-- (void)setPrimitivePurchased:(NSNumber *)value;
+- (NSNumber*)primitivePurchased;
+- (void)setPrimitivePurchased:(NSNumber*)value;
 
 - (BOOL)primitivePurchasedValue;
 - (void)setPrimitivePurchasedValue:(BOOL)value_;

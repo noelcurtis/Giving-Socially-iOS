@@ -7,14 +7,13 @@ const struct GSUserAttributes GSUserAttributes = {
 	.authToken = @"authToken",
 	.email = @"email",
 	.facebookToken = @"facebookToken",
-	.facebookTokenExpiationDate = @"facebookTokenExpiationDate",
+	.facebookTokenExpirationDate = @"facebookTokenExpirationDate",
 	.firstName = @"firstName",
 	.lastName = @"lastName",
 	.username = @"username",
 };
 
 const struct GSUserRelationships GSUserRelationships = {
-	.friends = @"friends",
 };
 
 const struct GSUserFetchedProperties GSUserFetchedProperties = {
@@ -27,16 +26,16 @@ const struct GSUserFetchedProperties GSUserFetchedProperties = {
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"GSUser" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"GSUser";
+	return @"User";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"GSUser" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"User" inManagedObjectContext:moc_];
 }
 
 - (GSUserID*)objectID {
@@ -74,7 +73,7 @@ const struct GSUserFetchedProperties GSUserFetchedProperties = {
 
 
 
-@dynamic facebookTokenExpiationDate;
+@dynamic facebookTokenExpirationDate;
 
 
 
@@ -101,19 +100,6 @@ const struct GSUserFetchedProperties GSUserFetchedProperties = {
 
 
 
-
-@dynamic friends;
-
-	
-- (NSMutableSet*)friendsSet {
-	[self willAccessValueForKey:@"friends"];
-  
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"friends"];
-  
-	[self didAccessValueForKey:@"friends"];
-	return result;
-}
-	
 
 
 

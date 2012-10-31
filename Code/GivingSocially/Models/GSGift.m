@@ -10,12 +10,4 @@
 
 @implementation GSGift
 
-@synthesize giftListID = _giftListID;
-
-- (void)didTurnIntoFault
-{
-    [_giftListID release];
-    [super didTurnIntoFault];
-}
-
 @end

@@ -8,6 +8,6 @@
 
 #import <RestKit/RestKit.h>
 
-@interface GSHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
+@interface GSHomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

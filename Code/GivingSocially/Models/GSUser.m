@@ -17,11 +17,11 @@ static GSUser* gUser = nil;
 + (GSUser*)currentUser
 {
     if (nil == gUser) {
-        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"authToken != nil"]; // TODO fix this to empty or nil
-        gUser = [[GSUser findFirstWithPredicate:predicate sortedBy:@"email" ascending:YES] retain];
-        if (gUser) {
-            [[RKObjectManager sharedManager].client.HTTPHeaders setValue:gUser.authToken forKey:GSAuthTokenHeaderKey];
-        }
+//        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"authToken != nil"]; // TODO fix this to empty or nil
+//        gUser =  [GSUser findFirstWithPredicate:predicate sortedBy:@"email" ascending:YES];
+//        if (gUser) {
+//            [[RKObjectManager sharedManager].client.HTTPHeaders setValue:gUser.authToken forKey:GSAuthTokenHeaderKey];
+//        }
     }
     
     return gUser;
@@ -29,10 +29,10 @@ static GSUser* gUser = nil;
 
 - (void)logout
 {
-    GSUser* user = [GSUser currentUser];
-    user.authToken = nil;
-    [[user managedObjectContext] save:nil]; // TODO: Do we need to handle this error?
-    [[RKObjectManager sharedManager].client.HTTPHeaders removeObjectForKey:GSAuthTokenHeaderKey];
+//    GSUser* user = [GSUser currentUser];
+//    user.authToken = nil;
+//    [[user managedObjectContext] save:nil]; // TODO: Do we need to handle this error?
+//    [[RKObjectManager sharedManager].client.HTTPHeaders removeObjectForKey:GSAuthTokenHeaderKey];
     
     // TODO: Post notification when logged out?
 }

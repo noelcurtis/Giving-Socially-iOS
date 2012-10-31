@@ -95,12 +95,12 @@ namespace :build do
   desc "Build the release version of App"
   task :release do
     builder = GivingSocially.new
-    builder.run("xcodebuild -project Code/GivingSocially.xcodeproj/ -scheme wootstar")
+    builder.run("xcodebuild -project Code/GivingSocially.xcodeproj/ -scheme GivingSocially")
   end
 
   desc "Build the calabash test version of App"
   task :tests do
-    builder = Wootstar.new
+    builder = GivingSocially.new
     builder.run("xcodebuild -project Code/GivingSocially.xcodeproj/ -scheme GivingSocially-calabash -sdk iphonesimulator6.0 -configuration Debug build")
   end
 end
@@ -131,5 +131,5 @@ task :mogen do
   model_path = "Code/GivingSocially/Models/GSDataModel.xcdatamodeld"
   current_version_of_model = `/usr/libexec/PlistBuddy "#{model_path}/.xccurrentversion" -c "print _XCCurrentVersionName"`.chomp
   current_version_of_model_path = "#{model_path}/#{current_version_of_model}"
-  Wootstar.instance.execute("Generating NSManagedObjectModel Sub-classes with model:\n#{current_version_of_model_path}\n", "mogenerator --model \"#{current_version_of_model_path}\"  --machine-dir \"Code/GivingSocially/Models/Machine\" --human-dir \"Code/GivingSocially/Models\" --template-var arc=true")
+  GivingSocially.instance.execute("Generating NSManagedObjectModel Sub-classes with model:\n#{current_version_of_model_path}\n", "mogenerator --model \"#{current_version_of_model_path}\"  --machine-dir \"Code/GivingSocially/Models/Machine\" --human-dir \"Code/GivingSocially/Models\" --template-var arc=true")
 end

@@ -8,7 +8,7 @@
 
 #import <RestKit/RestKit.h>
 #import "GSGiftList.h"
-@interface GSGiftListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
+@interface GSGiftListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 - (id)initWithGiftList:(GSGiftList*)giftList;
 

@@ -6,80 +6,155 @@
 //  Copyright (c) 2012 Scott Penrose. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "GSMappingProvider.h"
 #import "GSUser.h"
 #import "GSGiftList.h"
 #import "GSGift.h"
 #import "GSActivity.h"
 
+static NSString * const kGSAPIMappingPrimaryKey = @"GS_JSON_PRIMARY_KEY";
+static NSString * const kGSAPIMappingSerializableKey = @"GS_SERIALIZABLE_KEY";
+static NSString * const kGSAPIMappingUserInfoServerKey = @"GS_JSON_SERVER_KEY";
+static NSString * const kGSAPIMappingImageServerKey = @"GS_JSON_IMAGE_DATA";
+
+@interface GSMappingProvider ()
+
+@property (nonatomic, strong) NSDictionary *mappings;
+
++ (NSDictionary *)mappingsFromStore:(RKManagedObjectStore *)store;
++ (void)mapAttributesInMapping:(RKEntityMapping *)mapping entity:(NSEntityDescription *)entity;
++ (void)mapRelationshipsInMapping:(RKEntityMapping *)mapping entity:(NSEntityDescription *)entity mappings:(NSDictionary *)entityMappings;
+
+- (void)mapSerializationsInStore:(RKManagedObjectStore *)store;
+
+@end
+
 @implementation GSMappingProvider
 
-- (id)init {
-    self = [super init];
-    
-    if(self){
-        RKManagedObjectStore* objectStore = [RKObjectManager sharedManager].objectStore;
-        
-        // User mapping        
-        RKManagedObjectMapping* user = [RKManagedObjectMapping mappingForClass:[GSUser class] inManagedObjectStore:objectStore];
-        [user setPrimaryKeyAttribute:@"email"];
-        [user mapKeyPath:@"username" toAttribute:@"username"];
-        [user mapKeyPath:@"email" toAttribute:@"email"];
-        [user mapKeyPath:@"authentication_token" toAttribute:@"authToken"];
-        [user mapKeyPath:@"facebook_token" toAttribute:@"facebookToken"];
-        [user mapKeyPath:@"facebook_token_expire_at" toAttribute:@"facebookTokenExpiationDate"];
-        [user mapKeyPath:@"first_name" toAttribute:@"firstName"];
-        [user mapKeyPath:@"last_name" toAttribute:@"lastName"];
-        [self setMapping:user forKeyPath:@"user"];
-        [self setSerializationMapping:[user inverseMapping] forClass:[GSUser class]];
-        [self setMapping:user forKeyPath:@"users.user"];
-        [self registerMapping:user withRootKeyPath:@"user"];
-        
-        // GiftList Mapping
-        RKManagedObjectMapping* giftlist = [RKManagedObjectMapping mappingForClass:[GSGiftList class] inManagedObjectStore:objectStore];
-        [giftlist setPrimaryKeyAttribute:@"giftListID"];
-        [giftlist mapKeyPath:@"name" toAttribute:@"name"];
-        [giftlist mapKeyPath:@"id" toAttribute:@"giftListID"];
-        [giftlist mapKeyPath:@"is_editable_by_friends" toAttribute:@"editableByFriends"];
-        [giftlist mapKeyPath:@"is_private" toAttribute:@"privateList"];
-        [giftlist mapKeyPath:@"is_starred" toAttribute:@"starred"];
-        [giftlist mapKeyPath:@"all_gifts_purchased" toAttribute:@"allGiftsPurchased"];
-        [giftlist mapKeyPath:@"due_date" toAttribute:@"dueDate"];
-        [giftlist mapAttributes:@"purpose", nil];
-        [self setMapping:giftlist forKeyPath:@"gift_list"];
-        [self setMapping:giftlist forKeyPath:@"gift_lists.gift_list"];
-        
-        // Gift Mapping
-        RKManagedObjectMapping* gift = [RKManagedObjectMapping mappingForClass:[GSGift class] inManagedObjectStore:objectStore];
-        [gift setPrimaryKeyAttribute:@"giftID"];
-        [gift mapKeyPath:@"amazon_affiliate_link" toAttribute:@"amazonAffiliateURL"];
-        [gift mapKeyPath:@"approximate_price" toAttribute:@"approximatePrice"];
-        [gift mapKeyPath:@"id" toAttribute:@"giftID"];
-        [gift mapKeyPath:@"is_purchased" toAttribute:@"purchased"];
-        [gift mapKeyPath:@"link_to_example" toAttribute:@"exampleURL"];
-        [gift mapAttributes:@"name", nil];
-        [self setMapping:gift forKeyPath:@"gift"];
-        [self setMapping:gift forKeyPath:@"gifts.gift"];
-        [self registerObjectMapping:gift withRootKeyPath:@"gift"];
-        
-        RKObjectMapping *giftSerialization = [gift inverseMapping];
-        [self setSerializationMapping:giftSerialization forClass:[GSGift class]];
-        
-        // Activity Mapping
-        RKManagedObjectMapping* activity = [RKManagedObjectMapping mappingForClass:[GSActivity class] inManagedObjectStore:objectStore];
-        [activity setPrimaryKeyAttribute:@"activityID"];
-        [activity mapKeyPath:@"id" toAttribute:@"activityID"];
-        [activity mapKeyPath:@"friendly_descriptor" toAttribute:@"friendlyDescription"];
-        // Gift Relationship
-        [activity mapKeyPath:@"gift" toRelationship:@"gift" withMapping:gift];
-        // Gift List Relationship
-        [activity mapKeyPath:@"gift_list" toRelationship:@"giftList" withMapping:giftlist];
+#pragma mark - Convenience Methods
 
-        [self setMapping:activity forKeyPath:@"activity"];
-        [self setMapping:activity forKeyPath:@"activities.activity"];
-    }
++ (id)mappingProviderWithStore:(RKManagedObjectStore *)store
+{
+	// Build Mapping Provider
+	GSMappingProvider *mappingProvider = [[self alloc] init];
+	mappingProvider.mappings = [self mappingsFromStore:store];
+//	[mappingProvider mapSerializationsInStore:store]; // TODO still need to figure this out
     
-    return self;
+    NSMutableArray *descriptors = [NSMutableArray array];
+	
+	// Setup mappings to URL Patterns
+    RKObjectMapping *userMapping = [mappingProvider mappingWithEntityName:@"User"];
+    NSIndexSet *successStatusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful); // Anything in 2xx
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping pathPattern:@"users/sign_in" keyPath:@"user" statusCodes:successStatusCodes];
+    
+    [descriptors addObject:responseDescriptor];
+    
+//	RKObjectMapping *postMapping = [mappingProvider.mappings objectForKey:@"Post"];
+//	[mappingProvider setObjectMapping:postMapping forResourcePathPattern:@"/posts/:postId"];
+//	[mappingProvider setObjectMapping:postMapping forResourcePathPattern:@"/posts"];
+//    
+//	RKObjectMapping *commentMapping = [mappingProvider.mappings objectForKey:@"Comment"];
+//	[mappingProvider setObjectMapping:commentMapping forResourcePathPattern:@"/posts/:postId/comments/:commentId"];
+//	[mappingProvider setObjectMapping:commentMapping forResourcePathPattern:@"/posts/:postId/comments"];
+//	
+//	RKObjectMapping *friendshipMapping = [mappingProvider.mappings objectForKey:@"Friendship"];
+//	[mappingProvider setObjectMapping:friendshipMapping forResourcePathPattern:@"/friendships/:friendshipId"];
+//	[mappingProvider setObjectMapping:friendshipMapping forResourcePathPattern:@"/friendships"];
+//    
+//	RKObjectMapping *locationMapping = [mappingProvider.mappings objectForKey:@"MapEntry"];
+//	[mappingProvider setObjectMapping:locationMapping forResourcePathPattern:@"/locations"];
+    
+    mappingProvider.descriptors = [NSArray arrayWithArray:descriptors];
+	
+	return mappingProvider;
+}
+
+#pragma mark - Mapping Feching
+
+- (RKObjectMapping *)mappingWithEntityName:(NSString *)entityName
+{
+	return [self.mappings objectForKey:entityName];
+}
+
+#pragma mark - Mapping Provider Helpers
+
++ (NSDictionary *)mappingsFromStore:(RKManagedObjectStore *)store
+{
+	NSMutableDictionary *entityMappings = [NSMutableDictionary dictionary];
+	
+	// Create mappings and map attributes
+	for (NSEntityDescription *entity in [store.managedObjectModel entities]) {
+		RKEntityMapping *entityMapping = [RKEntityMapping mappingForEntityForName:entity.name inManagedObjectStore:store];
+		[self mapAttributesInMapping:entityMapping entity:entity];
+		[entityMappings setObject:entityMapping forKey:entity.name];
+	}
+    
+	// Now that they are all created, map relationships
+	for (RKEntityMapping *objectMapping in [entityMappings allValues]) {
+		[self mapRelationshipsInMapping:objectMapping entity:objectMapping.entity mappings:entityMappings];
+	}
+	
+	return entityMappings;
+}
+
++ (void)mapAttributesInMapping:(RKEntityMapping *)mapping entity:(NSEntityDescription *)entity
+{
+	for (NSAttributeDescription *attribute in [[entity attributesByName] allValues]) {
+		NSDictionary *userInfo = [attribute userInfo];
+		if (userInfo) {
+			NSString *propertyName = [attribute name];
+			NSString *serverKey = [userInfo objectForKey:kGSAPIMappingUserInfoServerKey] ?: propertyName;
+            
+			RKAttributeMapping *attributeMapping = [RKAttributeMapping attributeMappingFromKeyPath:serverKey toKeyPath:propertyName];
+			
+			// check for primary key
+			BOOL isPrimaryKey = [[userInfo objectForKey:kGSAPIMappingPrimaryKey] isEqualToString:@"YES"];
+			if (isPrimaryKey) {
+				[mapping setPrimaryKeyAttribute:propertyName];
+			}
+			
+			[mapping addAttributeMappingsFromArray:@[attributeMapping]];
+		}
+	}
+}
+
++ (void)mapRelationshipsInMapping:(RKEntityMapping *)mapping entity:(NSEntityDescription *)entity mappings:(NSDictionary *)entityMappings
+{
+	for (NSRelationshipDescription *relationship in [[entity relationshipsByName] allValues]) {
+		NSString *relationName = relationship.name;
+		NSString *serverKey = [[relationship userInfo] objectForKey:kGSAPIMappingUserInfoServerKey] ?: relationName;
+		NSString *relationEntityName = relationship.destinationEntity.name;
+		
+		RKEntityMapping *relationMap = [entityMappings objectForKey:relationEntityName];
+        
+		RKRelationshipMapping *relationMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:serverKey toKeyPath:relationName withMapping:relationMap];
+		[mapping addPropertyMapping:relationMapping];
+	}
+}
+
+- (void)mapSerializationsInStore:(RKManagedObjectStore *)store
+{
+	for (NSEntityDescription *entity in [store.managedObjectModel entities]) {
+		Class entityClass = NSClassFromString([entity managedObjectClassName]);
+		
+		RKObjectMapping *entitySerializationMapping = [RKObjectMapping mappingForClass:entityClass];
+		
+		for (NSAttributeDescription *attribute in [[entity attributesByName] allValues]) {
+			NSDictionary *userInfo = [attribute userInfo];
+			if (userInfo) {
+				BOOL isSerializable = [[userInfo objectForKey:kGSAPIMappingSerializableKey] isEqualToString:@"YES"];
+				if (isSerializable) {
+					NSString *propertyName = [attribute name];
+					NSString *serverKey = [userInfo objectForKey:kGSAPIMappingUserInfoServerKey] ?: propertyName;
+                    RKAttributeMapping *attributeMapping = [RKAttributeMapping attributeMappingFromKeyPath:serverKey toKeyPath:propertyName];
+                    [entitySerializationMapping addAttributeMappingsFromArray:@[attributeMapping]];
+				}
+			}
+		}
+//		[self setSerializationMapping:entitySerializationMapping forClass:entityClass];
+        // TODO what to do here.
+	}
 }
 
 @end

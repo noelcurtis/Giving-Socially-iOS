@@ -10,30 +10,19 @@
 
 @interface GSGiftListView ()
 
-@property (nonatomic, retain) UILabel* nameLabel;
-@property (nonatomic, retain) UILabel* dateLabel;
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UILabel *dateLabel;
 
 @end
 
 @implementation GSGiftListView
-
-@synthesize giftList = _giftList;
-@synthesize nameLabel = _nameLabel, dateLabel = _dateLabel;
-
-- (void)dealloc 
-{
-    [_giftList release];
-    [_nameLabel release];
-    [_dateLabel release];
-    [super dealloc];
-}
 
 - (id)initWithFrame:(CGRect)frame giftList:(GSGiftList*)giftList
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self setFrame:(CGRect){frame.origin, 320, 82}];
-        _giftList = [giftList retain];
+        _giftList = giftList;
         
         _nameLabel = [[UILabel alloc] initWithFrame:(CGRect){30, 10, 280, 20}];
         [_nameLabel setText:_giftList.name];

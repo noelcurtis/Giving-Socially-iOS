@@ -8,26 +8,16 @@
 
 #import "GSHomeViewController.h"
 #import "GSGiftList.h"
-#import "GSGiftListViewController.h"
+//#import "GSGiftListViewController.h"
 
 @interface GSHomeViewController ()
 
-@property (nonatomic, retain) UITableView* tableView;
-@property (nonatomic, retain) NSArray* giftLists;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) NSArray *giftLists;
 
 @end
 
 @implementation GSHomeViewController
-
-@synthesize tableView = _tableView;
-@synthesize giftLists = _giftLists;
-
-- (void)dealloc 
-{
-    [_tableView release];
-    [_giftLists release];
-    [super dealloc];
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,12 +39,12 @@
     [self.tableView setDataSource:self];
     [self.view addSubview:self.tableView];
     
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/gift_lists" delegate:self];
+//    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/gift_lists" delegate:self];
 }
 
 - (void)setupTable
 {
-    self.giftLists = [GSGiftList findAll];
+//    self.giftLists = [GSGiftList findAll];
     [self.tableView reloadData];
 }
 
@@ -70,7 +60,7 @@
     NSString* cellIdentifier = @"GiftListCellIdentifier";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (nil == cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
     NSLog(@"Gift list id:%@, name:%@", giftList.giftListID, giftList.name);
@@ -80,23 +70,23 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
-    GSGiftListViewController* giftListVC = [[[GSGiftListViewController alloc] initWithGiftList:giftList] autorelease];
-    [self.navigationController pushViewController:giftListVC animated:YES];
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    GSGiftList* giftList = (GSGiftList*)[self.giftLists objectAtIndex:indexPath.row];
+//    GSGiftListViewController* giftListVC = [[GSGiftListViewController alloc] initWithGiftList:giftList];
+//    [self.navigationController pushViewController:giftListVC animated:YES];
+//}
 
 #pragma mark - RKObjectLoaderDelegate
 
-- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error
-{
-    NSLog(@"Error loading lists");
-}
-
-- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects
-{
-    [self setupTable];
-}
+//- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error
+//{
+//    NSLog(@"Error loading lists");
+//}
+//
+//- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects
+//{
+//    [self setupTable];
+//}
 
 @end

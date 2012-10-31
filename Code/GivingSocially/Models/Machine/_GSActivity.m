@@ -23,16 +23,16 @@ const struct GSActivityFetchedProperties GSActivityFetchedProperties = {
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"GSActivity" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"Activity" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"GSActivity";
+	return @"Activity";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"GSActivity" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:moc_];
 }
 
 - (GSActivityID*)objectID {

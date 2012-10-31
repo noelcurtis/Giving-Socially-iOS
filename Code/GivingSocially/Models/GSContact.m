@@ -10,13 +10,4 @@
 
 @implementation GSContact
 
-@synthesize firstName = _firstName, lastName = _lastName, emailAddresses = _emailAddresses;
-
--(void)dealloc{
-    [_firstName release];
-    [_lastName release];
-    [_emailAddresses release];
-    [super dealloc];
-}
-
 @end

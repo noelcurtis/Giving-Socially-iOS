@@ -5,14 +5,14 @@
 
 
 extern const struct GSGiftListAttributes {
-	 NSString *allGiftsPurchased;
-	 NSString *dueDate;
-	 NSString *editableByFriends;
-	 NSString *giftListID;
-	 NSString *name;
-	 NSString *privateList;
-	 NSString *purpose;
-	 NSString *starred;
+	__unsafe_unretained NSString *allGiftsPurchased;
+	__unsafe_unretained NSString *dueDate;
+	__unsafe_unretained NSString *editableByFriends;
+	__unsafe_unretained NSString *giftListID;
+	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *privateList;
+	__unsafe_unretained NSString *purpose;
+	__unsafe_unretained NSString *starred;
 } GSGiftListAttributes;
 
 extern const struct GSGiftListRelationships {
@@ -43,7 +43,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *allGiftsPurchased;
+@property (nonatomic, strong) NSNumber* allGiftsPurchased;
 
 
 @property BOOL allGiftsPurchasedValue;
@@ -55,7 +55,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSDate *dueDate;
+@property (nonatomic, strong) NSDate* dueDate;
 
 
 //- (BOOL)validateDueDate:(id*)value_ error:(NSError**)error_;
@@ -63,7 +63,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *editableByFriends;
+@property (nonatomic, strong) NSNumber* editableByFriends;
 
 
 @property BOOL editableByFriendsValue;
@@ -75,7 +75,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *giftListID;
+@property (nonatomic, strong) NSNumber* giftListID;
 
 
 @property int32_t giftListIDValue;
@@ -87,7 +87,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString* name;
 
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
@@ -95,7 +95,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *privateList;
+@property (nonatomic, strong) NSNumber* privateList;
 
 
 @property BOOL privateListValue;
@@ -107,7 +107,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *purpose;
+@property (nonatomic, strong) NSString* purpose;
 
 
 //- (BOOL)validatePurpose:(id*)value_ error:(NSError**)error_;
@@ -115,7 +115,7 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber *starred;
+@property (nonatomic, strong) NSNumber* starred;
 
 
 @property BOOL starredValue;
@@ -138,8 +138,8 @@ extern const struct GSGiftListFetchedProperties {
 @interface _GSGiftList (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSNumber *)primitiveAllGiftsPurchased;
-- (void)setPrimitiveAllGiftsPurchased:(NSNumber *)value;
+- (NSNumber*)primitiveAllGiftsPurchased;
+- (void)setPrimitiveAllGiftsPurchased:(NSNumber*)value;
 
 - (BOOL)primitiveAllGiftsPurchasedValue;
 - (void)setPrimitiveAllGiftsPurchasedValue:(BOOL)value_;
@@ -147,14 +147,14 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-- (NSDate *)primitiveDueDate;
-- (void)setPrimitiveDueDate:(NSDate *)value;
+- (NSDate*)primitiveDueDate;
+- (void)setPrimitiveDueDate:(NSDate*)value;
 
 
 
 
-- (NSNumber *)primitiveEditableByFriends;
-- (void)setPrimitiveEditableByFriends:(NSNumber *)value;
+- (NSNumber*)primitiveEditableByFriends;
+- (void)setPrimitiveEditableByFriends:(NSNumber*)value;
 
 - (BOOL)primitiveEditableByFriendsValue;
 - (void)setPrimitiveEditableByFriendsValue:(BOOL)value_;
@@ -162,8 +162,8 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-- (NSNumber *)primitiveGiftListID;
-- (void)setPrimitiveGiftListID:(NSNumber *)value;
+- (NSNumber*)primitiveGiftListID;
+- (void)setPrimitiveGiftListID:(NSNumber*)value;
 
 - (int32_t)primitiveGiftListIDValue;
 - (void)setPrimitiveGiftListIDValue:(int32_t)value_;
@@ -171,14 +171,14 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-- (NSString *)primitiveName;
-- (void)setPrimitiveName:(NSString *)value;
+- (NSString*)primitiveName;
+- (void)setPrimitiveName:(NSString*)value;
 
 
 
 
-- (NSNumber *)primitivePrivateList;
-- (void)setPrimitivePrivateList:(NSNumber *)value;
+- (NSNumber*)primitivePrivateList;
+- (void)setPrimitivePrivateList:(NSNumber*)value;
 
 - (BOOL)primitivePrivateListValue;
 - (void)setPrimitivePrivateListValue:(BOOL)value_;
@@ -186,14 +186,14 @@ extern const struct GSGiftListFetchedProperties {
 
 
 
-- (NSString *)primitivePurpose;
-- (void)setPrimitivePurpose:(NSString *)value;
+- (NSString*)primitivePurpose;
+- (void)setPrimitivePurpose:(NSString*)value;
 
 
 
 
-- (NSNumber *)primitiveStarred;
-- (void)setPrimitiveStarred:(NSNumber *)value;
+- (NSNumber*)primitiveStarred;
+- (void)setPrimitiveStarred:(NSNumber*)value;
 
 - (BOOL)primitiveStarredValue;
 - (void)setPrimitiveStarredValue:(BOOL)value_;

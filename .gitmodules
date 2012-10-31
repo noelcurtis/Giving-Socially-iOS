@@ -7,3 +7,18 @@
 [submodule "Libraries/FacebookSDK"]
 	path = Code/Libraries/FacebookSDK
 	url = https://github.com/facebook/facebook-ios-sdk.git
+[submodule "Code/Libraries/FacebookSDK"]
+	path = Code/Libraries/FacebookSDK
+	url = git@github.com:facebook/facebook-ios-sdk.git
+[submodule "Code/Libraries/RestKit"]
+	path = Code/Libraries/RestKit
+	url = git@github.com:RestKit/RestKit.git
+[submodule "Code/Libraries/ViewDeck"]
+	path = Code/Libraries/ViewDeck
+	url = git@github.com:Inferis/ViewDeck.git
+[submodule "Code/Libraries/Specta"]
+	path = Code/Libraries/Specta
+	url = git@github.com:petejkim/specta.git
+[submodule "Code/Libraries/Expecta"]
+	path = Code/Libraries/Expecta
+	url = git@github.com:petejkim/expecta.git

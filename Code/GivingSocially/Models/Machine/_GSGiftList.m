@@ -27,16 +27,16 @@ const struct GSGiftListFetchedProperties GSGiftListFetchedProperties = {
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"GSGiftList" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"GiftList" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"GSGiftList";
+	return @"GiftList";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"GSGiftList" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"GiftList" inManagedObjectContext:moc_];
 }
 
 - (GSGiftListID*)objectID {

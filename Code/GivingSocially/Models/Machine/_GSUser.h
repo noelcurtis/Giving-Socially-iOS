@@ -5,23 +5,21 @@
 
 
 extern const struct GSUserAttributes {
-	 NSString *authToken;
-	 NSString *email;
-	 NSString *facebookToken;
-	 NSString *facebookTokenExpiationDate;
-	 NSString *firstName;
-	 NSString *lastName;
-	 NSString *username;
+	__unsafe_unretained NSString *authToken;
+	__unsafe_unretained NSString *email;
+	__unsafe_unretained NSString *facebookToken;
+	__unsafe_unretained NSString *facebookTokenExpirationDate;
+	__unsafe_unretained NSString *firstName;
+	__unsafe_unretained NSString *lastName;
+	__unsafe_unretained NSString *username;
 } GSUserAttributes;
 
 extern const struct GSUserRelationships {
-	 NSString *friends;
 } GSUserRelationships;
 
 extern const struct GSUserFetchedProperties {
 } GSUserFetchedProperties;
 
-@class GSUser;
 
 
 
@@ -43,7 +41,7 @@ extern const struct GSUserFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *authToken;
+@property (nonatomic, strong) NSString* authToken;
 
 
 //- (BOOL)validateAuthToken:(id*)value_ error:(NSError**)error_;
@@ -51,7 +49,7 @@ extern const struct GSUserFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *email;
+@property (nonatomic, strong) NSString* email;
 
 
 //- (BOOL)validateEmail:(id*)value_ error:(NSError**)error_;
@@ -59,7 +57,7 @@ extern const struct GSUserFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *facebookToken;
+@property (nonatomic, strong) NSString* facebookToken;
 
 
 //- (BOOL)validateFacebookToken:(id*)value_ error:(NSError**)error_;
@@ -67,15 +65,15 @@ extern const struct GSUserFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSDate *facebookTokenExpiationDate;
+@property (nonatomic, strong) NSDate* facebookTokenExpirationDate;
 
 
-//- (BOOL)validateFacebookTokenExpiationDate:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateFacebookTokenExpirationDate:(id*)value_ error:(NSError**)error_;
 
 
 
 
-@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, strong) NSString* firstName;
 
 
 //- (BOOL)validateFirstName:(id*)value_ error:(NSError**)error_;
@@ -83,7 +81,7 @@ extern const struct GSUserFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, strong) NSString* lastName;
 
 
 //- (BOOL)validateLastName:(id*)value_ error:(NSError**)error_;
@@ -91,18 +89,11 @@ extern const struct GSUserFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString *username;
+@property (nonatomic, strong) NSString* username;
 
 
 //- (BOOL)validateUsername:(id*)value_ error:(NSError**)error_;
 
-
-
-
-
-@property (nonatomic, retain) NSSet* friends;
-
-- (NSMutableSet*)friendsSet;
 
 
 
@@ -112,61 +103,51 @@ extern const struct GSUserFetchedProperties {
 
 @interface _GSUser (CoreDataGeneratedAccessors)
 
-- (void)addFriends:(NSSet*)value_;
-- (void)removeFriends:(NSSet*)value_;
-- (void)addFriendsObject:(GSUser*)value_;
-- (void)removeFriendsObject:(GSUser*)value_;
-
 @end
 
 @interface _GSUser (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSString *)primitiveAuthToken;
-- (void)setPrimitiveAuthToken:(NSString *)value;
+- (NSString*)primitiveAuthToken;
+- (void)setPrimitiveAuthToken:(NSString*)value;
 
 
 
 
-- (NSString *)primitiveEmail;
-- (void)setPrimitiveEmail:(NSString *)value;
+- (NSString*)primitiveEmail;
+- (void)setPrimitiveEmail:(NSString*)value;
 
 
 
 
-- (NSString *)primitiveFacebookToken;
-- (void)setPrimitiveFacebookToken:(NSString *)value;
+- (NSString*)primitiveFacebookToken;
+- (void)setPrimitiveFacebookToken:(NSString*)value;
 
 
 
 
-- (NSDate *)primitiveFacebookTokenExpiationDate;
-- (void)setPrimitiveFacebookTokenExpiationDate:(NSDate *)value;
+- (NSDate*)primitiveFacebookTokenExpirationDate;
+- (void)setPrimitiveFacebookTokenExpirationDate:(NSDate*)value;
 
 
 
 
-- (NSString *)primitiveFirstName;
-- (void)setPrimitiveFirstName:(NSString *)value;
+- (NSString*)primitiveFirstName;
+- (void)setPrimitiveFirstName:(NSString*)value;
 
 
 
 
-- (NSString *)primitiveLastName;
-- (void)setPrimitiveLastName:(NSString *)value;
+- (NSString*)primitiveLastName;
+- (void)setPrimitiveLastName:(NSString*)value;
 
 
 
 
-- (NSString *)primitiveUsername;
-- (void)setPrimitiveUsername:(NSString *)value;
+- (NSString*)primitiveUsername;
+- (void)setPrimitiveUsername:(NSString*)value;
 
 
-
-
-
-- (NSMutableSet*)primitiveFriends;
-- (void)setPrimitiveFriends:(NSMutableSet*)value;
 
 
 @end

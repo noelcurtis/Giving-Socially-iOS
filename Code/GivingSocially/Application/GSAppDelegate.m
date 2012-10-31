@@ -10,14 +10,14 @@
 
 #import "TestFlight.h"
 
-#import <RestKit/RestKit.h>
+#import "GSNetworkManager.h"
 #import "GSMappingProvider.h"
 
-#import "GSFriendsViewController.h"
-#import "GSAccountViewController.h"
+//#import "GSFriendsViewController.h"
+//#import "GSAccountViewController.h"
 #import "GSHomeViewController.h"
 #import "GSLoginViewController.h"
-#import "GSActivitesViewController.h"
+//#import "GSActivitesViewController.h"
 
 #import "GSGift.h"
 #import "GSGiftList.h"
@@ -25,34 +25,15 @@
 
 @interface GSAppDelegate ()
 
-@property (nonatomic, retain) GSFriendsViewController* friendsViewController;
-@property (nonatomic, retain) GSAccountViewController* accountViewController;
-@property (nonatomic, retain) GSHomeViewController* homeViewController;
-@property (nonatomic, retain) GSLoginViewController* loginViewController;
-@property (nonatomic, retain) GSActivitesViewController* activitiesViewController;
-
-- (void)setupRestKit;
-- (void)setupRestKitRoutes;
-- (void)setupFacebook;
+//@property (nonatomic, strong) GSFriendsViewController *friendsViewController;
+//@property (nonatomic, strong) GSAccountViewController *accountViewController;
+@property (nonatomic, strong) GSHomeViewController *homeViewController;
+@property (nonatomic, strong) GSLoginViewController *loginViewController;
+//@property (nonatomic, strong) GSActivitesViewController *activitiesViewController;
 
 @end
 
 @implementation GSAppDelegate
-
-@synthesize window = _window;
-@synthesize friendsViewController = _friendsViewController, accountViewController = _accountViewController, homeViewController = _homeViewController, loginViewController = _loginViewController, activitiesViewController = _activitiesViewController;
-@synthesize facebook = _facebook;
-
-- (void)dealloc
-{
-    [_friendsViewController release];
-    [_accountViewController release];
-    [_homeViewController release];
-    [_loginViewController release];
-    [_activitiesViewController release];
-    [_window release];
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -62,21 +43,20 @@
     NSLog(@"\n***************************\nCONFIGURATION MODE: DEBUG\n***************************");
 #endif
     
-    [self setupRestKit];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    
-    _friendsViewController = [[GSFriendsViewController alloc] init];
-    _accountViewController = [[GSAccountViewController alloc] init];
+//    _friendsViewController = [[GSFriendsViewController alloc] init];
+//    _accountViewController = [[GSAccountViewController alloc] init];
     _homeViewController = [[GSHomeViewController alloc] init];
-    _activitiesViewController = [[GSActivitesViewController alloc] init];
-    UINavigationController* centerNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.activitiesViewController] autorelease];
+//    _activitiesViewController = [[GSActivitesViewController alloc] init];
+//    UINavigationController *centerNavigationController = [[UINavigationController alloc] initWithRootViewController:self.activitiesViewController];
     
-    UINavigationController* rightNavigationController = [[[UINavigationController alloc] initWithRootViewController:self.friendsViewController] autorelease];
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerNavigationController 
-                                                                                    leftViewController:self.accountViewController
-                                                                                   rightViewController:rightNavigationController];
-    [self.window setRootViewController:deckController];
+//    UINavigationController *rightNavigationController = [[UINavigationController alloc] initWithRootViewController:self.friendsViewController];
+//    IIViewDeckController *deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerNavigationController
+//                                                                                    leftViewController:self.accountViewController
+//                                                                                   rightViewController:rightNavigationController];
+//    [self.window setRootViewController:deckController];
+    [self.window setRootViewController:_homeViewController];
     self.window.backgroundColor = [UIColor whiteColor];
     
     // TestFlight
@@ -87,68 +67,71 @@
     [self.window makeKeyAndVisible];
     
     // Throw up login if not logged in
-    if (nil == [GSUser currentUser]) {
-        _loginViewController = [[GSLoginViewController alloc] init];
-        [self setupFacebook];
-        [centerNavigationController presentModalViewController:_loginViewController animated:YES];
-    }
+//    if (![GSUser currentUser]) {
+//        _loginViewController = [[GSLoginViewController alloc] init];
+//        [self setupFacebook];
+//        [centerNavigationController presentModalViewController:_loginViewController animated:YES];
+//    }
     
     return YES;
 }
 
--(IIViewDeckController *)deckControllerInstance{
+- (IIViewDeckController *)deckControllerInstance
+{
     return (IIViewDeckController*)self.window.rootViewController;
 }
 
-- (void)setupRestKit
-{
-    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
-//    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURLString:GSBaseURL];
-    [objectManager setObjectStore:[RKManagedObjectStore objectStoreWithStoreFilename:@"GivingSocial.sqlite"]];
-    NSLog(@"Object store located at: %@", [objectManager.objectStore pathToStoreFile]);
-    
-    [objectManager.client.requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
-    
-    RKParserRegistry* parserRegistery = [RKParserRegistry sharedRegistry];
-    [parserRegistery setParserClass:NSClassFromString(@"RKJSONParserJSONKit") forMIMEType:@"application/json"];
-    
-    objectManager.mappingProvider = [[[GSMappingProvider alloc] init] autorelease];
-    [self setupRestKitRoutes];
-    
-//    [[RKParserRegistry sharedRegistry] setParserClass:NSClassFromString(@"RKXMLParserLibXML") forMIMEType:@"application/rss+xml"]; 
-//    [[RKClient sharedClient].requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
-//    [[RKClient sharedClient].requestQueue setRequestTimeout:30.0];
+//- (void)setupRestKit
+//{
+//    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+////    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+//    RKObjectManager* objectManager = [RKObjectManager objectManagerWithBaseURLString:GSBaseURL];
+//    [objectManager setObjectStore:[RKManagedObjectStore objectStoreWithStoreFilename:@"GivingSocial.sqlite"]];
+//    NSLog(@"Object store located at: %@", [objectManager.objectStore pathToStoreFile]);
 //    
-//    //Sat, 14 Jan 2012 00:00:00 -0600
-//    NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-//    [dateFormatter setDateFormat:@"E, dd MMM yyyy HH:mm:ss Z"];
-//    [RKObjectMapping addDefaultDateFormatter:dateFormatter];
-}
+//    [objectManager.client.requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
+//    
+//    RKParserRegistry* parserRegistery = [RKParserRegistry sharedRegistry];
+//    [parserRegistery setParserClass:NSClassFromString(@"RKJSONParserJSONKit") forMIMEType:@"application/json"];
+//    
+//    objectManager.mappingProvider = [[[GSMappingProvider alloc] init] autorelease];
+//    [self setupRestKitRoutes];
+//    
+////    [[RKParserRegistry sharedRegistry] setParserClass:NSClassFromString(@"RKXMLParserLibXML") forMIMEType:@"application/rss+xml"]; 
+////    [[RKClient sharedClient].requestQueue setShowsNetworkActivityIndicatorWhenBusy:YES];
+////    [[RKClient sharedClient].requestQueue setRequestTimeout:30.0];
+////    
+////    //Sat, 14 Jan 2012 00:00:00 -0600
+////    NSDateFormatter* dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+////    [dateFormatter setDateFormat:@"E, dd MMM yyyy HH:mm:ss Z"];
+////    [RKObjectMapping addDefaultDateFormatter:dateFormatter];
+//}
+//
+//- (void)setupRestKitRoutes
+//{
+//    RKObjectRouter *router = [RKObjectManager sharedManager].router;
+//    
+//    // User Routes
+//    [router routeClass:[GSUser class] toResourcePath:@"/users/sign_in" forMethod:RKRequestMethodPOST];
+//    
+//    // Gift Routes
+//    [router routeClass:[GSGift class] toResourcePath:@"/gift_lists/:giftListID/gifts" forMethod:RKRequestMethodPOST];
+//}
 
-- (void)setupRestKitRoutes
-{
-    RKObjectRouter *router = [RKObjectManager sharedManager].router;
-    
-    // User Routes
-    [router routeClass:[GSUser class] toResourcePath:@"/users/sign_in" forMethod:RKRequestMethodPOST];
-    
-    // Gift Routes
-    [router routeClass:[GSGift class] toResourcePath:@"/gift_lists/:giftListID/gifts" forMethod:RKRequestMethodPOST];
-}
-
--(void) setupFacebook{
-    _facebook = [[Facebook alloc] initWithAppId:@"362526673776223" andDelegate:_loginViewController];
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [_facebook handleOpenURL:url]; 
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [_facebook handleOpenURL:url]; 
-}
+//-(void)setupFacebook
+//{
+//    _facebook = [[Facebook alloc] initWithAppId:@"362526673776223" andDelegate:_loginViewController];
+//}
+//
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+//    
+//    return [_facebook handleOpenURL:url]; 
+//}
+//
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    return [_facebook handleOpenURL:url]; 
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -6,9 +6,8 @@
 //  Copyright (c) 2012 Scott Penrose. All rights reserved.
 //
 
-#import <RestKit/RestKit.h>
-#import "Facebook.h"
+#import <Foundation/Foundation.h>
 
-@interface GSLoginViewController : UIViewController <RKObjectLoaderDelegate, FBSessionDelegate, FBRequestDelegate>
+@interface GSLoginViewController : UIViewController
 
 @end

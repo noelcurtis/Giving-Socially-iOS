@@ -17,22 +17,6 @@
 
 @implementation GSAddGiftImageView
 
-@synthesize giftImageView = _giftImageView;
-@synthesize takePhotoButton = _takePhotoButton, selectPhotoButton = _selectPhotoButton;
-@synthesize displayImagePickerHandler = _displayImagePickerHandler, dismissImagePickerHandler = _dismissImagePickerHandler;
-@synthesize imagePickerController = _imagePickerController;
-
-- (void)dealloc
-{
-    [_giftImageView release];
-    [_selectPhotoButton release];
-    [_takePhotoButton release];
-    [_displayImagePickerHandler release];
-    [_dismissImagePickerHandler release];
-    [_imagePickerController release];
-    [super dealloc];
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -44,13 +28,13 @@
         [self.giftImageView setContentMode:UIViewContentModeScaleAspectFit];
         [self addSubview:self.giftImageView];
         
-        _takePhotoButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+        _takePhotoButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.takePhotoButton setFrame:(CGRect){self.frame.size.width - 100 - 10, 40, 100, 25}];
         [self.takePhotoButton setTitle:@"Take Photo" forState:UIControlStateNormal];
         [self.takePhotoButton addTarget:self action:@selector(takePhotoButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.takePhotoButton];
         
-        _selectPhotoButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+        _selectPhotoButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.selectPhotoButton setFrame:(CGRect){self.frame.size.width - 100 - 10, 75, 100, 25}];
         [self.selectPhotoButton setTitle:@"Select Photo" forState:UIControlStateNormal];
         [self.selectPhotoButton addTarget:self action:@selector(selectPhotoButtonTouched:) forControlEvents:UIControlEventTouchUpInside];

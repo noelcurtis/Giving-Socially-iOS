@@ -8,5 +8,5 @@
 
 #import "GSEnvironment.h"
 
-NSString* const GSBaseURL = @"http://furious-light-8716.herokuapp.com/api";
-NSString* const GSAuthTokenHeaderKey = @"Auth-Token";
+NSString * const kGSBaseURL = @"http://furious-light-8716.herokuapp.com/api/";
+NSString * const kGSAuthTokenHeaderKey = @"Auth-Token";
